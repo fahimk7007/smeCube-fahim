@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, ShoppingCart, Code, Users, Palette, MessageCircle, Briefcase, BarChart3, Lightbulb, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Linkedin, DollarSign, TrendingUp, Zap, Layers, Target, PenTool, FileText, Gift, Megaphone } from 'lucide-react';
-import Header from './Header';
-import HeroSection from './HeroSection';
-import StatsSection from './StatsSection';
-import ServiceSection from './ServiceSection';
-import FeaturesSection from './FeaturesSection';
-import CTASection from './CTASection';
-import Footer from './Footer';
+import Header from './shared/Header';
+import HeroSection from '../components/HeroSection';
+import StatsSection from '../components/StatsSection';
+import ServiceSection from '../components/ServiceSection';
+import FeaturesSection from '../components/FeaturesSection';
+import CTASection from '../components/CTASection';
+import Footer from './shared/Footer';
 
 export default function SMECubeLanding() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

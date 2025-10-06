@@ -1,3 +1,4 @@
+import { ChevronRight, Lightbulb } from 'lucide-react'
 import React from 'react'
 
 const HeroSection = () => {

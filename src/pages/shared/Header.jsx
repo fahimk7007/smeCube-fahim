@@ -1,6 +1,8 @@
+
+import { Menu } from 'lucide-react'
 import React from 'react'
 
-const Header = ({setMobileMenuOpen, scrolled, setMobileMenuOpen}) => {
+const Header = ({setMobileMenuOpen, scrolled, mobileMenuOpen}) => {
     return (
         <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
