@@ -42,16 +42,19 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
-            <Link to="/#home" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
+            <Link to="/" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
               হোম
             </Link>
-            <Link to="/#services" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
+            <Link to="/services" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
               সার্ভিস
             </Link>
-            <Link to="/#pricing" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
+            <Link to="/about" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
+              আমাদের সম্পর্কে
+            </Link>
+            <Link to="/pricing" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
               প্রাইসিং
             </Link>
-            <Link to="/#contact" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
+            <Link to="/contact" className="px-4 py-2 text-gray-700 hover:text-red-500 transition-colors font-medium rounded-lg hover:bg-red-50/50">
               যোগাযোগ
             </Link>
             <Link to="/login" className="ml-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold">
@@ -75,16 +78,19 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-6 space-y-2 bg-white/95 border-t backdrop-blur-md">
-            <Link to="/#home" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
+            <Link to="/" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
               হোম
             </Link>
-            <Link to="/#services" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
+            <Link to="/services" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
               সার্ভিস
             </Link>
-            <Link to="/#pricing" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
+            <Link to="/about" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
+              আমাদের সম্পর্কে
+            </Link>
+            <Link to="/pricing" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
               প্রাইসিং
             </Link>
-            <Link to="/#contact" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
+            <Link to="/contact" className="block px-4 py-3 text-gray-700 hover:bg-red-50/50 hover:text-red-500 rounded-lg transition-colors font-medium">
               যোগাযোগ
             </Link>
             <Link to="/login" className="block w-full mt-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all font-semibold text-center">

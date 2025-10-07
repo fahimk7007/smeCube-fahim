@@ -1,18 +1,96 @@
+// File: src/routes/router.jsx
 import { createBrowserRouter } from "react-router-dom";
-  import App from "../App";
-  import SMECubeLanding from "../pages/SMECubeLanding.jsx";
-  import BrandPageSetup from "../pages/BrandPageSetup.jsx";
-  import BusinessConsulting from "../pages/BusinessConsulting.jsx";
-  import Login from "../pages/Login.jsx";
-  import Register from "../pages/Register.jsx";
-  import Dashboard from "../pages/user/Dashboard.jsx";
+import App from "../App";
+
+// Main Pages
+import SMECubeLanding from "../pages/SMECubeLanding";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Services from "../pages/Services";
+import Pricing from "../pages/Pricing";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
+// Service Pages
+import BrandPageSetup from "../pages/services/BrandPageSetup";
+import BulkSMS from "../pages/services/BulkSMS";
+import BusinessConsulting from "../pages/services/BusinessConsulting";
+import ChatbotSetup from "../pages/services/ChatbotSetup";
+import EcommerceSolution from "../pages/services/EcommerceSolution";
+import FacebookBoosting from "../pages/services/FacebookBoosting";
+import GraphicDesign from "../pages/services/GraphicDesign";
+import LandingPage from "../pages/services/LandingPage";
+import WebDevelopment from "../pages/services/WebDevelopment";
+
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: SMECubeLanding,
+    element: <App />,
     children: [
       {
-
+        index: true,
+        element: <SMECubeLanding />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "contact",
+        element: <Contact />
+      },
+      {
+        path: "services",
+        element: <Services />
+      },
+      {
+        path: "pricing",
+        element: <Pricing />
+      },
+      {
+        path: "login",
+        element: <Login />
+      },
+      {
+        path: "register",
+        element: <Register />
+      },
+      // Service Routes
+      {
+        path: "services/brand-page-setup",
+        element: <BrandPageSetup />
+      },
+      {
+        path: "services/bulk-sms",
+        element: <BulkSMS />
+      },
+      {
+        path: "services/business-consulting",
+        element: <BusinessConsulting />
+      },
+      {
+        path: "services/chatbot-setup",
+        element: <ChatbotSetup />
+      },
+      {
+        path: "services/ecommerce-solution",
+        element: <EcommerceSolution />
+      },
+      {
+        path: "services/facebook-boosting",
+        element: <FacebookBoosting />
+      },
+      {
+        path: "services/graphic-design",
+        element: <GraphicDesign />
+      },
+      {
+        path: "services/landing-page",
+        element: <LandingPage />
+      },
+      {
+        path: "services/web-development",
+        element: <WebDevelopment />
       }
     ]
   }
