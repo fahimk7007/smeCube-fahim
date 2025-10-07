@@ -53,6 +53,7 @@ export default function SMECubeLanding() {
       desc: "টার্গেটেড অডিয়েন্সে পৌঁছান এবং বিক্রয় বাড়ান",
       gradient: "from-blue-500 to-blue-600",
       iconBg: "bg-blue-50",
+      link: "/services/facebook-boosting"
     },
     {
       icon: <ShoppingCart className="w-10 h-10" />,
@@ -60,6 +61,7 @@ export default function SMECubeLanding() {
       desc: "সম্পূর্ণ অনলাইন শপ সেটআপ এবং ম্যানেজমেন্ট",
       gradient: "from-emerald-500 to-teal-600",
       iconBg: "bg-emerald-50",
+      link: "/services/ecommerce-solution"
     },
     {
       icon: <Code className="w-10 h-10" />,
@@ -67,6 +69,7 @@ export default function SMECubeLanding() {
       desc: "আধুনিক এবং রেসপন্সিভ ওয়েবসাইট ডেভেলপমেন্ট",
       gradient: "from-purple-500 to-indigo-600",
       iconBg: "bg-purple-50",
+      link: "/services/web-development"
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
@@ -74,6 +77,7 @@ export default function SMECubeLanding() {
       desc: "নিরাপদ এবং দ্রুত হোস্টিং সেবা",
       gradient: "from-orange-500 to-red-600",
       iconBg: "bg-orange-50",
+      link: "/services/web-development" // Reuse web-development or create new route
     },
     {
       icon: <Layers className="w-10 h-10" />,
@@ -81,6 +85,7 @@ export default function SMECubeLanding() {
       desc: "কনভার্শন অপটিমাইজড ল্যান্ডিং পেজ ডিজাইন",
       gradient: "from-pink-500 to-rose-600",
       iconBg: "bg-pink-50",
+      link: "/services/landing-page"
     },
     {
       icon: <MessageCircle className="w-10 h-10" />,
@@ -88,6 +93,7 @@ export default function SMECubeLanding() {
       desc: "বাল্ক এসএমএস মার্কেটিং সার্ভিস",
       gradient: "from-green-500 to-emerald-600",
       iconBg: "bg-green-50",
+      link: "/services/bulk-sms"
     },
     {
       icon: <Users className="w-10 h-10" />,
@@ -95,6 +101,7 @@ export default function SMECubeLanding() {
       desc: "ব্যবসায়িক পরামর্শ এবং কৌশল উন্নয়ন",
       gradient: "from-yellow-500 to-orange-600",
       iconBg: "bg-yellow-50",
+      link: "/services/business-consulting"
     },
     {
       icon: <BarChart3 className="w-10 h-10" />,
@@ -102,6 +109,7 @@ export default function SMECubeLanding() {
       desc: "প্রফেশনাল বিজনেস পেজ সেটআপ",
       gradient: "from-cyan-500 to-blue-600",
       iconBg: "bg-cyan-50",
+      link: "/services/brand-page-setup"
     },
     {
       icon: <PenTool className="w-10 h-10" />,
@@ -109,6 +117,7 @@ export default function SMECubeLanding() {
       desc: "লোগো, ব্যানার এবং ব্র্যান্ডিং ডিজাইন",
       gradient: "from-violet-500 to-purple-600",
       iconBg: "bg-violet-50",
+      link: "/services/graphic-design"
     },
     {
       icon: <FileText className="w-10 h-10" />,
@@ -116,6 +125,7 @@ export default function SMECubeLanding() {
       desc: "অটোমেটেড কাস্টমার সাপোর্ট সিস্টেম",
       gradient: "from-teal-500 to-cyan-600",
       iconBg: "bg-teal-50",
+      link: "/services/chatbot-setup"
     },
     {
       icon: <Gift className="w-10 h-10" />,
@@ -123,6 +133,7 @@ export default function SMECubeLanding() {
       desc: "বিশেষ প্যাকেজ এবং অফার",
       gradient: "from-rose-500 to-pink-600",
       iconBg: "bg-rose-50",
+      link: "/services/web-development" // Create new route if needed
     },
     {
       icon: <Megaphone className="w-10 h-10" />,
@@ -130,6 +141,7 @@ export default function SMECubeLanding() {
       desc: "ডিজিটাল মার্কেটিং প্রশিক্ষণ",
       gradient: "from-indigo-500 to-blue-600",
       iconBg: "bg-indigo-50",
+      link: "/services/business-consulting" // Reuse or create new route
     },
   ];
 
