@@ -1,8 +1,17 @@
+// File: src/routes/router.jsx
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import SMECubeLanding from "../pages/SMECubeLanding";
 
-// Import service pages
+// Main Pages
+import SMECubeLanding from "../pages/SMECubeLanding";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Services from "../pages/Services";
+import Pricing from "../pages/Pricing";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
+// Service Pages
 import BrandPageSetup from "../pages/services/BrandPageSetup";
 import BulkSMS from "../pages/services/BulkSMS";
 import BusinessConsulting from "../pages/services/BusinessConsulting";
@@ -16,49 +25,73 @@ import WebDevelopment from "../pages/services/WebDevelopment";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: App,
+    element: <App />,
     children: [
       {
         index: true,
-        Component: SMECubeLanding
-      },
-      // Service routes
-      {
-        path: "/services/brand-page-setup",
-        Component: BrandPageSetup
+        element: <SMECubeLanding />,
       },
       {
-        path: "/services/bulk-sms",
-        Component: BulkSMS
+        path: "about",
+        element: <About />,
       },
       {
-        path: "/services/business-consulting",
-        Component: BusinessConsulting
+        path: "contact",
+        element: <Contact />,
       },
       {
-        path: "/services/chatbot-setup",
-        Component: ChatbotSetup
+        path: "services",
+        element: <Services />,
       },
       {
-        path: "/services/ecommerce-solution",
-        Component: EcommerceSolution
+        path: "pricing",
+        element: <Pricing />,
       },
       {
-        path: "/services/facebook-boosting",
-        Component: FacebookBoosting
+        path: "login",
+        element: <Login />,
       },
       {
-        path: "/services/graphic-design",
-        Component: GraphicDesign
+        path: "register",
+        element: <Register />,
+      },
+      // Service Routes
+      {
+        path: "services/brand-page-setup",
+        element: <BrandPageSetup />,
       },
       {
-        path: "/services/landing-page",
-        Component: LandingPage
+        path: "services/bulk-sms",
+        element: <BulkSMS />,
       },
       {
-        path: "/services/web-development",
-        Component: WebDevelopment
-      }
-    ]
-  }
+        path: "services/business-consulting",
+        element: <BusinessConsulting />,
+      },
+      {
+        path: "services/chatbot-setup",
+        element: <ChatbotSetup />,
+      },
+      {
+        path: "services/ecommerce-solution",
+        element: <EcommerceSolution />,
+      },
+      {
+        path: "services/facebook-boosting",
+        element: <FacebookBoosting />,
+      },
+      {
+        path: "services/graphic-design",
+        element: <GraphicDesign />,
+      },
+      {
+        path: "services/landing-page",
+        element: <LandingPage />,
+      },
+      {
+        path: "services/web-development",
+        element: <WebDevelopment />,
+      },
+    ],
+  },
 ]);
