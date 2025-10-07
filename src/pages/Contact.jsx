@@ -20,7 +20,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-16">
+    <main className="max-w-6xl mx-auto px-4 py-16 mt-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">যোগাযোগ করুন</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
