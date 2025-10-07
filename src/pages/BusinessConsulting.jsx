@@ -5,165 +5,310 @@ import { ArrowRight, CheckCircle, Users, Target, TrendingUp, Shield, Clock, Awar
 const BusinessConsulting = () => {
   const [activeTab, setActiveTab] = useState('strategy');
 
-  const tabs = [
+  const services = [
     {
-      id: 'strategy',
+      icon: <Target className="w-8 h-8" />,
       title: 'ব্যবসায়িক কৌশল',
-      icon: <Target className="w-6 h-6" />,
-      content: 'আমরা আপনার ব্যবসার জন্য কাস্টমাইজড কৌশল তৈরি করি যা আপনাকে প্রতিযোগিতায় এগিয়ে রাখবে। বাজার বিশ্লেষণ থেকে শুরু করে বৃদ্ধির পরিকল্পনা, আমরা সবকিছু কভার করি।',
+      description: 'আপনার ব্যবসার জন্য কাস্টমাইজড কৌশলগত পরিকল্পনা এবং রোডম্যাপ তৈরি',
+      features: ['বাজার বিশ্লেষণ', 'প্রতিযোগিতা মূল্যায়ন', 'কৌশলগত পরিকল্পনা']
     },
     {
-      id: 'growth',
-      title: 'বৃদ্ধি পরিকল্পনা',
-      icon: <TrendingUp className="w-6 h-6" />,
-      content: 'আপনার ব্যবসার সম্প্রসারণের জন্য আমরা কার্যকরী পরিকল্পনা তৈরি করি। নতুন বাজারে প্রবেশ থেকে শুরু করে রেভিনিউ বৃদ্ধি, আমরা আপনার পাশে আছি।',
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: 'বাজার উন্নয়ন',
+      description: 'আপনার পণ্য ও সেবার জন্য নতুন বাজার ও গ্রাহক খুঁজে বের করুন',
+      features: ['বাজার গবেষণা', 'গ্রাহক প্রোফাইলিং', 'বিক্রয় কৌশল']
     },
     {
-      id: 'optimization',
-      title: 'অপটিমাইজেশন',
-      icon: <Shield className="w-6 h-6" />,
-      content: 'আপনার ব্যবসায়িক প্রক্রিয়াগুলোকে আরও দক্ষ করতে আমরা প্রযুক্তি এবং কৌশল ব্যবহার করি, যাতে আপনি সময় এবং খরচ বাঁচাতে পারেন।',
-    },
+      icon: <Shield className="w-8 h-8" />,
+      title: 'ঝুঁকি ব্যবস্থাপনা',
+      description: 'ব্যবসায়িক ঝুঁকি চিহ্নিতকরণ এবং ব্যবস্থাপনা কৌশল',
+      features: ['ঝুঁকি মূল্যায়ন', 'সতর্কতা পরিকল্পনা', 'বিমা কৌশল']
+    }
   ];
 
-  const benefits = [
-    { icon: <Clock className="w-6 h-6 text-red-500" />, text: 'দ্রুত ফলাফল' },
-    { icon: <Award className="w-6 h-6 text-pink-500" />, text: 'বিশেষজ্ঞ পরামর্শ' },
-    { icon: <TrendingUp className="w-6 h-6 text-purple-500" />, text: 'টেকসই বৃদ্ধি' },
+  const processSteps = [
+    {
+      step: '০১',
+      title: 'পরামর্শ সেশন',
+      description: 'বিনামূল্যে প্রাথমিক পরামর্শ এবং প্রয়োজনীয়তা বিশ্লেষণ'
+    },
+    {
+      step: '০২',
+      title: 'কৌশল উন্নয়ন',
+      description: 'আপনার ব্যবসার জন্য কাস্টমাইজড কৌশল ও পরিকল্পনা তৈরি'
+    },
+    {
+      step: '০৩',
+      title: 'বাস্তবায়ন',
+      description: 'পরিকল্পনা বাস্তবায়ন এবং নিয়মিত মনিটরিং'
+    },
+    {
+      step: '০৪',
+      title: 'ফলাফল মূল্যায়ন',
+      description: 'কর্মক্ষমতা ট্র্যাকিং এবং প্রয়োজনীয় সমন্বয়'
+    }
+  ];
+
+  const stats = [
+    { number: '500+', label: 'সন্তুষ্ট ক্লায়েন্ট' },
+    { number: '95%', label: 'সাফল্যের হার' },
+    { number: '15+', label: 'বছরের অভিজ্ঞতা' },
+    { number: '50+', label: 'বিশেষজ্ঞ টিম' }
   ];
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+        .english-text {
+          font-family: 'Akceler Alter', sans-serif;
+        }
+        .gradient-overlay {
+          background: linear-gradient(135deg, rgba(128, 0, 0, 0.95) 0%, rgba(114, 47, 55, 0.95) 100%);
+        }
+      `}</style>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 pt-24">
-        <div className="absolute inset-0 z-0 opacity-10">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 pt-20">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center">
-          <motion.div
-            className="md:w-2/3 text-white space-y-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold leading-tight"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              আপনার ব্যবসাকে
-              <span className="block bg-gradient-to-r from-red-500 to-pink-600 bg-clip-text text-transparent">
-                নতুন উচ্চতায় নিয়ে যান
-              </span>
-            </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl max-w-2xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              আমাদের বিশেষজ্ঞ পরামর্শ সেবার মাধ্যমে আপনার ব্যবসার সম্ভাবনাকে সর্বোচ্চ ব্যবহার করুন। কৌশল, বৃদ্ধি এবং অপটিমাইজেশনের মাধ্যমে সাফল্য অর্জন করুন।
-            </motion.p>
+
+        <div className="container mx-auto px-6 lg:px-16 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <a
-                href="#services"
-                className="inline-flex items-center bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block mb-6"
               >
-                আরও জানুন
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+                <span className="px-4 py-2 bg-rose-500/20 text-rose-300 rounded-full text-sm font-semibold border border-rose-400/30">
+                  বিশেষজ্ঞ ব্যবসায়িক পরামর্শ
+                </span>
+              </motion.div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+                ব্যবসায়িক পরামর্শ
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 mt-2">
+                  সেবা
+                </span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed">
+                আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যান আমাদের বিশেষজ্ঞ পরামর্শদাতাদের সাথে
+              </p>
+
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                {stats.slice(0, 2).map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + index * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                  >
+                    <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                    <div className="text-gray-300 text-sm">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(244, 63, 94, 0.4)' }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group bg-gradient-to-r from-red-500 to-rose-500 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-3 shadow-2xl transition-all"
+                >
+                  বিনামূল্যে পরামর্শ বুক করুন
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all"
+                >
+                  আরও জানুন
+                </motion.button>
+              </motion.div>
             </motion.div>
-          </motion.div>
-          <motion.div
-            className="md:w-1/3 mt-8 md:mt-0"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <img
-              src="/image-2.png"
-              alt="Business Consulting"
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/image-1.png" 
+                  alt="Business Consulting" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div class="w-full h-96 bg-gradient-to-br from-red-500/20 to-rose-500/20 flex items-center justify-center rounded-2xl"><div class="text-white text-center"><div class="text-6xl mb-4">📊</div><div class="text-xl">Business Growth</div></div></div>';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/50 to-transparent"></div>
+              </div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl max-w-xs"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-gradient-to-br from-red-500 to-rose-500 w-12 h-12 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-gray-800">15+</div>
+                    <div className="text-gray-600 text-sm">বছরের অভিজ্ঞতা</div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+          </svg>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-12"
+      <section className="py-24 bg-white relative">
+        <div className="px-[15%] relative z-10">
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-20"
           >
-            আমাদের পরামর্শ সেবা
-          </motion.h2>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {tabs.map((tab, index) => (
-              <motion.button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                } hover:scale-105`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-2 bg-rose-100 text-rose-500 rounded-full text-sm font-semibold mb-4"
+            >
+              আমাদের সেবাসমূহ
+            </motion.span>
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              আমাদের পরামর্শ সেবাসমূহ
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              আমরা আপনার ব্যবসার সকল দিক কভার করি সম্পূর্ণ পরামর্শ সেবা দিয়ে
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10, boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)' }}
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 relative overflow-hidden"
               >
-                {tab.icon}
-                <span>{tab.title}</span>
-              </motion.button>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-500/5 to-rose-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-red-600 mb-6 bg-gradient-to-br from-red-100 to-rose-100 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <ul className="space-y-3">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-gray-700">
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
             ))}
           </div>
-          <motion.div
-            className="p-6 bg-white rounded-2xl shadow-lg"
-            key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-gray-600 text-lg">{tabs.find((tab) => tab.id === activeTab).content}</p>
-          </motion.div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-12"
+      {/* Process Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-red-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e11d48' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        <div className="px-[15%] relative z-10">
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-20"
           >
-            আমাদের সুবিধা
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-2 bg-white text-red-600 rounded-full text-sm font-semibold mb-4 shadow-sm"
+            >
+              কাজের প্রক্রিয়া
+            </motion.span>
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              আমাদের কাজের প্রক্রিয়া
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              সহজ এবং কার্যকরী ধাপে আপনার ব্যবসার উন্নয়ন
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                className="relative"
               >
-                {benefit.icon}
-                <p className="mt-4 text-lg font-semibold text-gray-900">{benefit.text}</p>
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 h-full relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-500/10 to-rose-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-6xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent mb-6">
+                      {step.step}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+                
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 z-20">
+                    <ArrowRight className="w-8 h-8 text-red-400" />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -171,72 +316,44 @@ const BusinessConsulting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-red-500 to-pink-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            আপনার ব্যবসার সম্ভাবনা উন্মোচন করুন
-          </motion.h2>
-          <motion.p
-            className="text-lg text-white/90 max-w-2xl mx-auto mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            আমাদের বিশেষজ্ঞ দলের সাথে আজই যোগাযোগ করুন এবং আপনার ব্যবসার জন্য কাস্টমাইজড সমাধান পান।
-          </motion.p>
-          <motion.a
-            href="/login"
-            className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            এখনই শুরু করুন
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </motion.a>
+      <section className="py-24 bg-gradient-to-br from-red-600 via-rose-600 to-red-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+        <div className="px-[15%] text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            আমাদের সাথে যোগাযোগ করুন
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: <Phone className="w-6 h-6 text-red-500" />, title: 'ফোন', value: '+৮৮০ ১২৩৪ ৫৬৭৮৯০' },
-              { icon: <Mail className="w-6 h-6 text-red-500" />, title: 'ইমেইল', value: 'support@smecube.com' },
-              { icon: <MapPin className="w-6 h-6 text-red-500" />, title: 'ঠিকানা', value: 'ঢাকা, বাংলাদেশ' },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+              আপনার ব্যবসার রূপান্তর শুরু করুন
+            </h2>
+            <p className="text-xl text-red-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+              আজই আমাদের বিশেষজ্ঞ দলের সাথে কথা বলুন এবং দেখুন কিভাবে আমরা আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যেতে পারি
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: '0 20px 60px rgba(255, 255, 255, 0.3)' }}
+                whileTap={{ scale: 0.95 }}
+                className="group bg-white text-red-600 px-10 py-5 rounded-full font-semibold text-lg shadow-2xl hover:shadow-white/30 transition-all flex items-center justify-center gap-3"
               >
-                {item.icon}
-                <h3 className="mt-4 text-lg font-semibold text-gray-900">{item.title}</h3>
-                <p className="mt-2 text-gray-600">{item.value}</p>
-              </motion.div>
-            ))}
-          </div>
+                বিনামূল্যে পরামর্শ নিন
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+              >
+                আমাদের কাজ দেখুন
+              </motion.button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
