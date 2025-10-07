@@ -6,3 +6,14 @@ import { createBrowserRouter } from "react-router-dom";
   import Login from "../pages/Login.jsx";
   import Register from "../pages/Register.jsx";
   import Dashboard from "../pages/user/Dashboard.jsx";
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: SMECubeLanding,
+    children: [
+      {
+
+      }
+    ]
+  }
+]);
