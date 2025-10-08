@@ -1,25 +1,26 @@
+import { SquareCheckBig } from 'lucide-react';
 import React from 'react';
 import { Link } from "react-router";
 
 const FacebookBoosting = () => {
   const features = [
     {
-      icon: "🎯",
+      icon: '/public/icons/target.png',
       title: "টার্গেটেড অডিয়েন্স",
       description: "সঠিক কাস্টমারদের কাছে পৌঁছান"
     },
     {
-      icon: "📊",
+      icon: '/public/icons/pie-chart.png',
       title: "এনালিটিক্স রিপোর্ট",
       description: "বিস্তারিত পারফরমেন্স ট্র্যাকিং"
     },
     {
-      icon: "💰",
+      icon: '/public/icons/money-bag.png',
       title: "বাজেট অপটিমাইজেশন",
       description: "সর্বোচ্চ ROI নিশ্চিত করুন"
     },
     {
-      icon: "⚡",
+      icon: '/public/icons/lightning.png',
       title: "দ্রুত রেজাল্ট",
       description: "১-২ দিনে ফলাফল দেখুন"
     }
@@ -95,7 +96,9 @@ const FacebookBoosting = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <div className="text-6xl mb-6">📘</div>
+              <div className="mb-6 h-20">
+                <img className='h-full' src="/icons/rocket.png" alt="" />
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 ফেসবুক মার্কেটিং ও বুস্টিং সেবা
               </h1>
@@ -120,19 +123,19 @@ const FacebookBoosting = () => {
                 <h3 className="text-2xl font-bold mb-4">কেন ফেসবুক মার্কেটিং?</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>৩ কোটি+ বাংলাদেশি ইউজার</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>সর্বোচ্চ এনগেজমেন্ট রেট</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>কম খরচে বেশি রিচ</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>মাপযোগ্য ফলাফল</span>
                   </li>
                 </ul>
@@ -157,7 +160,7 @@ const FacebookBoosting = () => {
                 key={index}
                 className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <img className='mb-4 h-14 w-14' src={feature.icon} alt="" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
