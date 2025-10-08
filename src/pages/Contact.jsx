@@ -1,3 +1,4 @@
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 import React, { useState } from 'react';
 
 const Contact = () => {
@@ -20,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-16 mt-8">
+    <main className="max-w-6xl mx-auto px-4 pt-32 pb-20">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">যোগাযোগ করুন</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -107,14 +108,18 @@ const Contact = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">যোগাযোগের তথ্য</h2>
             <div className="space-y-4">
               <div className="flex items-start">
-                <span className="text-2xl mr-4">📍</span>
+                <span className="text-2xl mr-4">
+                  <MapPin />
+                </span>
                 <div>
                   <h3 className="font-semibold text-gray-800">ঠিকানা</h3>
                   <p className="text-gray-600">ঢাকা, বাংলাদেশ</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-2xl mr-4">📧</span>
+                <span className="text-2xl mr-4">
+                  <Mail />
+                </span>
                 <div>
                   <h3 className="font-semibold text-gray-800">ইমেইল</h3>
                   <p className="text-gray-600">info@smecube.com</p>
@@ -122,7 +127,9 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-2xl mr-4">📞</span>
+                <span className="text-2xl mr-4">
+                  <Phone />
+                </span>
                 <div>
                   <h3 className="font-semibold text-gray-800">ফোন</h3>
                   <p className="text-gray-600">+৮৮০ ১৭XX-XXXXXX</p>
@@ -130,7 +137,9 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-2xl mr-4">🕒</span>
+                <span className="text-2xl mr-4">
+                  <Clock />
+                </span>
                 <div>
                   <h3 className="font-semibold text-gray-800">কর্মঘন্টা</h3>
                   <p className="text-gray-600">শনিবার - বৃহস্পতিবার</p>

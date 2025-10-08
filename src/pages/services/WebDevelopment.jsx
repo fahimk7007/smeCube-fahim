@@ -105,9 +105,9 @@ const WebDevelopment = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
+      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <div className="text-6xl mb-6">💻</div>
