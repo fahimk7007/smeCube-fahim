@@ -21,6 +21,7 @@ import FacebookBoosting from "../pages/services/FacebookBoosting";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
+import BusinessTraining from "../pages/services/BusinessTraining";
 
 export const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
       {
         path: "services/web-development",
         element: <WebDevelopment />,
+      },
+      {
+        path: "services/business-training",
+        element: <BusinessTraining />,
       },
     ],
   },

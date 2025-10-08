@@ -141,7 +141,7 @@ export default function SMECubeLanding() {
       desc: "ডিজিটাল মার্কেটিং প্রশিক্ষণ",
       gradient: "from-indigo-500 to-blue-600",
       iconBg: "bg-indigo-50",
-      path: "/services/business-consulting",
+      path: "/services/business-training",
     },
   ];
 
