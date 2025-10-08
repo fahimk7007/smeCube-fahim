@@ -1,10 +1,5 @@
 // File: src/routes/router.jsx
-<<<<<<< HEAD
-import { createBrowserRouter } from "react-router";
-import App from "../App";
-=======
 import { createBrowserRouter } from "react-router-dom";
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 
 // Main Pages
 import SMECubeLanding from "../pages/SMECubeLanding";
@@ -25,11 +20,7 @@ import FacebookBoosting from "../pages/services/FacebookBoosting";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
-<<<<<<< HEAD
-import BusinessTraining from "../pages/services/BusinessTraining";
-=======
 import App from "../layouts/App";
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 
 export const router = createBrowserRouter([
   {
@@ -38,33 +29,6 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-<<<<<<< HEAD
-        element: <SMECubeLanding />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "services",
-        element: <Services />,
-      },
-      {
-        path: "pricing",
-        element: <Pricing />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-=======
         element: <SMECubeLanding />
       },
       {
@@ -90,54 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
       },
       // Service Routes
       {
         path: "services/brand-page-setup",
-<<<<<<< HEAD
-        element: <BrandPageSetup />,
-      },
-      {
-        path: "services/bulk-sms",
-        element: <BulkSMS />,
-      },
-      {
-        path: "services/business-consulting",
-        element: <BusinessConsulting />,
-      },
-      {
-        path: "services/chatbot-setup",
-        element: <ChatbotSetup />,
-      },
-      {
-        path: "services/ecommerce-solution",
-        element: <EcommerceSolution />,
-      },
-      {
-        path: "services/facebook-boosting",
-        element: <FacebookBoosting />,
-      },
-      {
-        path: "services/graphic-design",
-        element: <GraphicDesign />,
-      },
-      {
-        path: "services/landing-page",
-        element: <LandingPage />,
-      },
-      {
-        path: "services/web-development",
-        element: <WebDevelopment />,
-      },
-      {
-        path: "services/business-training",
-        element: <BusinessTraining />,
-      },
-    ],
-  },
-]);
-=======
         element: <BrandPageSetup />
       },
       {
@@ -175,4 +95,3 @@ export const router = createBrowserRouter([
     ]
   }
 ]);
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce

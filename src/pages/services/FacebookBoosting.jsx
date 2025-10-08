@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import { SquareCheckBig } from 'lucide-react';
 import React from 'react';
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 import { Link } from "react-router";
 
 const FacebookBoosting = () => {
@@ -96,13 +92,8 @@ const FacebookBoosting = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-<<<<<<< HEAD
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-6xl mx-auto px-4 mt-20">
-=======
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-4">
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
               <div className="mb-6 h-20">
@@ -171,15 +162,8 @@ const FacebookBoosting = () => {
                 key={index}
                 className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition"
               >
-<<<<<<< HEAD
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {feature.title}
-                </h3>
-=======
                 <img className='mb-4 h-14 w-14' src={feature.icon} alt="" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}

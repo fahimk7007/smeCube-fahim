@@ -1,22 +1,7 @@
-<<<<<<< HEAD
-import React, { useContext } from "react";
-import { useNavigate } from "react-router";
-import {
-  User,
-  Phone,
-  Mail,
-  LogOut,
-  Package,
-  Heart,
-  ShoppingCart,
-} from "lucide-react";
-import AuthContext from "../../context/AuthContext.jsx";
-=======
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Phone, Mail, LogOut, Package, Heart, ShoppingCart } from 'lucide-react';
 import AuthContext from '../../context/AuthContext.jsx';
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext);
@@ -24,21 +9,13 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     logout();
-<<<<<<< HEAD
-    navigate("/login");
-=======
     navigate('/login');
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
   };
 
   // If no user, redirect to login
   React.useEffect(() => {
     if (!user) {
-<<<<<<< HEAD
-      navigate("/login");
-=======
       navigate('/login');
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     }
   }, [user, navigate]);
 
@@ -47,15 +24,6 @@ const Dashboard = () => {
   }
 
   const menuItems = [
-<<<<<<< HEAD
-    { icon: Package, label: "আমার অর্ডার", path: "/dashboard/orders" },
-    { icon: Heart, label: "পছন্দের তালিকা", path: "/dashboard/wishlist" },
-    { icon: ShoppingCart, label: "শপিং কার্ট", path: "/cart" },
-  ];
-
-  return (
-    <section
-=======
     { icon: Package, label: 'আমার অর্ডার', path: '/dashboard/orders' },
     { icon: Heart, label: 'পছন্দের তালিকা', path: '/dashboard/wishlist' },
     { icon: ShoppingCart, label: 'শপিং কার্ট', path: '/cart' },
@@ -63,7 +31,6 @@ const Dashboard = () => {
 
   return (
     <section 
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
       className="min-h-screen bg-gradient-to-br from-red-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8"
       style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
     >
@@ -76,13 +43,7 @@ const Dashboard = () => {
                 <User className="w-10 h-10 text-white" />
               </div>
               <div>
-<<<<<<< HEAD
-                <h1 className="text-3xl font-bold text-gray-800">
-                  {user.name}
-                </h1>
-=======
                 <h1 className="text-3xl font-bold text-gray-800">{user.name}</h1>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
                 <p className="text-gray-600 mt-1">স্বাগতম আপনার ড্যাশবোর্ডে</p>
               </div>
             </div>
@@ -100,13 +61,7 @@ const Dashboard = () => {
           {/* User Info Card */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-3xl shadow-xl p-6">
-<<<<<<< HEAD
-              <h2 className="text-xl font-bold text-gray-800 mb-4">
-                ব্যক্তিগত তথ্য
-              </h2>
-=======
               <h2 className="text-xl font-bold text-gray-800 mb-4">ব্যক্তিগত তথ্য</h2>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
                   <User className="w-5 h-5 text-red-600" />
@@ -127,13 +82,7 @@ const Dashboard = () => {
                     <Mail className="w-5 h-5 text-red-600" />
                     <div>
                       <p className="text-sm text-gray-500">ইমেইল</p>
-<<<<<<< HEAD
-                      <p className="font-semibold text-gray-800">
-                        {user.email}
-                      </p>
-=======
                       <p className="font-semibold text-gray-800">{user.email}</p>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
                     </div>
                   </div>
                 )}
@@ -144,13 +93,7 @@ const Dashboard = () => {
           {/* Quick Actions */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-3xl shadow-xl p-6">
-<<<<<<< HEAD
-              <h2 className="text-xl font-bold text-gray-800 mb-4">
-                দ্রুত অ্যাক্সেস
-              </h2>
-=======
               <h2 className="text-xl font-bold text-gray-800 mb-4">দ্রুত অ্যাক্সেস</h2>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {menuItems.map((item, index) => (
                   <button
@@ -161,13 +104,7 @@ const Dashboard = () => {
                     <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <item.icon className="w-6 h-6 text-red-600" />
                     </div>
-<<<<<<< HEAD
-                    <span className="text-lg font-semibold text-gray-800">
-                      {item.label}
-                    </span>
-=======
                     <span className="text-lg font-semibold text-gray-800">{item.label}</span>
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
                   </button>
                 ))}
               </div>
@@ -195,8 +132,4 @@ const Dashboard = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Dashboard;
-=======
-export default Dashboard;
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce

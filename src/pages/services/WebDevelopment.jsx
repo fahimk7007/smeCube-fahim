@@ -107,13 +107,8 @@ const WebDevelopment = () => {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-<<<<<<< HEAD
-      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
-        <div className="max-w-6xl mx-auto px-4 mt-20">
-=======
       <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-4">
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <div className="text-center">
             <div className="text-6xl mb-6">💻</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">

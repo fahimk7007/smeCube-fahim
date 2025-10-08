@@ -225,13 +225,8 @@ const ChatbotSetup = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-<<<<<<< HEAD
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <div className="max-w-6xl mx-auto px-4 mt-20">
-=======
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white pt-32 pb-20">
         <div className="container mx-auto px-4">
->>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">চ্যাটবট সেটআপ সার্ভিস</h1>
             <p className="text-xl mb-8 text-blue-100">
