@@ -57,7 +57,7 @@ const BusinessConsulting = () => {
   ];
 
   return (
-    <div className="min-h-screen mt-5 bg-white" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+    <div className="min-h-screen  bg-white" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
         .english-text {

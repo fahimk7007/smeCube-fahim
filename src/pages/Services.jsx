@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React from "react";
+import { Link } from "react-router";
+import { motion } from "framer-motion";
+import { Tilt } from "react-tilt";
+import { CheckCircle, ArrowRight } from "lucide-react";
+=======
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -5,137 +12,399 @@ import {Tilt} from 'react-tilt';
 import {
   CheckCircle, ArrowRight
 } from 'lucide-react';
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 
 // Custom SVG logos for each service
 const customLogos = {
   facebookBoosting: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12c0 5.01 3.66 9.15 8.44 9.88v-7h-2.54v-2.88h2.54v-2.2c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.88h-2.33v7C18.34 21.15 22 17.01 22 12c0-5.52-4.48-10-10-10z"
+        fill="url(#fb-gradient)"
+      />
+      <defs>
+        <linearGradient id="fb-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#3B82F6", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#2563EB", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C6.48 2 2 6.48 2 12c0 5.01 3.66 9.15 8.44 9.88v-7h-2.54v-2.88h2.54v-2.2c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.88h-2.33v7C18.34 21.15 22 17.01 22 12c0-5.52-4.48-10-10-10z" fill="url(#fb-gradient)" />
       <defs>
         <linearGradient id="fb-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#2563EB', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   ecommerce: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 14H6v-2h6v2zm6-4H6v-2h12v2zm0-4H6V8h12v2z"
+        fill="url(#ecom-gradient)"
+      />
+      <defs>
+        <linearGradient id="ecom-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#10B981", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#0D9488", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 14H6v-2h6v2zm6-4H6v-2h12v2zm0-4H6V8h12v2z" fill="url(#ecom-gradient)" />
       <defs>
         <linearGradient id="ecom-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#10B981', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#0D9488', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   webDevelopment: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"
+        fill="url(#web-gradient)"
+      />
+      <defs>
+        <linearGradient id="web-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#8B5CF6", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#4F46E5", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" fill="url(#web-gradient)" />
       <defs>
         <linearGradient id="web-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#8B5CF6', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#4F46E5', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   hosting: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14h-2v6l5.25 3.15.75-1.23-4.25-2.67V6z"
+        fill="url(#host-gradient)"
+      />
+      <defs>
+        <linearGradient id="host-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#F97316", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#DC2626", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14h-2v6l5.25 3.15.75-1.23-4.25-2.67V6z" fill="url(#host-gradient)" />
       <defs>
         <linearGradient id="host-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#F97316', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#DC2626', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   landingPage: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M21 7H3v10h18V7zm-2 8H5V9h14v6z" fill="url(#landing-gradient)" />
+      <defs>
+        <linearGradient
+          id="landing-gradient"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" style={{ stopColor: "#F472B6", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#BE123C", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M21 7H3v10h18V7zm-2 8H5V9h14v6z" fill="url(#landing-gradient)" />
       <defs>
         <linearGradient id="landing-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#F472B6', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#BE123C', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   bulkSms: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"
+        fill="url(#sms-gradient)"
+      />
+      <defs>
+        <linearGradient id="sms-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#22C55E", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#059669", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="url(#sms-gradient)" />
       <defs>
         <linearGradient id="sms-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#22C55E', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#059669', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   consulting: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 11h-4v4h4v-4zm-4-7H8v4h4V4zm4 14h-4v4h4v-4zm-8 0H4v4h4v-4z"
+        fill="url(#consult-gradient)"
+      />
+      <defs>
+        <linearGradient
+          id="consult-gradient"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" style={{ stopColor: "#EAB308", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#F97316", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M16 11h-4v4h4v-4zm-4-7H8v4h4V4zm4 14h-4v4h4v-4zm-8 0H4v4h4v-4z" fill="url(#consult-gradient)" />
       <defs>
         <linearGradient id="consult-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#EAB308', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#F97316', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   brandPage: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 3v18h18V3H3zm16 16H5V5h14v14zM9 9h6v6H9V9z"
+        fill="url(#brand-gradient)"
+      />
+      <defs>
+        <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#06B6D4", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#3B82F6", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM9 9h6v6H9V9z" fill="url(#brand-gradient)" />
       <defs>
         <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#06B6D4', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   graphicDesign: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 17V7h4l5-5v20l-5-5H3zm14 2V5h4v14h-4z"
+        fill="url(#graphic-gradient)"
+      />
+      <defs>
+        <linearGradient
+          id="graphic-gradient"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" style={{ stopColor: "#A855F7", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#7E22CE", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3 17V7h4l5-5v20l-5-5H3zm14 2V5h4v14h-4z" fill="url(#graphic-gradient)" />
       <defs>
         <linearGradient id="graphic-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#A855F7', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#7E22CE', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   chatbot: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-7h2v2h-2v-2zm0-4h2v2h-2V9z"
+        fill="url(#chatbot-gradient)"
+      />
+      <defs>
+        <linearGradient
+          id="chatbot-gradient"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
+          <stop offset="0%" style={{ stopColor: "#14B8A6", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#06B6D4", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-7h2v2h-2v-2zm0-4h2v2h-2V9z" fill="url(#chatbot-gradient)" />
       <defs>
         <linearGradient id="chatbot-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#14B8A6', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#06B6D4', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   issueFixing: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"
+        fill="url(#issue-gradient)"
+      />
+      <defs>
+        <linearGradient id="issue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#FB7185", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#F43F5E", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="url(#issue-gradient)" />
       <defs>
         <linearGradient id="issue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#FB7185', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#F43F5E', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
   ),
   training: (
+<<<<<<< HEAD
+    <svg
+      className="w-10 h-10"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 9v6h4l5 5V4l-5 5H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z"
+        fill="url(#train-gradient)"
+      />
+      <defs>
+        <linearGradient id="train-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#6366F1", stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: "#3B82F6", stopOpacity: 1 }}
+          />
+=======
     <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3 9v6h4l5 5V4l-5 5H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z" fill="url(#train-gradient)" />
       <defs>
         <linearGradient id="train-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style={{ stopColor: '#6366F1', stopOpacity: 1 }} />
           <stop offset="100%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
         </linearGradient>
       </defs>
     </svg>
@@ -153,8 +422,15 @@ const ServiceCard = React.memo(({ service, index }) => (
       viewport={{ once: true }}
       className="group relative bg-white/80 backdrop-blur-lg border-2 border-transparent bg-clip-padding rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:border-gradient-to-r hover:from-[var(--gradient-start)] hover:to-[var(--gradient-end)]"
       style={{
+<<<<<<< HEAD
+        "--gradient-start": service.gradient
+          .split(" ")[0]
+          .replace("from-", "#"),
+        "--gradient-end": service.gradient.split(" ")[1].replace("to-", "#"),
+=======
         '--gradient-start': service.gradient.split(' ')[0].replace('from-', '#'),
         '--gradient-end': service.gradient.split(' ')[1].replace('to-', '#'),
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
       }}
     >
       {/* Icon */}
@@ -165,7 +441,13 @@ const ServiceCard = React.memo(({ service, index }) => (
         >
           {service.icon}
         </motion.div>
+<<<<<<< HEAD
+        <div
+          className={`absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br ${service.gradient} rounded-full animate-pulse`}
+        ></div>
+=======
         <div className={`absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br ${service.gradient} rounded-full animate-pulse`}></div>
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
       </div>
 
       {/* Text */}
@@ -179,7 +461,11 @@ const ServiceCard = React.memo(({ service, index }) => (
             key={idx}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
+<<<<<<< HEAD
+            transition={{ duration: 0.3, delay: index * 0.05 + idx * 0.1 }}
+=======
             transition={{ duration: 0.3, delay: (index * 0.05) + (idx * 0.1) }}
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
             viewport={{ once: true }}
             className="flex items-center gap-2 text-sm text-gray-600"
           >
@@ -211,7 +497,15 @@ const Services = () => {
       gradient: "from-blue-500 to-blue-600",
       iconBg: "bg-blue-50",
       path: "/services/facebook-boosting",
+<<<<<<< HEAD
+      features: [
+        "টার্গেটেড অ্যাড",
+        "বাজেট অপটিমাইজেশন",
+        "পারফরম্যান্স ট্র্যাকিং",
+      ],
+=======
       features: ["টার্গেটেড অ্যাড", "বাজেট অপটিমাইজেশন", "পারফরম্যান্স ট্র্যাকিং"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.ecommerce,
@@ -220,7 +514,15 @@ const Services = () => {
       gradient: "from-emerald-500 to-teal-600",
       iconBg: "bg-emerald-50",
       path: "/services/ecommerce-solution",
+<<<<<<< HEAD
+      features: [
+        "পেমেন্ট গেটওয়ে",
+        "ইনভেন্টরি ম্যানেজমেন্ট",
+        "অর্ডার ট্র্যাকিং",
+      ],
+=======
       features: ["পেমেন্ট গেটওয়ে", "ইনভেন্টরি ম্যানেজমেন্ট", "অর্ডার ট্র্যাকিং"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.webDevelopment,
@@ -229,7 +531,11 @@ const Services = () => {
       gradient: "from-purple-500 to-indigo-600",
       iconBg: "bg-purple-50",
       path: "/services/web-development",
+<<<<<<< HEAD
+      features: ["কাস্টম ডিজাইন", "মোবাইল ফ্রেন্ডলি", "SEO অপটিমাইজড"],
+=======
       features: ["কাস্টম ডিজাইন", "মোবাইল ফ্রেন্ডলি", "SEO অপটিমাইজড"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.hosting,
@@ -238,7 +544,11 @@ const Services = () => {
       gradient: "from-orange-500 to-red-600",
       iconBg: "bg-orange-50",
       path: "/services/hosting",
+<<<<<<< HEAD
+      features: ["৯৯.৯% আপটাইম", "SSL সার্টিফিকেট", "ডেইলি ব্যাকআপ"],
+=======
       features: ["৯৯.৯% আপটাইম", "SSL সার্টিফিকেট", "ডেইলি ব্যাকআপ"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.landingPage,
@@ -247,7 +557,11 @@ const Services = () => {
       gradient: "from-pink-500 to-rose-600",
       iconBg: "bg-pink-50",
       path: "/services/landing-page",
+<<<<<<< HEAD
+      features: ["হাই কনভার্শন", "দ্রুত লোডিং", "A/B টেস্টিং"],
+=======
       features: ["হাই কনভার্শন", "দ্রুত লোডিং", "A/B টেস্টিং"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.bulkSms,
@@ -256,7 +570,11 @@ const Services = () => {
       gradient: "from-green-500 to-emerald-600",
       iconBg: "bg-green-50",
       path: "/services/bulk-sms",
+<<<<<<< HEAD
+      features: ["দ্রুত ডেলিভারি", "রিপোর্টিং", "সাশ্রয়ী দাম"],
+=======
       features: ["দ্রুত ডেলিভারি", "রিপোর্টিং", "সাশ্রয়ী দাম"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.consulting,
@@ -265,7 +583,11 @@ const Services = () => {
       gradient: "from-yellow-500 to-orange-600",
       iconBg: "bg-yellow-50",
       path: "/services/business-consulting",
+<<<<<<< HEAD
+      features: ["কৌশল পরিকল্পনা", "মার্কেট রিসার্চ", "গ্রোথ হ্যাকিং"],
+=======
       features: ["কৌশল পরিকল্পনা", "মার্কেট রিসার্চ", "গ্রোথ হ্যাকিং"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.brandPage,
@@ -274,7 +596,15 @@ const Services = () => {
       gradient: "from-cyan-500 to-blue-600",
       iconBg: "bg-cyan-50",
       path: "/services/brand-page-setup",
+<<<<<<< HEAD
+      features: [
+        "পেজ ভেরিফিকেশন",
+        "কন্টেন্ট স্ট্র্যাটেজি",
+        "অডিয়েন্স বিল্ডিং",
+      ],
+=======
       features: ["পেজ ভেরিফিকেশন", "কন্টেন্ট স্ট্র্যাটেজি", "অডিয়েন্স বিল্ডিং"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.graphicDesign,
@@ -283,7 +613,15 @@ const Services = () => {
       gradient: "from-violet-500 to-purple-600",
       iconBg: "bg-violet-50",
       path: "/services/graphic-design",
+<<<<<<< HEAD
+      features: [
+        "লোগো ডিজাইন",
+        "সোশ্যাল মিডিয়া গ্রাফিক্স",
+        "ব্র্যান্ড আইডেন্টিটি",
+      ],
+=======
       features: ["লোগো ডিজাইন", "সোশ্যাল মিডিয়া গ্রাফিক্স", "ব্র্যান্ড আইডেন্টিটি"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.chatbot,
@@ -292,7 +630,11 @@ const Services = () => {
       gradient: "from-teal-500 to-cyan-600",
       iconBg: "bg-teal-50",
       path: "/services/chatbot-setup",
+<<<<<<< HEAD
+      features: ["২৪/৭ সাপোর্ট", "অটো রেসপন্স", "লিড জেনারেশন"],
+=======
       features: ["২৪/৭ সাপোর্ট", "অটো রেসপন্স", "লিড জেনারেশন"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.issueFixing,
@@ -301,7 +643,11 @@ const Services = () => {
       gradient: "from-rose-500 to-pink-600",
       iconBg: "bg-rose-50",
       path: "/services/issue-fixing",
+<<<<<<< HEAD
+      features: ["দ্রুত সমাধান", "বাগ ফিক্স", "পারফরম্যান্স উন্নতি"],
+=======
       features: ["দ্রুত সমাধান", "বাগ ফিক্স", "পারফরম্যান্স উন্নতি"]
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
     },
     {
       icon: customLogos.training,
@@ -310,8 +656,13 @@ const Services = () => {
       gradient: "from-indigo-500 to-blue-600",
       iconBg: "bg-indigo-50",
       path: "/services/business-training",
+<<<<<<< HEAD
+      features: ["হাতে-কলমে শিক্ষা", "সার্টিফিকেট", "লাইফটাইম সাপোর্ট"],
+    },
+=======
       features: ["হাতে-কলমে শিক্ষা", "সার্টিফিকেট", "লাইফটাইম সাপোর্ট"]
     }
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
   ];
 
   return (
@@ -335,7 +686,12 @@ const Services = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+<<<<<<< HEAD
+            আপনার ব্যবসার জন্য সম্পূর্ণ ডিজিটাল সলিউশন। মানসম্মত সেবা এবং দক্ষ
+            টিমের সাথে আপনার স্বপ্ন বাস্তবায়ন করুন।
+=======
             আপনার ব্যবসার জন্য সম্পূর্ণ ডিজিটাল সলিউশন। মানসম্মত সেবা এবং দক্ষ টিমের সাথে আপনার স্বপ্ন বাস্তবায়ন করুন।
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           </p>
         </motion.div>
 
@@ -355,7 +711,13 @@ const Services = () => {
           className="mt-28 bg-gradient-to-br from-red-500 via-pink-500 to-purple-600 rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+<<<<<<< HEAD
+          <h2 className="text-4xl md:text-5xl font-black mb-4 relative z-10">
+            আপনার প্রজেক্ট শুরু করুন আজই
+          </h2>
+=======
           <h2 className="text-4xl md:text-5xl font-black mb-4 relative z-10">আপনার প্রজেক্ট শুরু করুন আজই</h2>
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <p className="text-xl mb-8 text-white/90 relative z-10">
             আমাদের সাথে যোগাযোগ করুন এবং পান বিনামূল্যে পরামর্শ
           </p>
