@@ -105,7 +105,7 @@ export default function SMECubeLanding() {
   },
   {
     icon: <BarChart3 className="w-10 h-10" />,
-    title: "রেস পেইজ সেটআপ",
+    title: "ব্র্যান্ড পেইজ সেটআপ",
     desc: "প্রফেশনাল বিজনেস পেজ সেটআপ",
     gradient: "from-cyan-500 to-blue-600",
     iconBg: "bg-cyan-50",

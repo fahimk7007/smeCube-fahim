@@ -1,6 +1,5 @@
 // File: src/routes/router.jsx
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
 
 // Main Pages
 import SMECubeLanding from "../pages/SMECubeLanding";
@@ -21,6 +20,7 @@ import FacebookBoosting from "../pages/services/FacebookBoosting";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
+import App from "../layouts/App";
 
 export const router = createBrowserRouter([
   {
