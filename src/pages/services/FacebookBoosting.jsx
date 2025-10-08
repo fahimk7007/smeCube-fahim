@@ -5,22 +5,22 @@ import { Link } from "react-router";
 const FacebookBoosting = () => {
   const features = [
     {
-      icon: '/public/icons/target.png',
+      icon: '/icons/target.png',
       title: "টার্গেটেড অডিয়েন্স",
       description: "সঠিক কাস্টমারদের কাছে পৌঁছান"
     },
     {
-      icon: '/public/icons/pie-chart.png',
+      icon: '/icons/pie-chart.png',
       title: "এনালিটিক্স রিপোর্ট",
       description: "বিস্তারিত পারফরমেন্স ট্র্যাকিং"
     },
     {
-      icon: '/public/icons/money-bag.png',
+      icon: '/icons/money-bag.png',
       title: "বাজেট অপটিমাইজেশন",
       description: "সর্বোচ্চ ROI নিশ্চিত করুন"
     },
     {
-      icon: '/public/icons/lightning.png',
+      icon: '/icons/lightning.png',
       title: "দ্রুত রেজাল্ট",
       description: "১-২ দিনে ফলাফল দেখুন"
     }
