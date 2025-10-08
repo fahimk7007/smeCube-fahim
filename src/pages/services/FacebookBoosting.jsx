@@ -1,25 +1,30 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+import { SquareCheckBig } from 'lucide-react';
+import React from 'react';
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
 import { Link } from "react-router";
 
 const FacebookBoosting = () => {
   const features = [
     {
-      icon: "🎯",
+      icon: '/icons/target.png',
       title: "টার্গেটেড অডিয়েন্স",
       description: "সঠিক কাস্টমারদের কাছে পৌঁছান",
     },
     {
-      icon: "📊",
+      icon: '/icons/pie-chart.png',
       title: "এনালিটিক্স রিপোর্ট",
       description: "বিস্তারিত পারফরমেন্স ট্র্যাকিং",
     },
     {
-      icon: "💰",
+      icon: '/icons/money-bag.png',
       title: "বাজেট অপটিমাইজেশন",
       description: "সর্বোচ্চ ROI নিশ্চিত করুন",
     },
     {
-      icon: "⚡",
+      icon: '/icons/lightning.png',
       title: "দ্রুত রেজাল্ট",
       description: "১-২ দিনে ফলাফল দেখুন",
     },
@@ -91,11 +96,18 @@ const FacebookBoosting = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+<<<<<<< HEAD
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-6xl mx-auto px-4 mt-20">
+=======
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-32 pb-20">
+        <div className="max-w-6xl mx-auto px-4">
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <div className="text-6xl mb-6">📘</div>
+              <div className="mb-6 h-20">
+                <img className='h-full' src="/icons/rocket.png" alt="" />
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 ফেসবুক মার্কেটিং ও বুস্টিং সেবা
               </h1>
@@ -122,19 +134,19 @@ const FacebookBoosting = () => {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>৩ কোটি+ বাংলাদেশি ইউজার</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>সর্বোচ্চ এনগেজমেন্ট রেট</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>কম খরচে বেশি রিচ</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-2xl">✅</span>
+                    <span className="text-2xl"><SquareCheckBig /></span>
                     <span>মাপযোগ্য ফলাফল</span>
                   </li>
                 </ul>
@@ -159,10 +171,15 @@ const FacebookBoosting = () => {
                 key={index}
                 className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition"
               >
+<<<<<<< HEAD
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">
                   {feature.title}
                 </h3>
+=======
+                <img className='mb-4 h-14 w-14' src={feature.icon} alt="" />
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}

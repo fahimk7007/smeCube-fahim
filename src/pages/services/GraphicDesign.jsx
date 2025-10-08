@@ -97,8 +97,13 @@ const GraphicDesign = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
+<<<<<<< HEAD
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-20">
         <div className="container mx-auto px-4 mt-20">
+=======
+      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white pt-32 pb-20">
+        <div className="container mx-auto px-4">
+>>>>>>> dbd91fd4fae16a0f5e8cfe5546eebc9184da33ce
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               গ্রাফিক ডিজাইন সার্ভিস
