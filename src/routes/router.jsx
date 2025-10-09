@@ -1,21 +1,21 @@
-// File: src/routes/router.jsx
 import { createBrowserRouter } from "react-router-dom";
 
 // Main Pages
 import SMECubeLanding from "../pages/SMECubeLanding";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-import Services from "../pages/Services";
+import EcommerceSolution from "../pages/services/EcommerceSolution";
+import Tools from "../pages/Tools";
 import Pricing from "../pages/Pricing";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 
 // Service Pages
+import DomainHosting from "../pages/services/DomainHosting";
 import BrandPageSetup from "../pages/services/BrandPageSetup";
 import BulkSMS from "../pages/services/BulkSMS";
 import BusinessConsulting from "../pages/services/BusinessConsulting";
 import ChatbotSetup from "../pages/services/ChatbotSetup";
-import EcommerceSolution from "../pages/services/EcommerceSolution";
 import FacebookBoosting from "../pages/services/FacebookBoosting";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
@@ -41,7 +41,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <Services />
+        element: <EcommerceSolution />
+      },
+      {
+        path: "services/ecommerce",
+        element: <EcommerceSolution />
+      },
+      {
+        path: "tools",
+        element: <Tools />
       },
       {
         path: "pricing",
@@ -89,6 +97,10 @@ export const router = createBrowserRouter([
         element: <LandingPage />
       },
       {
+        path: "services/hosting",
+        element: <DomainHosting /> 
+      },
+            {
         path: "services/web-development",
         element: <WebDevelopment />
       }

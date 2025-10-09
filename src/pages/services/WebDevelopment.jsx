@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router";
 
 const WebDevelopment = () => {
@@ -6,33 +6,33 @@ const WebDevelopment = () => {
     {
       icon: "🎨",
       title: "কাস্টম ওয়েব ডিজাইন",
-      description: "আপনার ব্র্যান্ডের জন্য ইউনিক ডিজাইন",
+      description: "আপনার ব্র্যান্ডের জন্য ইউনিক ডিজাইন"
     },
     {
       icon: "⚡",
       title: "দ্রুত লোডিং",
-      description: "হাই পারফরমেন্স অপটিমাইজেশন",
+      description: "হাই পারফরমেন্স অপটিমাইজেশন"
     },
     {
       icon: "📱",
       title: "রেসপন্সিভ ডিজাইন",
-      description: "সব ডিভাইসে পারফেক্ট",
+      description: "সব ডিভাইসে পারফেক্ট"
     },
     {
       icon: "🔍",
       title: "SEO অপটিমাইজড",
-      description: "গুগলে ভালো র‍্যাংকিং",
+      description: "গুগলে ভালো র‍্যাংকিং"
     },
     {
       icon: "🔐",
       title: "সিকিউরিটি",
-      description: "SSL ও সিকিউরিটি ফিচার",
+      description: "SSL ও সিকিউরিটি ফিচার"
     },
     {
       icon: "🔄",
       title: "সহজ আপডেট",
-      description: "CMS ইন্টিগ্রেশন",
-    },
+      description: "CMS ইন্টিগ্রেশন"
+    }
   ];
 
   const technologies = [
@@ -41,7 +41,7 @@ const WebDevelopment = () => {
     { name: "WordPress", icon: "📝", color: "bg-purple-50" },
     { name: "HTML5/CSS3", icon: "🎨", color: "bg-orange-50" },
     { name: "PHP", icon: "🐘", color: "bg-indigo-50" },
-    { name: "MongoDB", icon: "🍃", color: "bg-teal-50" },
+    { name: "MongoDB", icon: "🍃", color: "bg-teal-50" }
   ];
 
   const packages = [
@@ -54,8 +54,8 @@ const WebDevelopment = () => {
         "রেসপন্সিভ লেআউট",
         "কন্টাক্ট ফর্ম",
         "বেসিক SEO",
-        "২ মাস সাপোর্ট",
-      ],
+        "২ মাস সাপোর্ট"
+      ]
     },
     {
       name: "বিজনেস ওয়েবসাইট",
@@ -68,8 +68,8 @@ const WebDevelopment = () => {
         "CMS ইন্টিগ্রেশন",
         "এডভান্স SEO",
         "ব্লগ সেকশন",
-        "৬ মাস সাপোর্ট",
-      ],
+        "৬ মাস সাপোর্ট"
+      ]
     },
     {
       name: "কর্পোরেট ওয়েবসাইট",
@@ -81,33 +81,33 @@ const WebDevelopment = () => {
         "কাস্টম ফিচার",
         "মাল্টি-ল্যাঙ্গুয়েজ",
         "API ইন্টিগ্রেশন",
-        "১ বছর সাপোর্ট",
-      ],
-    },
+        "১ বছর সাপোর্ট"
+      ]
+    }
   ];
 
   const portfolio = [
     {
       name: "রেস্টুরেন্ট ওয়েবসাইট",
       category: "খাদ্য ও পানীয়",
-      image: "🍽️",
+      image: "🍽️"
     },
     {
       name: "শিক্ষা প্রতিষ্ঠান",
       category: "শিক্ষা",
-      image: "🎓",
+      image: "🎓"
     },
     {
       name: "রিয়েল এস্টেট",
       category: "সম্পত্তি",
-      image: "🏢",
-    },
+      image: "🏢"
+    }
   ];
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white pt-32 pb-20">
+      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <div className="text-6xl mb-6">💻</div>
@@ -115,8 +115,8 @@ const WebDevelopment = () => {
               প্রফেশনাল ওয়েব ডেভেলপমেন্ট সার্ভিস
             </h1>
             <p className="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
-              আপনার ব্যবসার জন্য আধুনিক, দ্রুত এবং SEO ফ্রেন্ডলি ওয়েবসাইট তৈরি
-              করি। রেসপন্সিভ ডিজাইন এবং ইউজার ফ্রেন্ডলি ইন্টারফেস সহ।
+              আপনার ব্যবসার জন্য আধুনিক, দ্রুত এবং SEO ফ্রেন্ডলি ওয়েবসাইট তৈরি করি। 
+              রেসপন্সিভ ডিজাইন এবং ইউজার ফ্রেন্ডলি ইন্টারফেস সহ।
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -143,9 +143,7 @@ const WebDevelopment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমাদের ওয়েব ডেভেলপমেন্ট সেবা
             </h2>
-            <p className="text-lg text-gray-600">
-              আপনার প্রয়োজন অনুযায়ী কাস্টমাইজড সলিউশন
-            </p>
+            <p className="text-lg text-gray-600">আপনার প্রয়োজন অনুযায়ী কাস্টমাইজড সলিউশন</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -154,9 +152,7 @@ const WebDevelopment = () => {
                 className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {service.title}
-                </h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
@@ -171,9 +167,7 @@ const WebDevelopment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমরা যে টেকনোলজি ব্যবহার করি
             </h2>
-            <p className="text-lg text-gray-600">
-              আধুনিক এবং শক্তিশালী টেকনোলজি স্ট্যাক
-            </p>
+            <p className="text-lg text-gray-600">আধুনিক এবং শক্তিশালী টেকনোলজি স্ট্যাক</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {technologies.map((tech, index) => (
@@ -196,9 +190,7 @@ const WebDevelopment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমাদের সাম্প্রতিক কাজ
             </h2>
-            <p className="text-lg text-gray-600">
-              বিভিন্ন শিল্পে আমাদের সফলতার গল্প
-            </p>
+            <p className="text-lg text-gray-600">বিভিন্ন শিল্পে আমাদের সফলতার গল্প</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolio.map((project, index) => (
@@ -210,12 +202,8 @@ const WebDevelopment = () => {
                   {project.image}
                 </div>
                 <div className="p-6">
-                  <div className="text-sm text-purple-600 font-semibold mb-2">
-                    {project.category}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">
-                    {project.name}
-                  </h3>
+                  <div className="text-sm text-purple-600 font-semibold mb-2">{project.category}</div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{project.name}</h3>
                   <button className="text-purple-600 font-semibold hover:text-purple-700">
                     বিস্তারিত দেখুন →
                   </button>
@@ -233,9 +221,7 @@ const WebDevelopment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               প্রাইসিং প্ল্যান
             </h2>
-            <p className="text-lg text-gray-600">
-              সাশ্রয়ী মূল্যে পেশাদার ওয়েবসাইট
-            </p>
+            <p className="text-lg text-gray-600">সাশ্রয়ী মূল্যে পেশাদার ওয়েবসাইট</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
@@ -243,8 +229,8 @@ const WebDevelopment = () => {
                 key={index}
                 className={`rounded-2xl p-8 ${
                   pkg.popular
-                    ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white transform scale-105 shadow-2xl"
-                    : "bg-white border-2 border-gray-200 shadow-lg"
+                    ? 'bg-gradient-to-br from-purple-500 to-pink-600 text-white transform scale-105 shadow-2xl'
+                    : 'bg-white border-2 border-gray-200 shadow-lg'
                 }`}
               >
                 {pkg.popular && (
@@ -252,38 +238,18 @@ const WebDevelopment = () => {
                     প্রস্তাবিত
                   </div>
                 )}
-                <h3
-                  className={`text-2xl font-bold mb-2 ${
-                    pkg.popular ? "text-white" : "text-gray-800"
-                  }`}
-                >
+                <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? 'text-white' : 'text-gray-800'}`}>
                   {pkg.name}
                 </h3>
                 <div className="mb-6">
                   <span className="text-4xl font-bold">৳{pkg.price}</span>
-                  <span
-                    className={pkg.popular ? "text-gray-200" : "text-gray-600"}
-                  >
-                    /{pkg.duration}
-                  </span>
+                  <span className={pkg.popular ? 'text-gray-200' : 'text-gray-600'}>/{pkg.duration}</span>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <span
-                        className={
-                          pkg.popular ? "text-yellow-300" : "text-green-500"
-                        }
-                      >
-                        ✓
-                      </span>
-                      <span
-                        className={
-                          pkg.popular ? "text-gray-100" : "text-gray-700"
-                        }
-                      >
-                        {feature}
-                      </span>
+                      <span className={pkg.popular ? 'text-yellow-300' : 'text-green-500'}>✓</span>
+                      <span className={pkg.popular ? 'text-gray-100' : 'text-gray-700'}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -291,8 +257,8 @@ const WebDevelopment = () => {
                   to="/contact"
                   className={`block text-center py-3 rounded-full font-bold transition ${
                     pkg.popular
-                      ? "bg-white text-purple-600 hover:bg-gray-100"
-                      : "bg-purple-500 text-white hover:bg-purple-600"
+                      ? 'bg-white text-purple-600 hover:bg-gray-100'
+                      : 'bg-purple-500 text-white hover:bg-purple-600'
                   }`}
                 >
                   অর্ডার করুন

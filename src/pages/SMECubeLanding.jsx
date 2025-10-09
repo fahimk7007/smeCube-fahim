@@ -77,7 +77,7 @@ export default function SMECubeLanding() {
     desc: "নিরাপদ এবং দ্রুত হোস্টিং সেবা",
     gradient: "from-orange-500 to-red-600",
     iconBg: "bg-orange-50",
-    path: "/services/web-development"
+    path: "/services/hosting"
   },
   {
     icon: <Layers className="w-10 h-10" />,
@@ -141,7 +141,7 @@ export default function SMECubeLanding() {
     desc: "ডিজিটাল মার্কেটিং প্রশিক্ষণ",
     gradient: "from-indigo-500 to-blue-600",
     iconBg: "bg-indigo-50",
-    path: "/services/business-consulting"
+    path: "/services/business-training"
   },
 ];
 

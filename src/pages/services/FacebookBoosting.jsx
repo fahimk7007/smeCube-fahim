@@ -1,8 +1,30 @@
+import React, { useState } from 'react';
 import { SquareCheckBig } from 'lucide-react';
-import React from 'react';
-import { Link } from "react-router";
 
 const FacebookBoosting = () => {
+  const [formData, setFormData] = useState({
+    budget: '',
+    mobile: '',
+    pageLink: '',
+    postLink: '',
+    minAge: '18',
+    maxAge: '65',
+    location: '',
+    days: '1'
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = () => {
+    console.log('Form submitted:', formData);
+    alert('অর্ডার সফলভাবে সাবমিট হয়েছে!');
+  };
+
   const features = [
     {
       icon: '/icons/target.png',
@@ -26,275 +48,219 @@ const FacebookBoosting = () => {
     },
   ];
 
-  const packages = [
-    {
-      name: "বেসিক",
-      price: "৫,০০০",
-      duration: "মাসিক",
-      features: [
-        "১০টি পোস্ট বুস্টিং",
-        "বেসিক টার্গেটিং",
-        "সাপ্তাহিক রিপোর্ট",
-        "ইমেইল সাপোর্ট",
-      ],
-    },
-    {
-      name: "প্রিমিয়াম",
-      price: "১০,০০০",
-      duration: "মাসিক",
-      popular: true,
-      features: [
-        "২৫টি পোস্ট বুস্টিং",
-        "এডভান্স টার্গেটিং",
-        "দৈনিক রিপোর্ট",
-        "২৪/৭ সাপোর্ট",
-        "কাস্টম ক্রিয়েটিভ",
-      ],
-    },
-    {
-      name: "এন্টারপ্রাইজ",
-      price: "২০,০০০",
-      duration: "মাসিক",
-      features: [
-        "আনলিমিটেড বুস্টিং",
-        "প্রিমিয়াম টার্গেটিং",
-        "রিয়েল-টাইম রিপোর্ট",
-        "ডেডিকেটেড ম্যানেজার",
-        "A/B টেস্টিং",
-        "ভিডিও এড সাপোর্ট",
-      ],
-    },
-  ];
-
-  const processSteps = [
-    {
-      step: "১",
-      title: "কনসালটেশন",
-      description: "আপনার ব্যবসা এবং লক্ষ্য নিয়ে আলোচনা",
-    },
-    {
-      step: "২",
-      title: "স্ট্র্যাটেজি প্ল্যান",
-      description: "কাস্টম মার্কেটিং স্ট্র্যাটেজি তৈরি",
-    },
-    {
-      step: "৩",
-      title: "ক্যাম্পেইন লঞ্চ",
-      description: "টার্গেটেড এড ক্যাম্পেইন শুরু",
-    },
-    {
-      step: "৪",
-      title: "মনিটরিং ও অপটিমাইজেশন",
-      description: "পারফরমেন্স ট্র্যাক এবং উন্নতি",
-    },
-  ];
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-32 pb-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
-              <div className="mb-6 h-20">
-                <img className='h-full' src="/icons/rocket.png" alt="" />
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                ফেসবুক মার্কেটিং ও বুস্টিং সেবা
-              </h1>
-              <p className="text-xl mb-8 text-gray-100">
-                আপনার ব্যবসাকে সঠিক মানুষের কাছে পৌঁছে দিন ফেসবুক মার্কেটিং এর
-                মাধ্যমে। বৃদ্ধি করুন ব্র্যান্ড অ্যাওয়ারনেস এবং বিক্রয়।
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  to="/contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition"
-                >
-                  শুরু করুন →
-                </Link>
-                <button className="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition">
-                  আরও জানুন
-                </button>
-              </div>
+    <div className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-20 md:pt-32 pb-12 md:pb-20">
+        <div className="max-w-6xl mx-auto px-3 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <div className="mb-3 md:mb-6 h-12 md:h-20 inline-block">
+              <img className='h-full' src="/icons/rocket.png" alt="Rocket" />
             </div>
-            <div className="flex-1">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold mb-4">
-                  কেন ফেসবুক মার্কেটিং?
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl"><SquareCheckBig /></span>
-                    <span>৩ কোটি+ বাংলাদেশি ইউজার</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl"><SquareCheckBig /></span>
-                    <span>সর্বোচ্চ এনগেজমেন্ট রেট</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl"><SquareCheckBig /></span>
-                    <span>কম খরচে বেশি রিচ</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl"><SquareCheckBig /></span>
-                    <span>মাপযোগ্য ফলাফল</span>
-                  </li>
-                </ul>
+            <h1 className="text-2xl md:text-5xl font-bold mb-2 md:mb-6">
+              Facebook Boosting
+            </h1>
+            <p className="text-lg md:text-2xl font-bold text-yellow-300 mb-2 md:mb-4">
+              ডলার প্রতি ১৬৫ টাকা মাত্র
+            </p>
+            <p className="text-sm md:text-xl text-gray-100 px-4">
+              আপনার ব্যবসাকে সঠিক মানুষের কাছে পৌঁছে দিন
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto bg-white/95 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-8 shadow-2xl">
+            <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
+              বুস্টিং অর্ডার ফর্ম
+            </h2>
+            <div className="space-y-3 md:space-y-4">
+              <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                    বাজেট ($)
+                  </label>
+                  <input
+                    type="number"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    placeholder="উদাহরণ: 10"
+                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                    মোবাইল নাম্বার
+                  </label>
+                  <input
+                    type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    placeholder="০১৭xxxxxxxx"
+                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                  />
+                </div>
               </div>
+
+              <div>
+                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                  পেইজ লিংক
+                </label>
+                <input
+                  type="url"
+                  name="pageLink"
+                  value={formData.pageLink}
+                  onChange={handleChange}
+                  placeholder="https://facebook.com/yourpage"
+                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                  পোস্ট লিংক
+                </label>
+                <input
+                  type="url"
+                  name="postLink"
+                  value={formData.postLink}
+                  onChange={handleChange}
+                  placeholder="https://facebook.com/yourpage/posts/..."
+                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                    মিনিমাম বয়স
+                  </label>
+                  <input
+                    type="number"
+                    name="minAge"
+                    value={formData.minAge}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                    মেক্সিমাম বয়স
+                  </label>
+                  <input
+                    type="number"
+                    name="maxAge"
+                    value={formData.maxAge}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                  লোকেশন
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  value={formData.location}
+                  onChange={handleChange}
+                  placeholder="উদাহরণ: ঢাকা, বাংলাদেশ"
+                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
+                  কত দিন
+                </label>
+                <select
+                  name="days"
+                  value={formData.days}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
+                >
+                  <option value="1">১ দিন</option>
+                  <option value="3">৩ দিন</option>
+                  <option value="7">৭ দিন</option>
+                  <option value="14">১৪ দিন</option>
+                  <option value="30">৩০ দিন</option>
+                </select>
+              </div>
+
+              <button
+                onClick={handleSubmit}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 shadow-lg text-sm md:text-lg"
+              >
+                অর্ডার করুন →
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              আমাদের সেবার বৈশিষ্ট্য
+      <section className="py-8 md:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-3 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="text-xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-4">
+              কেন আমাদের সেবা নিবেন?
             </h2>
-            <p className="text-lg text-gray-600">যা আমাদের আলাদা করে</p>
+            <p className="text-xs md:text-lg text-gray-600">যা আমাদের আলাদা করে</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition"
+                className="bg-gradient-to-br from-blue-50 to-purple-50 p-3 md:p-6 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition"
               >
-                <img className='mb-4 h-14 w-14' src={feature.icon} alt="" />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <img className='mb-2 md:mb-4 h-8 w-8 md:h-14 md:w-14' src={feature.icon} alt="" />
+                <h3 className="text-xs md:text-xl font-bold text-gray-800 mb-1 md:mb-2">{feature.title}</h3>
+                <p className="text-xs md:text-base text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              আমাদের কাজের প্রক্রিয়া
-            </h2>
-            <p className="text-lg text-gray-600">সফলতার পথে ৪টি ধাপ</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
-                  <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <span className="text-blue-500 text-3xl">→</span>
-                  </div>
-                )}
+      <section className="py-8 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-3 md:px-4">
+          <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-blue-200 shadow-lg">
+            <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 text-center">
+              কেন ফেসবুক বুস্টিং?
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+              <div className="flex items-start gap-2">
+                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
+                <span className="text-xs md:text-base text-gray-700">৩ কোটি+ বাংলাদেশি ইউজার</span>
               </div>
-            ))}
+              <div className="flex items-start gap-2">
+                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
+                <span className="text-xs md:text-base text-gray-700">সর্বোচ্চ এনগেজমেন্ট রেট</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
+                <span className="text-xs md:text-base text-gray-700">কম খরচে বেশি রিচ</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
+                <span className="text-xs md:text-base text-gray-700">মাপযোগ্য ফলাফল</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              প্রাইসিং প্ল্যান
-            </h2>
-            <p className="text-lg text-gray-600">
-              আপনার বাজেট অনুযায়ী প্যাকেজ বেছে নিন
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`rounded-2xl p-8 ${
-                  pkg.popular
-                    ? "bg-gradient-to-br from-blue-500 to-purple-600 text-white transform scale-105 shadow-2xl"
-                    : "bg-white border-2 border-gray-200 shadow-lg"
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold inline-block mb-4">
-                    জনপ্রিয়
-                  </div>
-                )}
-                <h3
-                  className={`text-2xl font-bold mb-2 ${
-                    pkg.popular ? "text-white" : "text-gray-800"
-                  }`}
-                >
-                  {pkg.name}
-                </h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">৳{pkg.price}</span>
-                  <span
-                    className={pkg.popular ? "text-gray-200" : "text-gray-600"}
-                  >
-                    /{pkg.duration}
-                  </span>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span
-                        className={
-                          pkg.popular ? "text-yellow-300" : "text-green-500"
-                        }
-                      >
-                        ✓
-                      </span>
-                      <span
-                        className={
-                          pkg.popular ? "text-gray-100" : "text-gray-700"
-                        }
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className={`block text-center py-3 rounded-full font-bold transition ${
-                    pkg.popular
-                      ? "bg-white text-blue-600 hover:bg-gray-100"
-                      : "bg-blue-500 text-white hover:bg-blue-600"
-                  }`}
-                >
-                  এখনই শুরু করুন
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            আজই শুরু করুন আপনার ফেসবুক মার্কেটিং
+      <section className="py-10 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="max-w-4xl mx-auto px-3 md:px-4 text-center">
+          <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-6">
+            আজই শুরু করুন আপনার ফেসবুক বুস্টিং
           </h2>
-          <p className="text-xl mb-8 text-gray-100">
-            ফ্রি কনসালটেশন এবং মার্কেট এনালাইসিস পান
+          <p className="text-sm md:text-xl mb-6 md:mb-8 text-gray-100">
+            সাশ্রয়ী মূল্যে পান সেরা বুস্টিং সেবা
           </p>
-          <Link
-            to="/contact"
-            className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 inline-block transform hover:scale-105 transition"
-          >
-            ফ্রি কনসালটেশন বুক করুন →
-          </Link>
+          <button className="bg-white text-blue-600 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:bg-gray-100 inline-block transform hover:scale-105 transition">
+            এখনই শুরু করুন →
+          </button>
         </div>
       </section>
     </div>
