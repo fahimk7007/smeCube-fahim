@@ -202,9 +202,9 @@ const BusinessTraining = () => {
       </div> */}
 
       {/* Features Section */}
-      <section className="py-20 mx-auto max-w-6xl px-[10%] bg-gradient-to-br from-indigo-50 to-blue-50">
+      <section className="py-20 mx-auto max-w-6xl px-[10%]">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent py-1"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -245,29 +245,49 @@ const BusinessTraining = () => {
         </motion.div>
       </section>
 
-      {/* Process */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">কীভাবে কাজ করে?</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+      {/* Process Section */}
+      <section className="py-20 bg-gradient-to-r from-sky-50/50 to-blue-50/50">
+        <div className="mx-auto max-w-6xl px-[15%] text-center">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent py-2"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            কীভাবে কাজ করে?
+          </motion.h2>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             {steps.map((s, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className="p-6"
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-blue-100/50 group"
+                variants={slideIn}
+                whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-indigo-600 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-sky-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md">
                   {s.step}
                 </div>
-                <h3 className="font-bold mb-2">{s.title}</h3>
-                <p className="text-gray-600 text-sm">{s.desc}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {s.desc}
+                </p>
+                <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-sky-600 rounded-full mt-4 mx-auto group-hover:w-16 transition-all duration-300"></div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
+
       {/* Packages */}
       <div className="py-16 bg-gradient-to-br from-indigo-50 to-blue-100">
         <div className="max-w-6xl mx-auto px-4">
