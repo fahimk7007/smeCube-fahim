@@ -3,12 +3,12 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const BusinessTraining = () => {
-  const stats = [
+  /*  const stats = [
     { number: "৫০০+", label: "ট্রেইন্ড উদ্যোক্তা" },
     { number: "৯৫%", label: "সফলতা হার" },
     { number: "৩০+", label: "রিয়েল লাইভ সেশন" },
     { number: "২৪/৭", label: "সাপোর্ট" },
-  ];
+  ]; */
 
   const features = [
     {
@@ -97,54 +97,85 @@ const BusinessTraining = () => {
     },
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const slideIn = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden">
+
+      <section className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden">
         {/* Decorative Gradient Glow */}
-        <div className="absolute inset-0">
-          <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-400 rounded-full blur-3xl opacity-20"></div>
-          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
-        </div>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="absolute inset-0">
+            <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-400 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
+          </div>
 
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg"
-          >
-            বিজনেস ট্রেইনিং প্রোগ্রাম
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed"
-          >
-            আপনার উদ্যোক্তা যাত্রা শুরু করুন বাস্তবভিত্তিক বিজনেস ট্রেইনিংয়ের
-            মাধ্যমে।
-          </motion.p>
-
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            <Link
-              to="/contact"
-              className="bg-white text-indigo-700 px-10 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-indigo-50 hover:shadow-lg transition-all duration-300"
+          <div className="relative max-w-6xl mx-auto px-6 text-center">
+            <motion.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg"
             >
-              এখনই রেজিস্ট্রেশন করুন →
-            </Link>
-          </motion.div>
+              বিজনেস ট্রেইনিং প্রোগ্রাম
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 1 }}
+              className="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed"
+            >
+              আপনার উদ্যোক্তা যাত্রা শুরু করুন বাস্তবভিত্তিক বিজনেস ট্রেইনিংয়ের
+              মাধ্যমে।
+            </motion.p>
+
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              <Link
+                to="/contact"
+                className="bg-white text-indigo-700 px-10 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-indigo-50 hover:shadow-lg transition-all duration-300"
+              >
+                এখনই রেজিস্ট্রেশন করুন →
+              </Link>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Stats Section */}
-      <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
+      {/*  <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#dbeafe,_transparent_40%)]"></div>
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -168,29 +199,52 @@ const BusinessTraining = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* Features */}
-      <div className="py-16 bg-gradient-to-br from-indigo-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            কোর্সের বিশেষ ফিচার
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((f, i) => (
+      {/* Features Section */}
+      <section className="py-20 mx-auto max-w-6xl px-[10%] bg-gradient-to-br from-indigo-50 to-blue-50">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          কোর্সের বিশেষ ফিচার
+        </motion.h2>
+
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              className="p-6 bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100/50 cursor-pointer group backdrop-blur-sm"
+              variants={scaleIn}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
               <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition"
+                className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                whileHover={{
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.5 },
+                }}
               >
-                <div className="text-4xl mb-4">{f.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-                <p className="text-gray-600">{f.description}</p>
+                {f.icon}
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors">
+                {f.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{f.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
       {/* Process */}
       <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
