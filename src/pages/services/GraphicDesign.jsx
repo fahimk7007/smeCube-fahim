@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router";
 
 const GraphicDesign = () => {
@@ -6,33 +6,33 @@ const GraphicDesign = () => {
     {
       icon: "🎨",
       title: "ব্র্যান্ড আইডেন্টিটি",
-      description: "লোগো, কালার স্কিম এবং ব্র্যান্ড গাইডলাইন",
+      description: "লোগো, কালার স্কিম এবং ব্র্যান্ড গাইডলাইন"
     },
     {
       icon: "📱",
       title: "সোশ্যাল মিডিয়া ডিজাইন",
-      description: "পোস্ট, ব্যানার এবং কভার ডিজাইন",
+      description: "পোস্ট, ব্যানার এবং কভার ডিজাইন"
     },
     {
       icon: "🖼️",
       title: "প্রিন্ট ডিজাইন",
-      description: "ব্রোশিওর, ফ্লায়ার এবং বিজনেস কার্ড",
+      description: "ব্রোশিওর, ফ্লায়ার এবং বিজনেস কার্ড"
     },
     {
       icon: "✨",
       title: "ইলাস্ট্রেশন",
-      description: "কাস্টম ইলাস্ট্রেশন এবং আইকন ডিজাইন",
+      description: "কাস্টম ইলাস্ট্রেশন এবং আইকন ডিজাইন"
     },
     {
       icon: "📦",
       title: "প্যাকেজিং ডিজাইন",
-      description: "প্রোডাক্ট প্যাকেজিং এবং লেবেল",
+      description: "প্রোডাক্ট প্যাকেজিং এবং লেবেল"
     },
     {
       icon: "🎯",
       title: "ইনফোগ্রাফিক্স",
-      description: "ডেটা ভিজুয়ালাইজেশন এবং চার্ট ডিজাইন",
-    },
+      description: "ডেটা ভিজুয়ালাইজেশন এবং চার্ট ডিজাইন"
+    }
   ];
 
   const designTools = [
@@ -41,7 +41,7 @@ const GraphicDesign = () => {
     { name: "Figma", icon: "🎨", color: "bg-purple-50" },
     { name: "Canva Pro", icon: "🎭", color: "bg-green-50" },
     { name: "Adobe InDesign", icon: "📐", color: "bg-pink-50" },
-    { name: "CorelDRAW", icon: "💎", color: "bg-indigo-50" },
+    { name: "CorelDRAW", icon: "💎", color: "bg-indigo-50" }
   ];
 
   const packages = [
@@ -54,8 +54,8 @@ const GraphicDesign = () => {
         "বেসিক এডিটিং",
         "২টি রিভিশন",
         "২৪ ঘণ্টা ডেলিভারি",
-        "সোর্স ফাইল",
-      ],
+        "সোর্স ফাইল"
+      ]
     },
     {
       name: "স্ট্যান্ডার্ড",
@@ -68,8 +68,8 @@ const GraphicDesign = () => {
         "বিজনেস কার্ড ডিজাইন",
         "আনলিমিটেড রিভিশন",
         "সোর্স ফাইল সহ সব ফরম্যাট",
-        "১ সপ্তাহ সাপোর্ট",
-      ],
+        "১ সপ্তাহ সাপোর্ট"
+      ]
     },
     {
       name: "প্রিমিয়াম",
@@ -82,183 +82,191 @@ const GraphicDesign = () => {
         "ব্রোশিওর ও ফ্লায়ার ডিজাইন",
         "স্টেশনারি ডিজাইন",
         "আনলিমিটেড রিভিশন",
-        "১ মাস সাপোর্ট",
-      ],
-    },
+        "১ মাস সাপোর্ট"
+      ]
+    }
   ];
 
   const portfolio = [
     { name: "ব্র্যান্ড লোগো", category: "ব্র্যান্ডিং", image: "🏢" },
     { name: "সোশ্যাল মিডিয়া", category: "ডিজিটাল", image: "📱" },
     { name: "প্রিন্ট মেটেরিয়াল", category: "প্রিন্ট", image: "📄" },
-    { name: "প্যাকেজিং", category: "প্রোডাক্ট", image: "📦" },
+    { name: "প্যাকেজিং", category: "প্রোডাক্ট", image: "📦" }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 px-2">
               গ্রাফিক ডিজাইন সার্ভিস
             </h1>
-            <p className="text-xl mb-8 text-purple-100">
-              আপনার ব্যবসার জন্য আকর্ষণীয় এবং প্রফেশনাল গ্রাফিক ডিজাইন। লোগো,
-              ব্র্যান্ডিং, সোশ্যাল মিডিয়া এবং প্রিন্ট ডিজাইন সলিউশন।
+            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-purple-100 max-w-3xl mx-auto px-4">
+              আপনার ব্যবসার জন্য আকর্ষণীয় এবং প্রফেশনাল গ্রাফিক ডিজাইন। লোগো, ব্র্যান্ডিং, সোশ্যাল মিডিয়া এবং প্রিন্ট ডিজাইন সলিউশন।
             </p>
             <Link
               to="/contact"
-              className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block"
+              className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block text-sm sm:text-base"
             >
               ফ্রি কনসালটেশন
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Features Section */}
-      <div className="py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+      {/* Features Section - 2 cards per row on mobile */}
+      <section className="py-10 sm:py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             আমাদের ডিজাইন সার্ভিস
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+                className="flex flex-col h-full bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-xl transition"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4">{feature.icon}</div>
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Design Tools */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+      {/* Design Tools - Already 2 columns on mobile */}
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             আমরা যেসব টুলস ব্যবহার করি
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
             {designTools.map((tool, index) => (
               <div
                 key={index}
-                className={`${tool.color} p-4 rounded-lg text-center hover:scale-105 transition`}
+                className={`${tool.color} p-4 sm:p-5 rounded-lg text-center hover:scale-105 transition flex flex-col items-center justify-center h-full min-h-[100px] sm:min-h-[120px]`}
               >
-                <div className="text-3xl mb-2">{tool.icon}</div>
-                <p className="text-sm font-semibold">{tool.name}</p>
+                <div className="text-2xl sm:text-3xl mb-2">{tool.icon}</div>
+                <p className="text-xs sm:text-sm font-semibold">{tool.name}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Portfolio Section */}
-      <div className="py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+      {/* Portfolio Section - Already 2 columns on mobile */}
+      <section className="py-10 sm:py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             আমাদের সাম্প্রতিক কাজ
           </h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {portfolio.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition"
+                className="flex flex-col h-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition"
               >
-                <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-6xl">
+                <div className="h-40 sm:h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-5xl sm:text-6xl">
                   {item.image}
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold mb-1">{item.name}</h3>
-                  <p className="text-sm text-gray-600">{item.category}</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center text-center">
+                  <h3 className="font-bold mb-1 text-sm sm:text-base">{item.name}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600">{item.category}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Pricing Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
+      {/* Pricing Section - Mobile: 2 cards then 1 full width */}
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4">
             আপনার বাজেট অনুযায়ী প্যাকেজ
           </h2>
-          <p className="text-center text-gray-600 mb-12">
+          <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm sm:text-base px-4">
             সাশ্রয়ী মূল্যে পেশাদার ডিজাইন
           </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          
+          {/* Grid: 2 columns on mobile, 3 on medium+ */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`rounded-lg p-8 ${
+                className={`flex flex-col h-full rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-8 ${
+                  // Third card spans 2 columns on mobile (full width), 1 on medium+
+                  index === 2 ? 'col-span-2 md:col-span-1' : ''
+                } ${
                   pkg.popular
-                    ? "bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-2xl scale-105"
-                    : "bg-gray-50 shadow-md"
+                    ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white md:transform md:scale-105 shadow-2xl'
+                    : 'bg-white border-2 border-gray-200 shadow-lg'
                 }`}
               >
-                {pkg.popular && (
-                  <div className="bg-yellow-400 text-purple-900 text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
-                    জনপ্রিয়
+                <div className="text-center flex-1 flex flex-col">
+                  {pkg.popular && (
+                    <div className="bg-yellow-400 text-purple-900 text-xs sm:text-sm font-bold px-3 sm:px-4 py-1 rounded-full inline-block mb-3 sm:mb-4 mx-auto">
+                      জনপ্রিয়
+                    </div>
+                  )}
+                  <h3 className={`text-base sm:text-lg md:text-2xl font-bold mb-2`}>
+                    {pkg.name}
+                  </h3>
+                  <div className="mb-4 sm:mb-5 md:mb-6">
+                    <span className="text-xl sm:text-2xl md:text-4xl font-bold">৳{pkg.price}</span>
+                    <div className={`text-xs sm:text-sm ${pkg.popular ? 'text-purple-200' : 'text-gray-600'}`}>
+                      /{pkg.duration}
+                    </div>
                   </div>
-                )}
-                <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">৳{pkg.price}</span>
-                  <span
-                    className={
-                      pkg.popular ? "text-purple-200" : "text-gray-600"
-                    }
+                  
+                  <ul className="space-y-2 md:space-y-3 mb-5 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base flex-1 text-center sm:text-left">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center justify-center sm:justify-start gap-2">
+                        <span className="flex-shrink-0">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Link
+                    to="/contact"
+                    className={`block text-center py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold transition text-xs sm:text-sm md:text-base mt-auto ${
+                      pkg.popular
+                        ? 'bg-white text-purple-600 hover:bg-gray-100'
+                        : 'bg-purple-600 text-white hover:bg-purple-700'
+                    }`}
                   >
-                    /{pkg.duration}
-                  </span>
+                    অর্ডার করুন
+                  </Link>
                 </div>
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="mr-2">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className={`block text-center py-3 rounded-lg font-semibold transition ${
-                    pkg.popular
-                      ? "bg-white text-purple-600 hover:bg-gray-100"
-                      : "bg-purple-600 text-white hover:bg-purple-700"
-                  }`}
-                >
-                  অর্ডার করুন
-                </Link>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+        <div className="container mx-auto px-4 max-w-7xl text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 px-2">
             আপনার ব্র্যান্ডকে আলাদা করুন
           </h2>
-          <p className="text-xl mb-8 text-purple-100">
+          <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-purple-100 px-4">
             ফ্রি কনসালটেশন এবং ডিজাইন মকআপ পান
           </p>
           <Link
             to="/contact"
-            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block"
+            className="bg-white text-purple-600 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block text-sm sm:text-base"
           >
             এখনই যোগাযোগ করুন →
           </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

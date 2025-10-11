@@ -409,268 +409,12 @@ const WebDevelopment = () => {
   ];
 
   const technologies = [
-    {
-      name: "React.js",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="React Icon"
-        >
-          <defs>
-            <linearGradient id="reactGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#61DAFB" />
-              <stop offset="100%" stopColor="#1E40AF" />
-            </linearGradient>
-          </defs>
-
-          {/* Outer Ellipses */}
-          <ellipse
-            cx="32"
-            cy="32"
-            rx="28"
-            ry="10"
-            fill="none"
-            stroke="url(#reactGrad)"
-            strokeWidth="2"
-          />
-          <ellipse
-            cx="32"
-            cy="32"
-            rx="28"
-            ry="10"
-            fill="none"
-            stroke="url(#reactGrad)"
-            strokeWidth="2"
-            transform="rotate(60 32 32)"
-          />
-          <ellipse
-            cx="32"
-            cy="32"
-            rx="28"
-            ry="10"
-            fill="none"
-            stroke="url(#reactGrad)"
-            strokeWidth="2"
-            transform="rotate(120 32 32)"
-          />
-
-          {/* Central Circle */}
-          <circle cx="32" cy="32" r="6" fill="url(#reactGrad)" />
-        </svg>
-      ),
-      color: "bg-blue-50",
-    },
-    {
-      name: "Node.js",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="Node.js Icon"
-        >
-          <defs>
-            <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#339933" />
-              <stop offset="100%" stopColor="#6CC24A" />
-            </linearGradient>
-          </defs>
-
-          {/* Hexagon */}
-          <polygon
-            points="32,4 56,16 56,48 32,60 8,48 8,16"
-            fill="url(#nodeGrad)"
-            stroke="#2C6B2C"
-            strokeWidth="2"
-          />
-
-          {/* JS Text */}
-          <text
-            x="32"
-            y="42"
-            textAnchor="middle"
-            fontSize="18"
-            fontWeight="bold"
-            fill="#fff"
-            fontFamily="Arial, sans-serif"
-          >
-            JS
-          </text>
-        </svg>
-      ),
-      color: "bg-green-50",
-    },
-    {
-      name: "WordPress",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="WordPress Icon"
-        >
-          <defs>
-            <linearGradient id="wpGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#21759B" />
-              <stop offset="100%" stopColor="#00AEEF" />
-            </linearGradient>
-          </defs>
-
-          {/* Circle */}
-          <circle
-            cx="32"
-            cy="32"
-            r="28"
-            fill="url(#wpGrad)"
-            stroke="#1B4D63"
-            strokeWidth="2"
-          />
-
-          {/* W Letter */}
-          <text
-            x="32"
-            y="42"
-            textAnchor="middle"
-            fontSize="24"
-            fontWeight="bold"
-            fill="#fff"
-            fontFamily="Arial, sans-serif"
-          >
-            W
-          </text>
-        </svg>
-      ),
-      color: "bg-purple-50",
-    },
-    {
-      name: "HTML5/CSS3",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="HTML5 Icon"
-        >
-          <defs>
-            <linearGradient id="htmlGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#E34F26" />
-              <stop offset="100%" stopColor="#F06529" />
-            </linearGradient>
-          </defs>
-
-          {/* Hexagon */}
-          <polygon
-            points="32,4 56,16 56,48 32,60 8,48 8,16"
-            fill="url(#htmlGrad)"
-            stroke="#B53A1D"
-            strokeWidth="2"
-          />
-
-          {/* HTML5 Text */}
-          <text
-            x="32"
-            y="42"
-            textAnchor="middle"
-            fontSize="16"
-            fontWeight="bold"
-            fill="#fff"
-            fontFamily="Arial, sans-serif"
-          >
-            HTML
-          </text>
-        </svg>
-      ),
-      color: "bg-orange-50",
-    },
-    {
-      name: "PHP",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="PHP Icon"
-        >
-          <defs>
-            <linearGradient id="phpGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#8892BE" />
-              <stop offset="100%" stopColor="#6E7B9C" />
-            </linearGradient>
-          </defs>
-
-          {/* Hexagon */}
-          <polygon
-            points="32,4 56,16 56,48 32,60 8,48 8,16"
-            fill="url(#phpGrad)"
-            stroke="#555A7E"
-            strokeWidth="2"
-          />
-
-          {/* PHP Text */}
-          <text
-            x="32"
-            y="40"
-            textAnchor="middle"
-            fontSize="16"
-            fontWeight="bold"
-            fill="#fff"
-            fontFamily="Arial, sans-serif"
-          >
-            PHP
-          </text>
-        </svg>
-      ),
-      color: "bg-indigo-50",
-    },
-    {
-      name: "MongoDB",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          width="64"
-          height="full"
-          role="img"
-          aria-label="MongoDB Icon"
-        >
-          <defs>
-            <linearGradient id="mongoGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#4DB33D" />
-              <stop offset="100%" stopColor="#87C540" />
-            </linearGradient>
-          </defs>
-
-          {/* Hexagon */}
-          <polygon
-            points="32,4 56,16 56,48 32,60 8,48 8,16"
-            fill="url(#mongoGrad)"
-            stroke="#3A8135"
-            strokeWidth="2"
-          />
-
-          {/* Leaf / Mongo symbol */}
-          <path
-            d="M32 14 C28 20, 34 28, 32 36 C36 28, 28 22, 32 14 Z"
-            fill="#fff"
-            stroke="#3A8135"
-            strokeWidth="1.5"
-          />
-        </svg>
-      ),
-      color: "bg-teal-50",
-    },
+    { name: "React.js", icon: "⚛️", color: "bg-blue-50" },
+    { name: "Node.js", icon: "🟢", color: "bg-green-50" },
+    { name: "WordPress", icon: "📝", color: "bg-purple-50" },
+    { name: "HTML5/CSS3", icon: "🎨", color: "bg-orange-50" },
+    { name: "PHP", icon: "🐘", color: "bg-indigo-50" },
+    { name: "MongoDB", icon: "🍃", color: "bg-teal-50" },
   ];
 
   const packages = [
@@ -734,9 +478,9 @@ const WebDevelopment = () => {
   ];
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white pt-32 pb-20">
+      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <div className="text-6xl mb-6">
@@ -944,15 +688,11 @@ const WebDevelopment = () => {
                 key={index}
                 className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
               >
-                <div className="text-4xl mb-4 flex justify-center items-center">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-center">
-                  {service.description}
-                </p>
+                <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>
