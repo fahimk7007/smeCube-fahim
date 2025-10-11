@@ -73,7 +73,7 @@ export default function SMECubeLanding() {
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
-      title: "ডিজাইন হোস্টিং",
+      title: "ডোমেইন হোস্টিং",
       desc: "নিরাপদ এবং দ্রুত হোস্টিং সেবা",
       gradient: "from-orange-500 to-red-600",
       iconBg: "bg-orange-50",
