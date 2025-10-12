@@ -77,7 +77,7 @@ const services = [
     title: "ইইস্যু ফিক্সিং", 
     color: "bg-red-50", 
     borderColor: "border-red-200",
-    link: "/services/ui-features"
+    link: "services/ui-features"
   },
   { 
     icon: "🗂️", 
