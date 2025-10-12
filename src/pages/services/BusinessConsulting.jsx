@@ -1,66 +1,78 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Target, Shield, Award, BarChart3, Briefcase } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle,
+  Target,
+  Shield,
+  Award,
+  BarChart3,
+  Briefcase,
+} from "lucide-react";
 
 const BusinessConsulting = () => {
-  const [activeTab, setActiveTab] = useState('strategy');
+  const [activeTab, setActiveTab] = useState("strategy");
 
   // সেবাসমূহ
   const services = [
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'ব্যবসায়িক কৌশল',
-      description: 'আপনার ব্যবসার জন্য কাস্টমাইজড কৌশলগত পরিকল্পনা এবং রোডম্যাপ তৈরি',
-      features: ['বাজার বিশ্লেষণ', 'প্রতিযোগিতা মূল্যায়ন', 'কৌশলগত পরিকল্পনা'],
+      title: "ব্যবসায়িক কৌশল",
+      description:
+        "আপনার ব্যবসার জন্য কাস্টমাইজড কৌশলগত পরিকল্পনা এবং রোডম্যাপ তৈরি",
+      features: ["বাজার বিশ্লেষণ", "প্রতিযোগিতা মূল্যায়ন", "কৌশলগত পরিকল্পনা"],
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
-      title: 'বাজার উন্নয়ন',
-      description: 'আপনার পণ্য ও সেবার জন্য নতুন বাজার ও গ্রাহক খুঁজে বের করুন',
-      features: ['বাজার গবেষণা', 'গ্রাহক প্রোফাইলিং', 'বিক্রয় কৌশল'],
+      title: "বাজার উন্নয়ন",
+      description: "আপনার পণ্য ও সেবার জন্য নতুন বাজার ও গ্রাহক খুঁজে বের করুন",
+      features: ["বাজার গবেষণা", "গ্রাহক প্রোফাইলিং", "বিক্রয় কৌশল"],
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'ঝুঁকি ব্যবস্থাপনা',
-      description: 'ব্যবসায়িক ঝুঁকি চিহ্নিতকরণ এবং ব্যবস্থাপনা কৌশল',
-      features: ['ঝুঁকি মূল্যায়ন', 'সতর্কতা পরিকল্পনা', 'বিমা কৌশল'],
+      title: "ঝুঁকি ব্যবস্থাপনা",
+      description: "ব্যবসায়িক ঝুঁকি চিহ্নিতকরণ এবং ব্যবস্থাপনা কৌশল",
+      features: ["ঝুঁকি মূল্যায়ন", "সতর্কতা পরিকল্পনা", "বিমা কৌশল"],
     },
   ];
 
   const stats = [
-    { number: '150+', label: 'সন্তুষ্ট ক্লায়েন্ট' },
-    { number: '15+', label: 'বছরের অভিজ্ঞতা' },
+    { number: "150+", label: "সন্তুষ্ট ক্লায়েন্ট" },
+    { number: "15+", label: "বছরের অভিজ্ঞতা" },
   ];
 
   const steps = [
     {
-      number: '০১',
-      title: 'পরামর্শ সেশন',
-      description: 'বিনামূল্যে প্রাথমিক পরামর্শ এবং প্রয়োজনীয়তা বিশ্লেষণ',
+      number: "০১",
+      title: "পরামর্শ সেশন",
+      description: "বিনামূল্যে প্রাথমিক পরামর্শ এবং প্রয়োজনীয়তা বিশ্লেষণ",
       icon: <Briefcase className="w-8 h-8 text-rose-600" />,
     },
     {
-      number: '০২',
-      title: 'কৌশল উন্নয়ন',
-      description: 'আপনার ব্যবসার জন্য কাস্টমাইজড কৌশল ও পরিকল্পনা তৈরি',
+      number: "০২",
+      title: "কৌশল উন্নয়ন",
+      description: "আপনার ব্যবসার জন্য কাস্টমাইজড কৌশল ও পরিকল্পনা তৈরি",
       icon: <Target className="w-8 h-8 text-rose-600" />,
     },
     {
-      number: '০৩',
-      title: 'বাস্তবায়ন',
-      description: 'পরিকল্পনা বাস্তবায়ন এবং নিয়মিত মনিটরিং',
+      number: "০৩",
+      title: "বাস্তবায়ন",
+      description: "পরিকল্পনা বাস্তবায়ন এবং নিয়মিত মনিটরিং",
       icon: <CheckCircle className="w-8 h-8 text-rose-600" />,
     },
     {
-      number: '০৪',
-      title: 'ফলাফল মূল্যায়ন',
-      description: 'কর্মক্ষমতা ট্র্যাকিং এবং প্রয়োজনীয় সমন্বয়',
+      number: "০৪",
+      title: "ফলাফল মূল্যায়ন",
+      description: "কর্মক্ষমতা ট্র্যাকিং এবং প্রয়োজনীয় সমন্বয়",
       icon: <Award className="w-8 h-8 text-rose-600" />,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+    <div
+      className="min-h-screen bg-white"
+      style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
       `}</style>
@@ -79,7 +91,11 @@ const BusinessConsulting = () => {
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Section */}
-            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -90,14 +106,15 @@ const BusinessConsulting = () => {
               </motion.span>
 
               <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-                ব্যবসায়িক পরামর্শ{' '}
+                ব্যবসায়িক পরামর্শ{" "}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 mt-2">
                   সেবা
                 </span>
               </h1>
 
               <p className="text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed">
-                আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যান আমাদের বিশেষজ্ঞ পরামর্শদাতাদের সাথে
+                আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যান আমাদের বিশেষজ্ঞ
+                পরামর্শদাতাদের সাথে
               </p>
 
               {/* Stats */}
@@ -110,7 +127,9 @@ const BusinessConsulting = () => {
                     transition={{ delay: 0.4 + index * 0.1 }}
                     className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
                   >
-                    <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                    <div className="text-3xl font-bold text-white mb-1">
+                      {stat.number}
+                    </div>
                     <div className="text-gray-300 text-sm">{stat.label}</div>
                   </motion.div>
                 ))}
@@ -149,7 +168,7 @@ const BusinessConsulting = () => {
                   alt="Business Consulting"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.target.style.display = "none";
                     e.target.parentElement.innerHTML =
                       '<div class="w-full h-96 bg-gradient-to-br from-red-500/20 to-rose-500/20 flex items-center justify-center rounded-2xl"><div class="text-white text-center"><div class="text-6xl mb-4">📊</div><div class="text-xl">Business Growth</div></div></div>';
                   }}
@@ -209,11 +228,18 @@ const BusinessConsulting = () => {
               <div className="text-red-600 mb-6 bg-gradient-to-br from-red-100 to-rose-100 w-16 h-16 rounded-2xl flex items-center justify-center">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {service.description}
+              </p>
               <ul className="space-y-3">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-gray-700">
+                  <li
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-700"
+                  >
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
@@ -229,8 +255,12 @@ const BusinessConsulting = () => {
         <motion.span className="inline-block px-4 py-2 bg-rose-100 text-rose-600 rounded-full text-sm font-semibold mb-4">
           কাজের প্রক্রিয়া
         </motion.span>
-        <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">আমাদের কাজের প্রক্রিয়া</h2>
-        <p className="text-lg text-gray-600 mb-16">সহজ এবং কার্যকরী ধাপে আপনার ব্যবসার উন্নয়ন</p>
+        <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+          আমাদের কাজের প্রক্রিয়া
+        </h2>
+        <p className="text-lg text-gray-600 mb-16">
+          সহজ এবং কার্যকরী ধাপে আপনার ব্যবসার উন্নয়ন
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-[10%]">
           {steps.map((step, index) => (
@@ -241,9 +271,15 @@ const BusinessConsulting = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:-translate-y-2 transition-all"
             >
-              <div className="text-4xl font-bold text-rose-600 mb-4">{step.number}</div>
-              <div className="flex items-center justify-center mb-6">{step.icon}</div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+              <div className="text-4xl font-bold text-rose-600 mb-4">
+                {step.number}
+              </div>
+              <div className="flex items-center justify-center mb-6">
+                {step.icon}
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                {step.title}
+              </h3>
               <p className="text-gray-600">{step.description}</p>
             </motion.div>
           ))}
@@ -252,9 +288,12 @@ const BusinessConsulting = () => {
 
       {/* ================= CTA Section ================= */}
       <section className="py-24 bg-gradient-to-r from-red-600 to-rose-500 text-white text-center">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-6">আপনার ব্যবসার রূপান্তর শুরু করুন</h2>
+        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          আপনার ব্যবসার রূপান্তর শুরু করুন
+        </h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
-          আজই আমাদের বিশেষজ্ঞ দলের সাথে কথা বলুন এবং দেখুন কিভাবে আমরা আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যেতে পারি
+          আজই আমাদের বিশেষজ্ঞ দলের সাথে কথা বলুন এবং দেখুন কিভাবে আমরা আপনার
+          ব্যবসাকে নতুন উচ্চতায় নিয়ে যেতে পারি
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
