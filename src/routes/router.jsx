@@ -101,7 +101,7 @@ export const router = createBrowserRouter([
       {
         path: "services/hosting",
         // element: <DomainHosting />,
-        element: <DomainHostings />,
+        element: <DomainHosting />,
       },
       {
         path: "services/web-development",
@@ -114,3 +114,8 @@ export const router = createBrowserRouter([
     ]
   }
 ]);
+
+
+
+
+
