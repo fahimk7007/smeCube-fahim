@@ -3,12 +3,13 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const BusinessTraining = () => {
+  
   const stats = [
     { number: "৫০০+", label: "ট্রেইন্ড উদ্যোক্তা" },
     { number: "৯৫%", label: "সফলতা হার" },
     { number: "৩০+", label: "রিয়েল লাইভ সেশন" },
     { number: "২৪/৭", label: "সাপোর্ট" },
-  ];
+  ]; */
 
   const features = [
     {
@@ -97,54 +98,90 @@ const BusinessTraining = () => {
     },
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const slideIn = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
   return (
-    <div className="min-h-screen mt-5">
+    <div className="font-sans text-gray-800 bg-gradient-to-br from-sky-50 via-purple-50 to-pink-50 min-h-screen">
       {/* Hero Section */}
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden">
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden h-[80vh] flex flex-col justify-center items-center"
+      >
         {/* Decorative Gradient Glow */}
-        <div className="absolute inset-0">
-          <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-400 rounded-full blur-3xl opacity-20"></div>
-          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
-        </div>
+        <div className="max-w-6xl mx-auto px-4">
+          {/* <div className="absolute inset-0">
+            <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-400 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
+          </div> */}
 
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg"
-          >
-            বিজনেস ট্রেইনিং প্রোগ্রাম
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed"
-          >
-            আপনার উদ্যোক্তা যাত্রা শুরু করুন বাস্তবভিত্তিক বিজনেস ট্রেইনিংয়ের
-            মাধ্যমে।
-          </motion.p>
-
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            <Link
-              to="/contact"
-              className="bg-white text-indigo-700 px-10 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-indigo-50 hover:shadow-lg transition-all duration-300"
+          <div className="relative max-w-6xl px-6 text-center flex flex-col items-center justify-center">
+            <motion.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-16 sm:mt-0"
             >
-              এখনই রেজিস্ট্রেশন করুন →
-            </Link>
-          </motion.div>
+              বিজনেস ট্রেইনিং প্রোগ্রাম
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 1 }}
+              className="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto leading-relaxed"
+            >
+              আপনার উদ্যোক্তা যাত্রা শুরু করুন বাস্তবভিত্তিক বিজনেস ট্রেইনিংয়ের
+              মাধ্যমে।
+            </motion.p>
+
+            <div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              <Link
+                to="/contact"
+                className="bg-white text-indigo-700 px-10 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-indigo-50 hover:shadow-lg transition-all duration-300"
+              >
+                এখনই রেজিস্ট্রেশন করুন →
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.section>
 
       {/* Stats Section */}
-      <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
+      {/*  <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#dbeafe,_transparent_40%)]"></div>
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -168,56 +205,99 @@ const BusinessTraining = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* Features */}
-      <div className="py-16 bg-gradient-to-br from-indigo-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            কোর্সের বিশেষ ফিচার
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((f, i) => (
+      {/* Features Section */}
+      <section className="py-20 mx-auto max-w-6xl px-[10%]">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent py-1.5"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          কোর্সের বিশেষ ফিচার
+        </motion.h2>
+
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              className="p-6 bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100/50 cursor-pointer group backdrop-blur-sm"
+              variants={scaleIn}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
               <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition"
+                className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                whileHover={{
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.5 },
+                }}
               >
-                <div className="text-4xl mb-4">{f.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-                <p className="text-gray-600">{f.description}</p>
+                {f.icon}
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-      {/* Process */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">কীভাবে কাজ করে?</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors">
+                {f.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{f.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-gradient-to-r from-sky-50/50 to-blue-50/50">
+        <div className="mx-auto max-w-6xl px-[15%] text-center">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent py-2"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            কীভাবে কাজ করে?
+          </motion.h2>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             {steps.map((s, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className="p-6"
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 border border-blue-100/50 group"
+                variants={slideIn}
+                whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-indigo-600 to-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-sky-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md">
                   {s.step}
                 </div>
-                <h3 className="font-bold mb-2">{s.title}</h3>
-                <p className="text-gray-600 text-sm">{s.desc}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {s.desc}
+                </p>
+                <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-sky-600 rounded-full mt-4 mx-auto group-hover:w-16 transition-all duration-300"></div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
+
       {/* Packages */}
       <div className="py-16 bg-gradient-to-br from-indigo-50 to-blue-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
+        <div className="py-20 mx-auto max-w-6xl px-[15%]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent py-2">
             আমাদের ট্রেইনিং প্যাকেজ
           </h2>
           <p className="text-center text-gray-600 mb-12">
@@ -228,7 +308,7 @@ const BusinessTraining = () => {
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
-                className={`rounded-lg p-8 transition-all ${
+                className={`rounded-lg p-3 transition-all ${
                   pkg.popular
                     ? "bg-gradient-to-br from-indigo-600 to-blue-600 text-white shadow-2xl scale-105"
                     : "bg-white shadow-md"
@@ -239,9 +319,13 @@ const BusinessTraining = () => {
                     জনপ্রিয়
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl md:text-lg font-bold mb-2">
+                  {pkg.name}
+                </h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-bold">৳{pkg.price}</span>
+                  <span className="text-4xl md:text-2xl font-bold">
+                    ৳{pkg.price}
+                  </span>
                 </div>
                 <div
                   className={`mb-6 text-sm ${
@@ -260,7 +344,7 @@ const BusinessTraining = () => {
                 </ul>
                 <Link
                   to="/contact"
-                  className={`block text-center py-3 rounded-lg font-semibold transition ${
+                  className={`block text-center p-2 rounded-lg font-semibold transition ${
                     pkg.popular
                       ? "bg-white text-indigo-600 hover:bg-gray-100"
                       : "bg-indigo-600 text-white hover:bg-indigo-700"
@@ -273,8 +357,33 @@ const BusinessTraining = () => {
           </div>
         </div>
       </div>
+
       {/* CTA */}
-      <div className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
+      <section className="py-20 mx-auto max-w-6xl px-[15%]">
+        <motion.div
+          className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-3xl p-12 text-center shadow-2xl"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            আপনার ব্যবসার পরবর্তী ধাপ এখান থেকেই শুরু করুন!
+          </h3>
+          <p className="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">
+            অভিজ্ঞ মেন্টরের সহায়তায় আজই নিজের ব্যবসাকে আরও শক্তিশালী করুন।
+          </p>
+          <motion.button
+            className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            ফ্রী কন্সাল্টেশন বুক করুন
+          </motion.button>
+        </motion.div>
+      </section>
+
+      {/* <div className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">
           আপনার ব্যবসার পরবর্তী ধাপ এখান থেকেই শুরু করুন!
         </h2>
@@ -287,7 +396,7 @@ const BusinessTraining = () => {
         >
           ফ্রি পরামর্শ নিন →
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
