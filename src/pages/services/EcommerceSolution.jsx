@@ -12,6 +12,20 @@ const pageData = {
     { icon: <Shield className="w-6 h-6" />, title: "নিরাপত্তা ও সুরক্ষা", description: "SSL সার্টিফিকেট এবং নিরাপদ পেমেন্টের নিশ্চয়তা।" },
     { icon: <HeadphonesIcon className="w-6 h-6" />, title: "সেরা বিক্রয় পরবর্তী সেবা", description: "যেকোনো প্রয়োজনে আমাদের সাপোর্ট টিম সবসময় প্রস্তুত।" },
   ],
+  services: [
+    { title: "ফেসবুক বুস্টিং", description: "টার্গেটেড অডিয়েন্সে পৌঁছান এবং বিক্রয় বাড়ান", bgColor: "bg-blue-500" },
+    { title: "ই-কমার্স সলিউশন", description: "সম্পূর্ণ অনলাইন শপ সেটআপ এবং ম্যানেজমেন্ট", bgColor: "bg-purple-500" },
+    { title: "ডেভেলপ ওয়েবসাইট", description: "আধুনিক এবং রেসপন্সিভ ওয়েবসাইট ডেভেলপমেন্ট", bgColor: "bg-green-500" },
+    { title: "ডিজাইন হোস্টিং", description: "নিরাপদ এবং দ্রুত হোস্টিং সেবা", bgColor: "bg-orange-500" },
+    { title: "ল্যান্ডিং পেজ", description: "কনভার্শন অপটিমাইজড ল্যান্ডিং পেজ ডিজাইন", bgColor: "bg-pink-500" },
+    { title: "বাল্ক এসএমএস", description: "বাল্ক এসএমএস মার্কেটিং সার্ভিস", bgColor: "bg-indigo-500" },
+    { title: "বিজনেস কনসালটিং", description: "ব্যবসায়িক পরামর্শ এবং কৌশল উন্নয়ন", bgColor: "bg-teal-500" },
+    { title: "ব্র্যান্ড পেইজ সেটআপ", description: "প্রফেশনাল বিজনেস পেজ সেটআপ", bgColor: "bg-amber-500" },
+    { title: "গ্রাফিক ডিজাইন", description: "লোগো, ব্যানার এবং ব্র্যান্ডিং ডিজাইন", bgColor: "bg-rose-500" },
+    { title: "চাটবট সেটআপ", description: "অটোমেটেড কাস্টমার সাপোর্ট সিস্টেম", bgColor: "bg-emerald-500" },
+    { title: "ইস্যু ফিক্সিং", description: "বিশেষ প্যাকেজ এবং অফার", bgColor: "bg-cyan-500" },
+    { title: "বিজনেস ট্রেনিং", description: "ডিজিটাল মার্কেটিং প্রশিক্ষণ", bgColor: "bg-violet-500" },
+  ],
   clients: [
     { name: "bKash", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bkash_logo.svg/1280px-Bkash_logo.svg.png" },
     { name: "Daraz", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Daraz_logo.svg/2560px-Daraz_logo.svg.png" },
@@ -55,7 +69,7 @@ const pageData = {
   ],
 };
 
-// Animation variants
+// Animation variants (keeping existing ones)
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -116,7 +130,7 @@ const EcommerceSolution = () => {
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
       `}</style>
 
-      {/* HERO SECTION - Soft bluish theme, smaller height */}
+      {/* HERO SECTION - unchanged */}
       <motion.section
         className="relative pt-20 pb-24 md:pt-32 md:pb-32 overflow-hidden"
         initial="hidden"
@@ -212,7 +226,7 @@ const EcommerceSolution = () => {
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
-                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white/50 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300"
+                className="px-8 py-4 bg-purple/20 backdrop-blur-sm text-white border-2 border-white/50 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -223,7 +237,7 @@ const EcommerceSolution = () => {
         </div>
       </motion.section>
 
-      {/* FEATURES - With gradient hover effects */}
+      {/* FEATURES SECTION - unchanged */}
       <section className="py-12 md:py-20 mx-auto max-w-7xl px-4 md:px-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-cyan-50"></div>
@@ -287,65 +301,7 @@ const EcommerceSolution = () => {
         </motion.div>
       </section>
 
-      {/* CLIENTS - Smaller section with demo brands only */}
-      <motion.section 
-        className="py-8 md:py-12 bg-white/50 relative overflow-hidden"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={containerVariants}
-      >
-        <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-100 to-purple-100"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-16">
-          <motion.div
-            className="text-center mb-6 md:mb-8"
-            variants={itemVariants}
-          >
-            <motion.span
-              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 rounded-full text-sm font-semibold mb-4 shadow-sm hover:from-blue-200 hover:to-purple-200 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              বিশ্বস্ত ব্র্যান্ড
-            </motion.span>
-            <motion.h2
-              className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-              whileHover={{ y: -3 }}
-            >
-              আমাদের সম্মানিত ক্লায়েন্টরা
-            </motion.h2>
-          </motion.div>
-          
-          <motion.div
-            className="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-6 items-center justify-center"
-            variants={staggerContainer}
-          >
-            {pageData.clients.slice(0, 5).map((client, i) => (
-              <motion.div
-                key={i}
-                className="bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 aspect-square flex items-center justify-center group hover:border-blue-200"
-                variants={scaleIn}
-                whileHover={{ 
-                  scale: 1.08, 
-                  y: -3
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="w-full h-auto max-h-8 md:max-h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<div class="text-gray-400 text-sm">${client.name}</div>`;
-                  }}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* DEMO PROJECTS */}
+      {/* PROJECTS SECTION - Moved before clients */}
       <section className="py-12 md:py-20 mx-auto max-w-7xl px-4 md:px-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-gradient-to-b from-blue-50 to-white"></div>
         <motion.div
@@ -400,7 +356,126 @@ const EcommerceSolution = () => {
         </motion.div>
       </section>
 
-      {/* PROCESS SECTION */}
+      {/* SERVICES SECTION - Same appearance as projects with background colors */}
+      <section className="py-12 md:py-20 mx-auto max-w-7xl px-4 md:px-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-gradient-to-b from-purple-50 to-pink-50"></div>
+        <motion.div
+          className="relative z-10"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
+            variants={itemVariants}
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            আমাদের সার্ভিস
+          </motion.h2>
+          
+          <motion.div
+            className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6"
+            variants={staggerContainer}
+          >
+            {pageData.services.map((service, i) => (
+              <motion.div
+                key={i}
+                className={`overflow-hidden rounded-xl md:rounded-2xl shadow-md hover:shadow-xl relative group ${service.bgColor} aspect-square transition-all duration-500 text-white flex flex-col justify-center items-center p-4 md:p-6`}
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.02,
+                  y: -5,
+                  boxShadow: `0 20px 40px ${service.bgColor === 'bg-blue-500' ? 'rgba(59, 130, 246, 0.3)' : 
+                    service.bgColor === 'bg-purple-500' ? 'rgba(147, 51, 234, 0.3)' :
+                    service.bgColor === 'bg-green-500' ? 'rgba(34, 197, 94, 0.3)' :
+                    service.bgColor === 'bg-orange-500' ? 'rgba(249, 115, 22, 0.3)' :
+                    service.bgColor === 'bg-pink-500' ? 'rgba(236, 72, 153, 0.3)' :
+                    service.bgColor === 'bg-indigo-500' ? 'rgba(99, 102, 241, 0.3)' :
+                    service.bgColor === 'bg-teal-500' ? 'rgba(20, 184, 166, 0.3)' :
+                    service.bgColor === 'bg-amber-500' ? 'rgba(245, 158, 11, 0.3)' :
+                    service.bgColor === 'bg-rose-500' ? 'rgba(244, 63, 94, 0.3)' :
+                    service.bgColor === 'bg-emerald-500' ? 'rgba(16, 185, 129, 0.3)' :
+                    service.bgColor === 'bg-cyan-500' ? 'rgba(6, 182, 212, 0.3)' : 
+                    'rgba(139, 92, 246, 0.3)'}`
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between">
+                  <div className="flex-1"></div>
+                  <div className="pb-3 md:pb-6 px-2">
+                    <motion.button
+                      className="w-full bg-white text-gray-800 rounded-lg font-semibold py-2 px-4 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      বিস্তারিত
+                    </motion.button>
+                  </div>
+                </div>
+                
+                <div className="relative z-10 text-center">
+                  <motion.h3 className="text-sm md:text-lg font-bold mb-2">{service.title}</motion.h3>
+                  <motion.p className="text-xs md:text-sm opacity-90 leading-relaxed">{service.description}</motion.p>
+                </div>
+                
+                <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-black/70 text-white px-2 py-1 rounded-full text-[10px] md:text-sm font-medium backdrop-blur-sm">
+                  সার্ভিস {i + 1}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* CLIENTS SECTION - After projects */}
+      <section className="py-12 md:py-16 mx-auto max-w-7xl px-4 md:px-16">
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold mb-2 text-gray-800"
+            variants={itemVariants}
+          >
+            বিশ্বস্ত ব্র্যান্ড
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600"
+            variants={itemVariants}
+          >
+            আমাদের সম্মানিত ক্লায়েন্টরা
+          </motion.p>
+        </motion.div>
+        
+        <motion.div
+          className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+          variants={staggerContainer}
+        >
+          {pageData.clients.map((client, i) => (
+            <motion.div
+              key={i}
+              className="flex-shrink-0"
+              variants={scaleIn}
+              whileHover={{ scale: 1.1 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = `<div class="text-gray-600 font-medium">${client.name}</div>`;
+                }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* PROCESS SECTION - unchanged */}
       <section className="py-12 md:py-20 bg-white/50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-100 via-purple-100 to-cyan-100"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-16">
@@ -465,7 +540,7 @@ const EcommerceSolution = () => {
         </div>
       </section>
 
-      {/* CTA SECTION */}
+      {/* CTA SECTION - unchanged */}
       <section className="py-12 md:py-20 mx-auto max-w-7xl px-4 md:px-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10"></div>
         <motion.div
