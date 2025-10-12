@@ -127,18 +127,23 @@ const BusinessTraining = () => {
     show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
   return (
-    <div className="min-h-screen">
+    <div className="font-sans text-gray-800 bg-gradient-to-br from-sky-50 via-purple-50 to-pink-50 min-h-screen">
       {/* Hero Section */}
-
-      <section className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden">
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden h-[80vh] flex flex-col justify-center items-center"
+      >
         {/* Decorative Gradient Glow */}
         <div className="max-w-6xl mx-auto px-4">
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-400 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-400 rounded-full blur-3xl opacity-20"></div>
-          </div>
+          </div> */}
 
-          <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <div className="relative max-w-6xl px-6 text-center flex flex-col items-center justify-center">
             <motion.h1
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -158,7 +163,7 @@ const BusinessTraining = () => {
               মাধ্যমে।
             </motion.p>
 
-            <motion.div
+            <div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -169,10 +174,10 @@ const BusinessTraining = () => {
               >
                 এখনই রেজিস্ট্রেশন করুন →
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       {/*  <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
@@ -204,7 +209,7 @@ const BusinessTraining = () => {
       {/* Features Section */}
       <section className="py-20 mx-auto max-w-6xl px-[10%]">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent py-1"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent py-1.5"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -290,8 +295,8 @@ const BusinessTraining = () => {
 
       {/* Packages */}
       <div className="py-16 bg-gradient-to-br from-indigo-50 to-blue-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
+        <div className="py-20 mx-auto max-w-6xl px-[15%]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent py-2">
             আমাদের ট্রেইনিং প্যাকেজ
           </h2>
           <p className="text-center text-gray-600 mb-12">
@@ -347,8 +352,33 @@ const BusinessTraining = () => {
           </div>
         </div>
       </div>
+
       {/* CTA */}
-      <div className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
+      <section className="py-20 mx-auto max-w-6xl px-[15%]">
+        <motion.div
+          className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-3xl p-12 text-center shadow-2xl"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            আপনার ব্যবসার পরবর্তী ধাপ এখান থেকেই শুরু করুন!
+          </h3>
+          <p className="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">
+            অভিজ্ঞ মেন্টরের সহায়তায় আজই নিজের ব্যবসাকে আরও শক্তিশালী করুন।
+          </p>
+          <motion.button
+            className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            ফ্রী কন্সাল্টেশন বুক করুন
+          </motion.button>
+        </motion.div>
+      </section>
+
+      {/* <div className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">
           আপনার ব্যবসার পরবর্তী ধাপ এখান থেকেই শুরু করুন!
         </h2>
@@ -361,7 +391,7 @@ const BusinessTraining = () => {
         >
           ফ্রি পরামর্শ নিন →
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
