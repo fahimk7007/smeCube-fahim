@@ -4,24 +4,78 @@ import { motion } from "framer-motion";
 // HELPER DATA //
 const pageData = {
   features: [
-    { icon: "🎨", title: "পার্সোনালাইজড ডিজাইন", description: "আপনার ব্র্যান্ডের পরিচয় ফুটিয়ে তোলে এমন ইউনিক ডিজাইন।" },
-    { icon: "🛒", title: "পূর্ণাঙ্গ শপিং কার্ট", description: "সহজ চেকআউট এবং পেমেন্ট গেটওয়ে ইন্টিগ্রেশন।" },
-    { icon: "📱", title: "সম্পূর্ণ রেসপন্সিভ", description: "মোবাইল, ট্যাবলেট ও ডেক্সটপে নিখুঁতভাবে কাজ করে।" },
-    { icon: "⚡", title: "দ্রুত লোডিং স্পিড", description: "সর্বোত্তম পারফরম্যান্সের জন্য অপটিমাইজড ওয়েবসাইট।" },
-    { icon: "🔒", title: "নিরাপত্তা ও সুরক্ষা", description: "SSL সার্টিফিকেট এবং নিরাপদ পেমেন্টের নিশ্চয়তা।" },
-    { icon: "🛠️", title: "সেরা বিক্রয় পরবর্তী সেবা", description: "যেকোনো প্রয়োজনে আমাদের সাপোর্ট টিম সবসময় প্রস্তুত।" },
+    {
+      icon: "🎨",
+      title: "পার্সোনালাইজড ডিজাইন",
+      description: "আপনার ব্র্যান্ডের পরিচয় ফুটিয়ে তোলে এমন ইউনিক ডিজাইন।",
+    },
+    {
+      icon: "🛒",
+      title: "পূর্ণাঙ্গ শপিং কার্ট",
+      description: "সহজ চেকআউট এবং পেমেন্ট গেটওয়ে ইন্টিগ্রেশন।",
+    },
+    {
+      icon: "📱",
+      title: "সম্পূর্ণ রেসপন্সিভ",
+      description: "মোবাইল, ট্যাবলেট ও ডেক্সটপে নিখুঁতভাবে কাজ করে।",
+    },
+    {
+      icon: "⚡",
+      title: "দ্রুত লোডিং স্পিড",
+      description: "সর্বোত্তম পারফরম্যান্সের জন্য অপটিমাইজড ওয়েবসাইট।",
+    },
+    {
+      icon: "🔒",
+      title: "নিরাপত্তা ও সুরক্ষা",
+      description: "SSL সার্টিফিকেট এবং নিরাপদ পেমেন্টের নিশ্চয়তা।",
+    },
+    {
+      icon: "🛠️",
+      title: "সেরা বিক্রয় পরবর্তী সেবা",
+      description: "যেকোনো প্রয়োজনে আমাদের সাপোর্ট টিম সবসময় প্রস্তুত।",
+    },
   ],
   clients: [
-    { name: "bKash", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bkash_logo.svg/1280px-Bkash_logo.svg.png" },
-    { name: "Daraz", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Daraz_logo.svg/2560px-Daraz_logo.svg.png" },
-    { name: "Pathao", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pathao_Logo.svg/1280px-Pathao_Logo.svg.png" },
-    { name: "Rokomari", logo: "https://www.rokomari.com/static/200/images/rokomari_logo.png" },
-    { name: "Grameenphone", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Grameenphone_Logo.svg/1280px-Grameenphone_Logo.svg.png" },
-    { name: "Shopify", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" },
-    { name: "Unilever", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Unilever_logo.svg/2560px-Unilever_logo.svg.png" },
-    { name: "Square", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Square_Pharmaceuticals_logo.svg/2560px-Square_Pharmaceuticals_logo.svg.png" },
-    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" },
-    { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.svg" },
+    {
+      name: "bKash",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bkash_logo.svg/1280px-Bkash_logo.svg.png",
+    },
+    {
+      name: "Daraz",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Daraz_logo.svg/2560px-Daraz_logo.svg.png",
+    },
+    {
+      name: "Pathao",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pathao_Logo.svg/1280px-Pathao_Logo.svg.png",
+    },
+    {
+      name: "Rokomari",
+      logo: "https://www.rokomari.com/static/200/images/rokomari_logo.png",
+    },
+    {
+      name: "Grameenphone",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Grameenphone_Logo.svg/1280px-Grameenphone_Logo.svg.png",
+    },
+    {
+      name: "Shopify",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg",
+    },
+    {
+      name: "Unilever",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Unilever_logo.svg/2560px-Unilever_logo.svg.png",
+    },
+    {
+      name: "Square",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Square_Pharmaceuticals_logo.svg/2560px-Square_Pharmaceuticals_logo.svg.png",
+    },
+    {
+      name: "Google",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+    },
+    {
+      name: "Meta",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.svg",
+    },
   ],
   portfolioImages: [
     "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&w=800",
@@ -32,10 +86,30 @@ const pageData = {
     "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&w=800",
   ],
   processSteps: [
-    { step: "০১", title: "আলোচনা ও পরিকল্পনা", description: "আপনার ব্যবসার লক্ষ্য এবং প্রয়োজন নিয়ে আমরা বিস্তারিত আলোচনা করি।" },
-    { step: "০২", title: "ডিজাইন ও প্রোটোটাইপ", description: "আপনার ব্র্যান্ডের সাথে মিল রেখে একটি আকর্ষণীয় ডিজাইন তৈরি করি।" },
-    { step: "০৩", title: "ডেভেলপমেন্ট", description: "অনুমোদিত ডিজাইনের উপর ভিত্তি করে ওয়েবসাইট তৈরির কাজ শুরু করি।" },
-    { step: "০৪", title: "ডেলিভারি ও সাপোর্ট", description: "ওয়েবসাইট লঞ্চ করার পর প্রয়োজনীয় সাপোর্ট ও রক্ষণাবেক্ষণ সেবা দেই।" },
+    {
+      step: "০১",
+      title: "আলোচনা ও পরিকল্পনা",
+      description:
+        "আপনার ব্যবসার লক্ষ্য এবং প্রয়োজন নিয়ে আমরা বিস্তারিত আলোচনা করি।",
+    },
+    {
+      step: "০২",
+      title: "ডিজাইন ও প্রোটোটাইপ",
+      description:
+        "আপনার ব্র্যান্ডের সাথে মিল রেখে একটি আকর্ষণীয় ডিজাইন তৈরি করি।",
+    },
+    {
+      step: "০৩",
+      title: "ডেভেলপমেন্ট",
+      description:
+        "অনুমোদিত ডিজাইনের উপর ভিত্তি করে ওয়েবসাইট তৈরির কাজ শুরু করি।",
+    },
+    {
+      step: "০৪",
+      title: "ডেলিভারি ও সাপোর্ট",
+      description:
+        "ওয়েবসাইট লঞ্চ করার পর প্রয়োজনীয় সাপোর্ট ও রক্ষণাবেক্ষণ সেবা দেই।",
+    },
   ],
 };
 
@@ -57,7 +131,11 @@ const staggerContainer = {
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 const slideIn = {
@@ -89,12 +167,18 @@ const EcommerceSolution = () => {
             variants={fadeIn}
           >
             আপনার ব্র্যান্ডের জন্য আকর্ষণীয় ল্যান্ডিং পেজ, যা কনভার্সেশন বাড়াবে!
-            <span className="block mt-2">দৃষ্টিনন্দন Design আর কার্যকরী Conversion-এর সমন্বয়ে, আমরা তৈরি করি আপনার ব্র্যান্ডের Growth-এর পথ।</span>
+            <span className="block mt-2">
+              দৃষ্টিনন্দন Design আর কার্যকরী Conversion-এর সমন্বয়ে, আমরা তৈরি
+              করি আপনার ব্র্যান্ডের Growth-এর পথ।
+            </span>
           </motion.p>
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <motion.button
               className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-2xl font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(192, 38, 211, 0.3)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(192, 38, 211, 0.3)",
+              }}
               whileTap={{ scale: 0.95 }}
             >
               আরও জানুন
@@ -137,14 +221,19 @@ const EcommerceSolution = () => {
             >
               <motion.div
                 className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
-                whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.5 } }}
+                whileHover={{
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.5 },
+                }}
               >
                 {feature.icon}
               </motion.div>
               <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
@@ -225,9 +314,7 @@ const EcommerceSolution = () => {
                     প্রজেক্ট {i + 1}
                   </div>
                 </div>
-                <motion.div
-                  className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
-                >
+                <motion.div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <motion.button
                     className="px-4 py-2 bg-white text-purple-600 rounded-lg font-semibold text-sm transform scale-90 group-hover:scale-100 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
@@ -245,9 +332,7 @@ const EcommerceSolution = () => {
                     alt={`Project ${i + 1}`}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6"
-                  >
+                  <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
                     <motion.button
                       className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:shadow-xl"
                       whileHover={{ scale: 1.05 }}
@@ -328,7 +413,8 @@ const EcommerceSolution = () => {
             আপনার প্রজেক্ট শুরু করুন আজই!
           </h3>
           <p className="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">
-            আমাদের বিশেষজ্ঞ টিম আপনার প্রজেক্ট নিয়ে আলোচনা করতে প্রস্তুত। বিনামূল্যে কন্সাল্টেশন পান।
+            আমাদের বিশেষজ্ঞ টিম আপনার প্রজেক্ট নিয়ে আলোচনা করতে প্রস্তুত।
+            বিনামূল্যে কন্সাল্টেশন পান।
           </p>
           <motion.button
             className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl"

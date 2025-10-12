@@ -21,6 +21,8 @@ import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
+import BusinessTraining from "../pages/services/BusinessTraining";
+import DomainHostings from "../pages/services/DomainHostings";
 
 export const router = createBrowserRouter([
   {
@@ -29,81 +31,86 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <SMECubeLanding />
+        element: <SMECubeLanding />,
       },
       {
         path: "about",
-        element: <About />
+        element: <About />,
       },
       {
         path: "contact",
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: "services",
-        element: <EcommerceSolution />
+        element: <EcommerceSolution />,
       },
       {
         path: "services/ecommerce",
-        element: <EcommerceSolution />
+        element: <EcommerceSolution />,
       },
       {
         path: "tools",
-        element: <Tools />
+        element: <Tools />,
       },
       {
         path: "pricing",
-        element: <Pricing />
+        element: <Pricing />,
       },
       {
         path: "login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "register",
-        element: <Register />
+        element: <Register />,
       },
       // Service Routes
       {
         path: "services/brand-page-setup",
-        element: <BrandPageSetup />
+        element: <BrandPageSetup />,
       },
       {
         path: "services/bulk-sms",
-        element: <BulkSMS />
+        element: <BulkSMS />,
       },
       {
         path: "services/business-consulting",
-        element: <BusinessConsulting />
+        element: <BusinessConsulting />,
       },
       {
         path: "services/chatbot-setup",
-        element: <ChatbotSetup />
+        element: <ChatbotSetup />,
       },
       {
         path: "services/ecommerce-solution",
-        element: <EcommerceSolution />
+        element: <EcommerceSolution />,
       },
       {
         path: "services/facebook-boosting",
-        element: <FacebookBoosting />
+        element: <FacebookBoosting />,
       },
       {
         path: "services/graphic-design",
-        element: <GraphicDesign />
+        element: <GraphicDesign />,
       },
       {
         path: "services/landing-page",
-        element: <LandingPage />
+        element: <LandingPage />,
       },
       {
         path: "services/hosting",
-        element: <DomainHosting /> 
+        // element: <DomainHosting />,
+        element: <DomainHostings />,
       },
-            {
+      {
         path: "services/web-development",
-        element: <WebDevelopment />
-      }
-    ]
-  }
+        element: <WebDevelopment />,
+      },
+      {
+        path: "services/business-training",
+        element: <BusinessTraining />,
+      },
+    ],
+  },
 ]);
