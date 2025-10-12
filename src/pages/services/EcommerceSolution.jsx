@@ -28,10 +28,30 @@ const pageData = {
     "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.0.3&w=800",
   ],
   processSteps: [
-    { step: "০১", title: "আলোচনা ও পরিকল্পনা", description: "আপনার ব্যবসার লক্ষ্য এবং প্রয়োজন নিয়ে আমরা বিস্তারিত আলোচনা করি।" },
-    { step: "০২", title: "ডিজাইন ও প্রোটোটাইপ", description: "আপনার ব্র্যান্ডের সাথে মিল রেখে একটি আকর্ষণীয় ডিজাইন তৈরি করি।" },
-    { step: "০৩", title: "ডেভেলপমেন্ট", description: "অনুমোদিত ডিজাইনের উপর ভিত্তি করে ওয়েবসাইট তৈরির কাজ শুরু করি।" },
-    { step: "০৪", title: "ডেলিভারি ও সাপোর্ট", description: "ওয়েবসাইট লঞ্চ করার পর প্রয়োজনীয় সাপোর্ট ও রক্ষণাবেক্ষণ সেবা দেই।" },
+    {
+      step: "০১",
+      title: "আলোচনা ও পরিকল্পনা",
+      description:
+        "আপনার ব্যবসার লক্ষ্য এবং প্রয়োজন নিয়ে আমরা বিস্তারিত আলোচনা করি।",
+    },
+    {
+      step: "০২",
+      title: "ডিজাইন ও প্রোটোটাইপ",
+      description:
+        "আপনার ব্র্যান্ডের সাথে মিল রেখে একটি আকর্ষণীয় ডিজাইন তৈরি করি।",
+    },
+    {
+      step: "০৩",
+      title: "ডেভেলপমেন্ট",
+      description:
+        "অনুমোদিত ডিজাইনের উপর ভিত্তি করে ওয়েবসাইট তৈরির কাজ শুরু করি।",
+    },
+    {
+      step: "০৪",
+      title: "ডেলিভারি ও সাপোর্ট",
+      description:
+        "ওয়েবসাইট লঞ্চ করার পর প্রয়োজনীয় সাপোর্ট ও রক্ষণাবেক্ষণ সেবা দেই।",
+    },
   ],
 };
 
@@ -53,7 +73,11 @@ const staggerContainer = {
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 const slideIn = {
