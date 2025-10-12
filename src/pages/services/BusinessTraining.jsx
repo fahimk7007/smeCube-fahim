@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const BusinessTraining = () => {
+  
   const stats = [
     { number: "৫০০+", label: "ট্রেইন্ড উদ্যোক্তা" },
     { number: "৯৫%", label: "সফলতা হার" },
