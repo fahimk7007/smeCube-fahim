@@ -22,6 +22,7 @@ import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
+import DomainHostings from "../pages/services/DomainHostings";
 
 export const router = createBrowserRouter([
   {
@@ -99,7 +100,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "services/hosting",
-        element: <DomainHosting />,
+        // element: <DomainHosting />,
+        element: <DomainHostings />,
       },
       {
         path: "services/web-development",
