@@ -148,7 +148,7 @@ const BusinessTraining = () => {
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7 }}
-              className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg"
+              className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-16 sm:mt-0"
             >
               বিজনেস ট্রেইনিং প্রোগ্রাম
             </motion.h1>
@@ -307,7 +307,7 @@ const BusinessTraining = () => {
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
-                className={`rounded-lg p-8 transition-all ${
+                className={`rounded-lg p-3 transition-all ${
                   pkg.popular
                     ? "bg-gradient-to-br from-indigo-600 to-blue-600 text-white shadow-2xl scale-105"
                     : "bg-white shadow-md"
@@ -318,9 +318,13 @@ const BusinessTraining = () => {
                     জনপ্রিয়
                   </div>
                 )}
-                <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl md:text-lg font-bold mb-2">
+                  {pkg.name}
+                </h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-bold">৳{pkg.price}</span>
+                  <span className="text-4xl md:text-2xl font-bold">
+                    ৳{pkg.price}
+                  </span>
                 </div>
                 <div
                   className={`mb-6 text-sm ${
@@ -339,7 +343,7 @@ const BusinessTraining = () => {
                 </ul>
                 <Link
                   to="/contact"
-                  className={`block text-center py-3 rounded-lg font-semibold transition ${
+                  className={`block text-center p-2 rounded-lg font-semibold transition ${
                     pkg.popular
                       ? "bg-white text-indigo-600 hover:bg-gray-100"
                       : "bg-indigo-600 text-white hover:bg-indigo-700"
