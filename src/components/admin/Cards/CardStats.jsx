@@ -1,6 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
-
 const CardStats = ({
   statSubtitle,
   statTitle,
@@ -56,7 +53,7 @@ const CardStats = ({
   );
 };
 
-CardStats.defaultProps = {
+/* CardStats.defaultProps = {
   statSubtitle: "Traffic",
   statTitle: "350,897",
   statArrow: "up",
@@ -80,6 +77,6 @@ CardStats.propTypes = {
   // can be any of the background color utilities
   // from tailwindcss
   statIconColor: PropTypes.string,
-};
+}; */
 
 export default CardStats;
