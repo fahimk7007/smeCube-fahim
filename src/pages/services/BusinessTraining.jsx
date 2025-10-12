@@ -98,7 +98,7 @@ const BusinessTraining = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-5">
       {/* Hero Section */}
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-indigo-700 via-blue-600 to-cyan-500 text-white py-28 overflow-hidden">

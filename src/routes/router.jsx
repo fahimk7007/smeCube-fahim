@@ -21,6 +21,8 @@ import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
+import IssueFixing from "../pages/services/IssueFixing";
+import BusinessTraining from "../pages/services/BusinessTraining";
 
 export const router = createBrowserRouter([
   {
@@ -100,9 +102,17 @@ export const router = createBrowserRouter([
         path: "services/hosting",
         element: <DomainHosting /> 
       },
-            {
+      {
         path: "services/web-development",
         element: <WebDevelopment />
+      },
+      {
+        path:"services/issue-fixing",
+        element : <IssueFixing/>
+      },
+      {
+        path:"services/business-training",
+        element : <BusinessTraining/>
       }
     ]
   }

@@ -133,7 +133,7 @@ export default function SMECubeLanding() {
     desc: "বিশেষ প্যাকেজ এবং অফার",
     gradient: "from-rose-500 to-pink-600",
     iconBg: "bg-rose-50",
-    path: "/services/web-development"
+    path: "/services/issue-fixing"
   },
   {
     icon: <Megaphone className="w-10 h-10" />,
