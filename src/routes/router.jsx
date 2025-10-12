@@ -11,7 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 
 // Service Pages
-import DomainHosting from "../pages/services/DomainHosting";
+import DomainHostings from '../pages/services/DomainHostings'
 import BrandPageSetup from "../pages/services/BrandPageSetup";
 import BulkSMS from "../pages/services/BulkSMS";
 import BusinessConsulting from "../pages/services/BusinessConsulting";
