@@ -22,7 +22,6 @@ import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
-import DomainHostings from "../pages/services/DomainHostings";
 
 export const router = createBrowserRouter([
   {
@@ -78,6 +77,7 @@ export const router = createBrowserRouter([
         path: "services/business-consulting",
         element: <BusinessConsulting />,
       },
+
       {
         path: "services/chatbot-setup",
         element: <ChatbotSetup />,
@@ -105,12 +105,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "services/web-development",
-        element: <WebDevelopment />,
+        element: <WebDevelopment />
       },
-      {
+            {
         path: "services/business-training",
-        element: <BusinessTraining />,
-      },
-    ],
-  },
+        element: <BusinessTraining/>
+      }
+    ]
+  }
 ]);
