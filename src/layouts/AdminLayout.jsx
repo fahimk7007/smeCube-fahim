@@ -7,10 +7,13 @@ import {
   FileText,
   Settings,
 } from "lucide-react";
+import AdminNavbar from "../components/admin/Navbars/AdminNavbar";
+import Sidebar from "../components/admin/Sidebar/Sidebar";
+import HeaderStats from "../components/admin/Headers/HeaderStats";
 // import { useContext } from "react";
 // import { AuthContext } from "../../context/AuthContext";
 
-export default function AdminLayout() {
+const AdminLayout = () => {
   //   const { logout, user } = useContext(AuthContext);
 
   const navItems = [
@@ -21,54 +24,19 @@ export default function AdminLayout() {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md border-r p-5 flex flex-col justify-between fixed h-full">
-        <div>
-          <h2 className="text-2xl font-bold text-purple-600 mb-8 text-center">
-            Admin Panel
-          </h2>
-          <nav className="space-y-2">
-            {navItems.map((item, i) => (
-              <NavLink
-                key={i}
-                to={item.to}
-                end
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-2 rounded-lg transition ${
-                    isActive
-                      ? "bg-purple-100 text-purple-700 font-semibold"
-                      : "text-gray-700 hover:bg-purple-50"
-                  }`
-                }
-              >
-                {item.icon}
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+    <>
+      <Sidebar />
+      <div className="relative md:ml-64 bg-blueGray-100">
+        {/* Header */}
+        <AdminNavbar />
+        <HeaderStats />
+        <div className="px-4 md:px-10 mx-auto w-full -m-24">
+          <Outlet />
+          {/* <FooterAdmin /> */}
         </div>
-
-        <div className="border-t pt-4 mt-6">
-          <div className="flex items-center justify-between">
-            {/* <div className="text-sm">
-              <p className="font-semibold">{user?.name}</p>
-              <p className="text-gray-500 text-xs">{user?.email}</p>
-            </div> */}
-            <button
-              // onClick={logout}
-              className="text-red-500 hover:text-red-600 flex items-center gap-1 text-sm"
-            >
-              <LogOut size={16} /> Logout
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      {/* Main content */}
-      <main className="flex-1 ml-64 p-8">
-        <Outlet />
-      </main>
-    </div>
+      </div>
+    </>
   );
-}
+};
+
+export default AdminLayout;
