@@ -27,7 +27,7 @@ const Sidebar = () => {
 
         {/* Brand */}
         <NavLink
-          className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0 text-white"
+          className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
           to="/"
         >
           SME <span className="text-red-600"> CUBE </span>
