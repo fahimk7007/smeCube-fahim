@@ -4,13 +4,12 @@ import {
   LayoutDashboard,
   Settings,
   Table,
-  Map,
   Menu,
   X,
   Bell,
   User,
+  RefreshCcw,
 } from "lucide-react";
-import NotificationDropdown from "../Dropdowns/NotificationDropdown";
 import UserDropdown from "../Dropdowns/UserDropdown";
 
 const Sidebar = () => {
@@ -39,7 +38,7 @@ const Sidebar = () => {
           className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
           to="/"
         >
-          SME CUBE
+          SME <span className="text-red-600"> CUBE </span>
         </Link>
 
         {/* User Section (Mobile) */}
@@ -93,7 +92,7 @@ const Sidebar = () => {
 
             <li className="items-center">
               <Link
-                to="/admin/settings"
+                to="/admin/dashboard/settings"
                 className={`flex items-center gap-2 text-sm py-3 font-medium ${isActive(
                   "/admin/settings"
                 )}`}
@@ -120,7 +119,8 @@ const Sidebar = () => {
                   "/admin/maps"
                 )}`}
               >
-                <Map size={18} /> Maps
+                <RefreshCcw size={18} />
+                Update Services
               </Link>
             </li>
           </ul>

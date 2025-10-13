@@ -24,6 +24,7 @@ import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
 import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
+import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 
 export const router = createBrowserRouter([
   {
@@ -116,7 +117,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/admin/dashboard",
+    path: "admin/dashboard",
     element: (
       // <RequireAdmin>
       <AdminLayout />
@@ -124,7 +125,14 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <AdminDashboard /> },
-      // other admin routes here
+      {
+        path: "settings",
+        element: (
+          // <RequireAdmin>
+          <AdminSettings />
+          // </RequireAdmin>
+        ),
+      },
     ],
   },
 ]);
