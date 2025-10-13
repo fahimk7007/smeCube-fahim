@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import Header from "../pages/shared/Header";
 import Footer from "../pages/shared/Footer";
 import ScrollToTop from "../utils/ScrollToTop";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,14 +13,14 @@ function App() {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <ScrollToTop />
-      <Header 
+      <Header
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
         scrolled={scrolled}

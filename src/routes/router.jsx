@@ -11,7 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 
 // Service Pages
-import DomainHosting from "../pages/services/DomainHosting";
+import DomainHostings from "../pages/services/DomainHostings";
 import BrandPageSetup from "../pages/services/BrandPageSetup";
 import BulkSMS from "../pages/services/BulkSMS";
 import BusinessConsulting from "../pages/services/BusinessConsulting";
@@ -22,6 +22,9 @@ import LandingPage from "../pages/services/LandingPage";
 import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
+import AdminLayout from "../layouts/AdminLayout";
+import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
+import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 
 export const router = createBrowserRouter([
   {
@@ -105,14 +108,34 @@ export const router = createBrowserRouter([
       },
       {
         path: "services/web-development",
-        element: <WebDevelopment />
+        element: <WebDevelopment />,
       },
-            {
+      {
         path: "services/business-training",
-        element: <BusinessTraining/>
-      }
-    ]
-  }
+        element: <BusinessTraining />,
+      },
+    ],
+  },
+  {
+    path: "admin",
+    element: (
+      // <RequireAdmin>
+      <AdminLayout />
+      // </RequireAdmin>
+    ),
+    children: [
+      // { index: true, element: <AdminDashboard /> },
+      { path: "dashboard", element: <AdminDashboard /> },
+      {
+        path: "settings",
+        element: (
+          // <RequireAdmin>
+          <AdminSettings />
+          // </RequireAdmin>
+        ),
+      },
+    ],
+  },
 ]);
 
 

@@ -9,7 +9,11 @@ const BusinessTraining = () => {
     { number: "৯৫%", label: "সফলতা হার" },
     { number: "৩০+", label: "রিয়েল লাইভ সেশন" },
     { number: "২৪/৭", label: "সাপোর্ট" },
+<<<<<<< HEAD
   ]; 
+=======
+  ];
+>>>>>>> ammar
 
   const features = [
     {
