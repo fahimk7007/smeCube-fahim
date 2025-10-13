@@ -1,25 +1,17 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   Settings,
   Table,
   Menu,
   X,
-  Bell,
-  User,
   RefreshCcw,
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
 
 const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
-  const location = useLocation();
-
-  const isActive = (path) =>
-    location.pathname === path
-      ? "text-blue-600 font-semibold"
-      : "text-gray-600 hover:text-blue-500";
 
   return (
     <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
@@ -34,18 +26,15 @@ const Sidebar = () => {
         </button>
 
         {/* Brand */}
-        <Link
+        <NavLink
           className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
           to="/"
         >
           SME <span className="text-red-600"> CUBE </span>
-        </Link>
+        </NavLink>
 
         {/* User Section (Mobile) */}
         <ul className="md:hidden items-center flex flex-wrap list-none gap-3">
-          {/* <li className="inline-block relative">
-            <NotificationDropdown />
-          </li> */}
           <li className="inline-block relative">
             <UserDropdown />
           </li>
@@ -58,12 +47,12 @@ const Sidebar = () => {
           {/* Mobile Collapse Header */}
           <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-gray-200">
             <div className="flex flex-wrap justify-between items-center">
-              <Link
+              <NavLink
                 className="text-gray-800 text-sm uppercase font-bold"
                 to="/"
               >
                 SME CUBE
-              </Link>
+              </NavLink>
               <button
                 type="button"
                 className="cursor-pointer text-gray-600 opacity-70 md:hidden px-3 py-1 text-xl bg-transparent rounded"
@@ -80,48 +69,63 @@ const Sidebar = () => {
           {/* Navigation */}
           <ul className="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
             <li className="items-center">
-              <Link
+              <NavLink
                 to="/admin/dashboard"
-                className={`flex items-center gap-2 text-sm py-3 font-medium ${isActive(
-                  "/admin/dashboard"
-                )}`}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 text-sm py-3 font-medium ${
+                    isActive
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600 hover:text-blue-500"
+                  }`
+                }
               >
                 <LayoutDashboard size={18} /> Dashboard
-              </Link>
+              </NavLink>
             </li>
 
             <li className="items-center">
-              <Link
+              <NavLink
                 to="/admin/dashboard/settings"
-                className={`flex items-center gap-2 text-sm py-3 font-medium ${isActive(
-                  "/admin/settings"
-                )}`}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 text-sm py-3 font-medium ${
+                    isActive
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600 hover:text-blue-500"
+                  }`
+                }
               >
                 <Settings size={18} /> Settings
-              </Link>
+              </NavLink>
             </li>
 
             <li className="items-center">
-              <Link
+              <NavLink
                 to="/admin/tables"
-                className={`flex items-center gap-2 text-sm py-3 font-medium ${isActive(
-                  "/admin/tables"
-                )}`}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 text-sm py-3 font-medium ${
+                    isActive
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600 hover:text-blue-500"
+                  }`
+                }
               >
                 <Table size={18} /> Table
-              </Link>
+              </NavLink>
             </li>
 
             <li className="items-center">
-              <Link
+              <NavLink
                 to="/admin/maps"
-                className={`flex items-center gap-2 text-sm py-3 font-medium ${isActive(
-                  "/admin/maps"
-                )}`}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 text-sm py-3 font-medium ${
+                    isActive
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600 hover:text-blue-500"
+                  }`
+                }
               >
-                <RefreshCcw size={18} />
-                Update Services
-              </Link>
+                <RefreshCcw size={18} /> Update Services
+              </NavLink>
             </li>
           </ul>
         </div>
