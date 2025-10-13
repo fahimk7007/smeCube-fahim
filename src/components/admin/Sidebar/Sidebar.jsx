@@ -85,7 +85,7 @@ const Sidebar = () => {
 
             <li className="items-center">
               <NavLink
-                to="/admin/dashboard/settings"
+                to="/admin/settings"
                 className={({ isActive }) =>
                   `flex items-center gap-2 text-sm py-3 font-medium ${
                     isActive

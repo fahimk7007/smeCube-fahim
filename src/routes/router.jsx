@@ -117,14 +117,15 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "admin/dashboard",
+    path: "admin",
     element: (
       // <RequireAdmin>
       <AdminLayout />
       // </RequireAdmin>
     ),
     children: [
-      { index: true, element: <AdminDashboard /> },
+      // { index: true, element: <AdminDashboard /> },
+      { path: "dashboard", element: <AdminDashboard /> },
       {
         path: "settings",
         element: (
