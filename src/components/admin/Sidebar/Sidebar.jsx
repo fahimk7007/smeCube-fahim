@@ -14,7 +14,7 @@ const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
 
   return (
-    <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+    <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-gray-700 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
       <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         {/* Mobile Toggle */}
         <button
@@ -27,7 +27,7 @@ const Sidebar = () => {
 
         {/* Brand */}
         <NavLink
-          className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
+          className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0 text-white"
           to="/"
         >
           SME <span className="text-red-600"> CUBE </span>
@@ -64,7 +64,7 @@ const Sidebar = () => {
           </div>
 
           {/* Divider */}
-          <hr className="md:min-w-full" />
+          <hr className="md:min-w-full text-red-600" />
 
           {/* Navigation */}
           <ul className="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
@@ -74,8 +74,8 @@ const Sidebar = () => {
                 className={({ isActive }) =>
                   `flex items-center gap-2 text-sm py-3 font-medium ${
                     isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-gray-600 hover:text-blue-500"
+                      ? "text-white font-bold"
+                      : "text-gray-300 hover:text-white"
                   }`
                 }
               >
@@ -89,8 +89,8 @@ const Sidebar = () => {
                 className={({ isActive }) =>
                   `flex items-center gap-2 text-sm py-3 font-medium ${
                     isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-gray-600 hover:text-blue-500"
+                      ? "text-white font-bold"
+                      : "text-gray-300 hover:text-white"
                   }`
                 }
               >
