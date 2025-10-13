@@ -10,7 +10,8 @@ import {
   Bell,
   User,
 } from "lucide-react";
-
+import NotificationDropdown from "../Dropdowns/NotificationDropdown";
+import UserDropdown from "../Dropdowns/UserDropdown";
 
 const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
@@ -43,9 +44,9 @@ const Sidebar = () => {
 
         {/* User Section (Mobile) */}
         <ul className="md:hidden items-center flex flex-wrap list-none gap-3">
-          <li className="inline-block relative">
-            <Not
-          </li>
+          {/* <li className="inline-block relative">
+            <NotificationDropdown />
+          </li> */}
           <li className="inline-block relative">
             <UserDropdown />
           </li>
@@ -75,7 +76,7 @@ const Sidebar = () => {
           </div>
 
           {/* Divider */}
-          <hr className="my-4 md:min-w-full" />
+          <hr className="md:min-w-full" />
 
           {/* Navigation */}
           <ul className="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
@@ -108,7 +109,7 @@ const Sidebar = () => {
                   "/admin/tables"
                 )}`}
               >
-                <Table size={18} /> Tables
+                <Table size={18} /> Table
               </Link>
             </li>
 
