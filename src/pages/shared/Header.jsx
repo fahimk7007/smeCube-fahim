@@ -115,7 +115,7 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
               যোগাযোগ
             </Link>
             <Link
-              to="/admin"
+              to="/admin/dashboard"
               className={`font-semibold transition-all duration-300 hover:text-red-500 ${
                 location.pathname === "/contact"
                   ? "text-red-500"
