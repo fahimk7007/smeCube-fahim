@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   Settings,
@@ -9,12 +9,17 @@ import {
   RefreshCcw,
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
+import SidebarServiceDropdown from "../Dropdowns/SidebarServiceDropdown";
 
 const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
+  const servicesRoutes = [
+    { path: "/admin/dashboard", name: "Dashboard" },
+    { path: "/admin/settings", name: "Settings" },
+  ];
 
   return (
-    <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-gray-700 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+    <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
       <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         {/* Mobile Toggle */}
         <button
@@ -30,7 +35,10 @@ const Sidebar = () => {
           className="md:block text-left md:pb-2 text-gray-800 mr-0 inline-block whitespace-nowrap text-lg uppercase font-bold p-4 px-0"
           to="/"
         >
-          SME <span className="text-red-600"> CUBE </span>
+          <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+            sme
+          </span>
+          <span className="text-white">cube</span>
         </NavLink>
 
         {/* User Section (Mobile) */}
@@ -48,7 +56,7 @@ const Sidebar = () => {
           <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-gray-200">
             <div className="flex flex-wrap justify-between items-center">
               <NavLink
-                className="text-gray-800 text-sm uppercase font-bold"
+                className="text-gray-800 text-sm  uppercase font-bold"
                 to="/"
               >
                 SME CUBE
@@ -98,6 +106,18 @@ const Sidebar = () => {
               </NavLink>
             </li>
 
+            {/* Services Dropdown */}
+            <li
+              className={({ isActive }) =>
+                `flex items-center gap-2 text-sm py-3 font-medium ${
+                  isActive
+                    ? "text-white font-bold"
+                    : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              <SidebarServiceDropdown />
+            </li>
             <li className="items-center">
               <NavLink
                 to="/admin/tables"
@@ -110,21 +130,6 @@ const Sidebar = () => {
                 }
               >
                 <Table size={18} /> Table
-              </NavLink>
-            </li>
-
-            <li className="items-center">
-              <NavLink
-                to="/admin/maps"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 text-sm py-3 font-medium ${
-                    isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-gray-600 hover:text-blue-500"
-                  }`
-                }
-              >
-                <RefreshCcw size={18} /> Update Services
               </NavLink>
             </li>
           </ul>
