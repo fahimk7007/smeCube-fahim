@@ -10,7 +10,6 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
-import SidebarServiceDropdown from "../Dropdowns/SidebarServiceDropdown";
 
 const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
@@ -63,9 +62,9 @@ const Sidebar = () => {
       <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         {/* Mobile Toggle */}
         <button
-          className="cursor-pointer text-gray-600 opacity-70 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+          className="cursor-pointer text-gray-200 opacity-70 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
           type="button"
-          onClick={() => setCollapseShow("bg-white m-2 py-3 px-6")}
+          onClick={() => setCollapseShow("bg-gray-900 m-2 py-3 px-6")}
         >
           <Menu size={22} />
         </button>
@@ -93,17 +92,17 @@ const Sidebar = () => {
           className={`md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded ${collapseShow}`}
         >
           {/* Mobile Collapse Header */}
-          <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-gray-200">
+          <div className="md:min-w-full md:hidden block pb-2">
             <div className="flex flex-wrap justify-between items-center">
               <NavLink
-                className="text-gray-800 text-sm  uppercase font-bold"
+                className="text-red-400 text-sm  uppercase font-bold"
                 to="/"
               >
-                SME CUBE
+                SME <span className="text-gray-300">CUBE</span>
               </NavLink>
               <button
                 type="button"
-                className="cursor-pointer text-gray-600 opacity-70 md:hidden px-3 py-1 text-xl bg-transparent rounded"
+                className="cursor-pointer text-gray-300 opacity-70 md:hidden px-3 py-1 text-xl bg-transparent rounded"
                 onClick={() => setCollapseShow("hidden")}
               >
                 <X size={22} />
