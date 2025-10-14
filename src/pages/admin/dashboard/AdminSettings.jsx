@@ -14,7 +14,7 @@ const AdminSettings = () => {
     companyName: "SME Cube",
     companyEmail: "info@smecube.com",
     website: "https://www.smecube.com",
-    adminName: "Ammar",
+    adminName: "Md. Real",
     password: "",
   });
 

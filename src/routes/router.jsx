@@ -25,6 +25,7 @@ import BusinessTraining from "../pages/services/BusinessTraining";
 import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
+import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
 
 export const router = createBrowserRouter([
   {
@@ -131,6 +132,14 @@ export const router = createBrowserRouter([
         element: (
           // <RequireAdmin>
           <AdminSettings />
+          // </RequireAdmin>
+        ),
+      },
+      {
+        path: "web-development",
+        element: (
+          // <RequireAdmin>
+          <AdminWebdev />
           // </RequireAdmin>
         ),
       },
