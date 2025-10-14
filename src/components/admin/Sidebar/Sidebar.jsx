@@ -1,22 +1,62 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
-  LayoutDashboard,
   Settings,
   Table,
   Menu,
   X,
   RefreshCcw,
+  icons,
+  LayoutDashboard,
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
 import SidebarServiceDropdown from "../Dropdowns/SidebarServiceDropdown";
 
 const Sidebar = () => {
   const [collapseShow, setCollapseShow] = useState("hidden");
-  const servicesRoutes = [
-    { path: "/admin/dashboard", name: "Dashboard" },
-    { path: "/admin/settings", name: "Settings" },
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  const location = useLocation();
+
+  // Navigation menu items
+  const navMenu = [
+    {
+      path: "/admin/dashboard",
+      name: "Dashboard",
+      icon: <LayoutDashboard size={18} />,
+    },
+    { path: "/admin/settings", name: "Settings", icon: <Settings size={18} /> },
+    {
+      // path: "/admin/update-services",
+      name: "Update Services",
+      icon: <RefreshCcw size={18} />,
+      subcategories: [
+        { path: "/admin/facebook-boosting", name: "Facebook Boosting" },
+        { path: "/admin/ecommerce-solution", name: "Ecommerce Solution" },
+        { path: "/admin/web-development", name: "Develop Website" },
+        { path: "/admin/landing-page", name: "Landing Page" },
+        { path: "/admin/bulk-sms", name: "Bulk SMS" },
+        { path: "/admin/business-consulting", name: "Business Consulting" },
+        { path: "/admin/brand-page-setup", name: "Brand Page Setup" },
+        { path: "/admin/graphic-design", name: "Graphic Design" },
+        { path: "/admin/chatbot-setup", name: "Chatbot Setup" },
+        { path: "/admin/issue-fixing", name: "Issue Fixing" },
+        { path: "/admin/business-training", name: "Business Training" },
+      ],
+    },
   ];
+
+  const toggleCategories = (name) => {
+    setExpandedCategory(expandedCategory === name ? null : name);
+  };
+
+  const isActive = (path) => location.pathname === path;
+
+  const isParentActive = (item) => {
+    if (item.subcategories) {
+      return item.subcategories.some((sub) => sub.path === location.pathname);
+    }
+    return false;
+  };
 
   return (
     <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
@@ -75,64 +115,59 @@ const Sidebar = () => {
           <hr className="md:min-w-full text-red-600" />
 
           {/* Navigation */}
-          <ul className="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
-            <li className="items-center">
-              <NavLink
-                to="/admin/dashboard"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 text-sm py-3 font-medium ${
-                    isActive
+          <div className="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
+            {navMenu.map((item) => (
+              <div key={item.name} className="items-center">
+                <Link
+                  to={item.path ? item.path : ""}
+                  onClick={() =>
+                    item.subcategories && toggleCategories(item.name)
+                  }
+                  className={`flex items-center gap-2 text-sm py-3 font-medium text-gray-300 hover:text-white ${
+                    isActive(item.path) || isParentActive(item)
                       ? "text-white font-bold"
-                      : "text-gray-300 hover:text-white"
-                  }`
-                }
-              >
-                <LayoutDashboard size={18} /> Dashboard
-              </NavLink>
-            </li>
+                      : ""
+                  }`}
+                >
+                  {item.icon}
+                  {item.name}
 
-            <li className="items-center">
-              <NavLink
-                to="/admin/settings"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 text-sm py-3 font-medium ${
-                    isActive
-                      ? "text-white font-bold"
-                      : "text-gray-300 hover:text-white"
-                  }`
-                }
-              >
-                <Settings size={18} /> Settings
-              </NavLink>
-            </li>
-
-            {/* Services Dropdown */}
-            <li
-              className={({ isActive }) =>
-                `flex items-center gap-2 text-sm py-3 font-medium ${
-                  isActive
-                    ? "text-white font-bold"
-                    : "text-gray-300 hover:text-white"
-                }`
-              }
-            >
-              <SidebarServiceDropdown />
-            </li>
-            <li className="items-center">
-              <NavLink
-                to="/admin/tables"
-                className={({ isActive }) =>
-                  `flex items-center gap-2 text-sm py-3 font-medium ${
-                    isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-gray-600 hover:text-blue-500"
-                  }`
-                }
-              >
-                <Table size={18} /> Table
-              </NavLink>
-            </li>
-          </ul>
+                  {item.subcategories && (
+                    <svg
+                      className={`w-3 h-3 text-gray-400 transition-transform duration-200 ${
+                        expandedCategory ? "rotate-90" : "rotate-0"
+                      }`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  )}
+                </Link>
+                {item.subcategories && expandedCategory === item.name && (
+                  <div className="flex flex-col gap-2 ml-6 text-sm font-medium mb-2 text-gray-300 ">
+                    {item.subcategories.map((sub) => (
+                      <Link
+                        key={sub.path}
+                        to={sub.path}
+                        className={`${
+                          isActive(sub.path)
+                            ? "text-white font-bold"
+                            : "hover:text-white"
+                        }`}
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

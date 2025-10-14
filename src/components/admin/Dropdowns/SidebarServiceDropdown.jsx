@@ -40,7 +40,7 @@ const SidebarServiceDropdown = () => {
 
           {/* Right side: arrow */}
           <svg
-            className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+            className={`w-3 h-3 text-gray-400 transition-transform duration-200 ${
               isSubrouteActive ? "rotate-90" : "group-open:rotate-90"
             }`}
             xmlns="http://www.w3.org/2000/svg"
