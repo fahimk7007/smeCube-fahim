@@ -75,6 +75,10 @@ export const router = createBrowserRouter([
         element: <BrandPageSetup />,
       },
       {
+        path: "services/web-development",
+        element: <WebDevelopment />,
+      },
+      {
         path: "services/bulk-sms",
         element: <BulkSMS />,
       },
