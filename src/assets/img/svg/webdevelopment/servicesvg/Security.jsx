@@ -6,8 +6,7 @@ const Security = () => {
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
       id="_x36_"
-      width="64"
-      height="64"
+      className="w-8 h-8 sm:w-10 sm:h-10"
       version="1.1"
       viewBox="0 0 512 512"
     >

@@ -6,8 +6,7 @@ const ResponsiveWebDSGN = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
       xmlSpace="preserve"
-      width="64"
-      height="64"
+      className="w-8 h-8 sm:w-10 sm:h-10"
     >
       <path d="M0,304.112V28.56c0-4.896,4.184-8.888,9.288-8.888h436.536c5.104,0,9.288,4,9.288,8.888v275.552H0z" />
       <g>
