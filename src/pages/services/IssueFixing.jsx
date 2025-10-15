@@ -440,10 +440,10 @@ const IssueFixing = () => {
                 }`}
               >
                 {offer.popular && (
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-yellow-400 text-purple-900 px-4 py-1 rounded-full text-sm font-bold inline-block">
                       <Star className="w-6 h-4 inline mr-1" />
-                      সর্বাধিক জনপ্রিয়
+                      জনপ্রিয়
                     </div>
                   </div>
                 )}
