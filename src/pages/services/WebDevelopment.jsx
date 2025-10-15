@@ -7,6 +7,15 @@ import SeoOpt from "../../assets/img/svg/webdevelopment/servicesvg/SeoOpt";
 import Security from "../../assets/img/svg/webdevelopment/servicesvg/Security";
 import FastUpdate from "../../assets/img/svg/webdevelopment/servicesvg/FastUpdate";
 import HeroSvg from "../../assets/img/svg/webdevelopment/HeroSvg";
+import reactsvg from "../../assets/img/svg/webdevelopment/technologysvg/react-svgrepo-com.svg";
+import nodejs from "../../assets/img/svg/webdevelopment/technologysvg/nodejs-svgrepo-com.svg";
+import htmlsvg from "../../assets/img/svg/webdevelopment/technologysvg/html-svgrepo-com.svg";
+import csssvg from "../../assets/img/svg/webdevelopment/technologysvg/css3-svgrepo-com.svg";
+import phpsvg from "../../assets/img/svg/webdevelopment/technologysvg/php-svgrepo-com.svg";
+import wordpresssvg from "../../assets/img/svg/webdevelopment/technologysvg/wordpress-svgrepo-com.svg";
+import mongodbsvg from "../../assets/img/svg/webdevelopment/technologysvg/mongodb-svgrepo-com.svg";
+import laravelsvg from "../../assets/img/svg/webdevelopment/technologysvg/laravel-svgrepo-com.svg";
+import javascript from "../../assets/img/svg/webdevelopment/technologysvg/javascript-svgrepo-com.svg";
 
 const WebDevelopment = () => {
   const services = [
@@ -43,12 +52,57 @@ const WebDevelopment = () => {
   ];
 
   const technologies = [
-    { name: "React.js", icon: "⚛️", color: "bg-blue-50" },
-    { name: "Node.js", icon: "🟢", color: "bg-green-50" },
-    { name: "WordPress", icon: "📝", color: "bg-purple-50" },
-    { name: "HTML5/CSS3", icon: "🎨", color: "bg-orange-50" },
-    { name: "PHP", icon: "🐘", color: "bg-indigo-50" },
-    { name: "MongoDB", icon: "🍃", color: "bg-teal-50" },
+    {
+      name: "HTML5",
+      icon: <img src={htmlsvg} alt="HTML5" className="w-8 h-8 mx-auto" />,
+      color: "bg-orange-50",
+    },
+    {
+      name: "CSS3",
+      icon: <img src={csssvg} alt="CSS3" className="w-8 h-8 mx-auto" />,
+      color: "bg-orange-50",
+    },
+    {
+      name: "Javascript",
+      icon: (
+        <img src={javascript} alt="Javascript" className="w-8 h-8 mx-auto" />
+      ),
+      color: "bg-blue-50",
+    },
+    {
+      name: "React.js",
+      icon: <img src={reactsvg} alt="React" className="w-8 h-8 mx-auto" />,
+      color: "bg-blue-50",
+    },
+    {
+      name: "Node.js",
+      icon: <img src={nodejs} alt="Node.js" className="w-8 h-8 mx-auto" />,
+      color: "bg-green-50",
+    },
+    {
+      name: "WordPress",
+      icon: (
+        <img src={wordpresssvg} alt="WordPress" className="w-8 h-8 mx-auto" />
+      ),
+      color: "bg-purple-50",
+    },
+
+    {
+      name: "PHP",
+      icon: <img src={phpsvg} alt="PHP" className="w-8 h-8 mx-auto" />,
+      color: "bg-indigo-50",
+    },
+    {
+      name: "MongoDB",
+      icon: <img src={mongodbsvg} alt="MongoDB" className="w-8 h-8 mx-auto" />,
+      color: "bg-teal-50",
+    },
+
+    {
+      name: "Laravel",
+      icon: <img src={laravelsvg} alt="Laravel" className="w-8 h-8 mx-auto" />,
+      color: "bg-teal-50",
+    },
   ];
 
   const packages = [
@@ -186,16 +240,18 @@ const WebDevelopment = () => {
               আধুনিক এবং শক্তিশালী টেকনোলজি স্ট্যাক
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 gap-3">
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className={`${tech.color} p-6 rounded-xl shadow-md hover:shadow-lg transition text-center`}
+                className={`${tech.color} p-2 rounded-xl shadow-md hover:shadow-lg transition text-center`}
               >
                 <div className="text-4xl mb-3 flex justify-center items-center">
                   {tech.icon}
                 </div>
-                <div className="font-semibold text-gray-800">{tech.name}</div>
+                <div className="font-semibold text-gray-800 sm:text-[12px]">
+                  {tech.name}
+                </div>
               </div>
             ))}
           </div>
