@@ -1,36 +1,43 @@
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import heroDomain from "../../assets/png/domaiinhosting/domain.png";
+import domainIcon from "../../assets/icones/domainhosting/domain.png";
+import ssdIcon from "../../assets/icones/domainhosting/ssd.png";
+import sslIcon from "../../assets/icones/domainhosting/ssl.png";
+import upIcon from "../../assets/icones/domainhosting/uptime.png";
+import cpanelIcon from "../../assets/icones/domainhosting/cpanel.png";
+import supportIcon from "../../assets/icones/domainhosting/support.png";
 
 const DomainHostings = () => {
   const features = [
     {
-      icon: "../../../public/icons/domain.png",
+      icon: domainIcon,
       title: "ডোমেইন রেজিস্ট্রেশন",
       description: "আপনার ব্যবসার জন্য পছন্দের ডোমেইন নাম সহজে রেজিস্টার করুন।",
     },
     {
-      icon: "../../../public/icons/ssd.png",
+      icon: ssdIcon,
       title: "ফাস্ট SSD হোস্টিং",
       description: "SSD সার্ভারে দ্রুত ও নির্ভরযোগ্য ওয়েবসাইট পারফরম্যান্স।",
     },
     {
-      icon: "../../../public/icons/ssl.png",
+      icon: sslIcon,
       title: "ফ্রি SSL সার্টিফিকেট",
       description: "আপনার ওয়েবসাইটকে সুরক্ষিত রাখতে SSL সম্পূর্ণ ফ্রি।",
     },
     {
-      icon: "../../../public/icons/uptime.png",
+      icon: upIcon,
       title: "৯৯.৯% আপটাইম গ্যারান্টি",
       description: "আপনার ওয়েবসাইট সবসময় অনলাইনে থাকবে – গ্যারান্টিযুক্ত।",
     },
     {
-      icon: "../../../public/icons/cpanel.png",
+      icon: cpanelIcon,
       title: "ইজি কন্ট্রোল প্যানেল",
       description: "cPanel এর মাধ্যমে সহজে ফাইল, ইমেইল ও ডাটাবেস ম্যানেজ করুন।",
     },
     {
-      icon: "../../../public/icons/support.png",
+      icon: supportIcon,
       title: "২৪/৭ কাস্টমার সাপোর্ট",
       description: "লাইভ চ্যাট ও কল সাপোর্ট দিয়ে সর্বদা পাশে আছি।",
     },
@@ -138,11 +145,14 @@ const DomainHostings = () => {
         className="relative bg-gradient-to-br from-orange-500 to-red-600 text-white py-28 overflow-hidden h-[80vh] flex flex-col justify-center items-center"
       >
         <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="flex justify-center items-center">
+            <img className="w-16 h-16 mb-6" src={heroDomain} alt="domain" />
+          </div>
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-16 sm:mt-0"
+            className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-8 sm:mt-0"
           >
             ডোমেইন ও হোস্টিং সার্ভিস
           </motion.h1>
@@ -261,7 +271,7 @@ const DomainHostings = () => {
             আপনার ওয়েবসাইটের প্রয়োজন অনুযায়ী সঠিক প্যাকেজ নির্বাচন করুন।
           </p>
 
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, i) => (
               <motion.div
                 key={i}
