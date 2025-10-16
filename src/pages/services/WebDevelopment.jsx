@@ -16,6 +16,9 @@ import wordpresssvg from "../../assets/img/svg/webdevelopment/technologysvg/word
 import mongodbsvg from "../../assets/img/svg/webdevelopment/technologysvg/mongodb-svgrepo-com.svg";
 import laravelsvg from "../../assets/img/svg/webdevelopment/technologysvg/laravel-svgrepo-com.svg";
 import javascript from "../../assets/img/svg/webdevelopment/technologysvg/javascript-svgrepo-com.svg";
+import restaurantpic from "../../assets/img/webdevelopment/restaurant.jpg";
+import schoolPic from "../../assets/img/webdevelopment/school.jfif";
+import realstatePic from "../../assets/img/webdevelopment/real-state.jpg";
 
 const WebDevelopment = () => {
   const services = [
@@ -151,17 +154,35 @@ const WebDevelopment = () => {
     {
       name: "রেস্টুরেন্ট ওয়েবসাইট",
       category: "খাদ্য ও পানীয়",
-      image: "🍽️",
+      image: (
+        <img
+          src={restaurantpic}
+          alt="Restaurant"
+          className="w-full h-full object-cover"
+        />
+      ),
     },
     {
       name: "শিক্ষা প্রতিষ্ঠান",
       category: "শিক্ষা",
-      image: "🎓",
+      image: (
+        <img
+          src={schoolPic}
+          alt="School"
+          className="w-full h-full object-cover"
+        />
+      ),
     },
     {
       name: "রিয়েল এস্টেট",
       category: "সম্পত্তি",
-      image: "🏢",
+      image: (
+        <img
+          src={realstatePic}
+          alt="Real Estate"
+          className="w-full h-full object-cover"
+        />
+      ),
     },
   ];
 
@@ -269,7 +290,7 @@ const WebDevelopment = () => {
               বিভিন্ন শিল্পে আমাদের সফলতার গল্প
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4">
             {portfolio.map((project, index) => (
               <div
                 key={index}
@@ -278,7 +299,7 @@ const WebDevelopment = () => {
                 <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
                   {project.image}
                 </div>
-                <div className="p-6">
+                <div className="p-3">
                   <div className="text-sm text-purple-600 font-semibold mb-2">
                     {project.category}
                   </div>
@@ -297,7 +318,7 @@ const WebDevelopment = () => {
 
       {/* Pricing Section */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               প্রাইসিং প্ল্যান
@@ -306,7 +327,7 @@ const WebDevelopment = () => {
               সাশ্রয়ী মূল্যে পেশাদার ওয়েবসাইট
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, index) => (
               <div
                 key={index}
