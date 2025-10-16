@@ -135,7 +135,7 @@ const DomainHostings = () => {
   };
 
   return (
-    <div className="font-sans text-gray-800 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
+    <div className="text-gray-800 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
       {/* Hero Section */}
       <motion.section
         initial="hidden"
@@ -174,8 +174,8 @@ const DomainHostings = () => {
         </div>
       </motion.section>
 
-      {/* Features Section */}
-      <section className="py-20 mx-auto max-w-6xl px-[10%]">
+      {/* Service Features Section */}
+      <section className="py-20 mx-auto max-w-5xl px-2">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent py-1.5"
           initial="hidden"
@@ -187,7 +187,7 @@ const DomainHostings = () => {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-3 md:grid-cols-6 gap-3"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -196,23 +196,30 @@ const DomainHostings = () => {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className="p-6 bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100/50 cursor-pointer group backdrop-blur-sm"
+              className="p-3 bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100/50 cursor-pointer group backdrop-blur-sm"
               variants={scaleIn}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ scale: 1.02 }}
             >
               <motion.div
-                className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                className="mb-4 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{
-                  rotate: [0, -5, 5, 0],
+                  // rotate: [0, -5, 5, 0],
                   transition: { duration: 0.5 },
                 }}
               >
-                <img width={64} height={64} src={f.icon} alt="" srcset="" />
+                <img
+                  className="w-10 h-10 md:w-12 md:h-12"
+                  src={f.icon}
+                  alt=""
+                  srcset=""
+                />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">
+              <h3 className="text-sm lg:text-[16px] font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">
                 {f.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{f.description}</p>
+              <p className="text-gray-600 leading-relaxed text-[10px] lg:text-sm">
+                {f.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
