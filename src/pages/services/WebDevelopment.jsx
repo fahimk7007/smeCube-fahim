@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 import CustomwebDesign from "../../assets/img/svg/webdevelopment/servicesvg/CustomWebdesign";
 import FastLoading from "../../assets/img/svg/webdevelopment/servicesvg/FastLoading";
 import ResponsiveWebDSGN from "../../assets/img/svg/webdevelopment/servicesvg/ResponsiveWebDSGN";
@@ -186,10 +187,44 @@ const WebDevelopment = () => {
     },
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const slideIn = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
+      <motion.section
+        className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <div className="mb-6">
@@ -218,24 +253,50 @@ const WebDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section
+        className="py-16 bg-white"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
               আমাদের ওয়েব ডেভেলপমেন্ট সেবা
-            </h2>
-            <p className="text-lg text-gray-600">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-gray-600"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
               আপনার প্রয়োজন অনুযায়ী কাস্টমাইজড সলিউশন
-            </p>
+            </motion.p>
           </div>
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-4">
+          <motion.div
+            className="grid grid-cols-3 lg:grid-cols-6 gap-4"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-gradient-to-br from-purple-50 to-pink-50 py-2 px-1 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
+                variants={scaleIn}
+                whileHover={{ scale: 1.02 }}
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-[12px] sm:text-sm font-bold text-gray-800 mb-2">
@@ -244,9 +305,9 @@ const WebDevelopment = () => {
                 <p className="text-gray-600 text-[12px] sm:text-sm">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -254,18 +315,37 @@ const WebDevelopment = () => {
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
               আমরা যে টেকনোলজি ব্যবহার করি
-            </h2>
-            <p className="text-lg text-gray-600">
+            </motion.h2>
+            <p
+              className="text-lg text-gray-600"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
               আধুনিক এবং শক্তিশালী টেকনোলজি স্ট্যাক
             </p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 gap-3">
+          <motion.div
+            className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 gap-3"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             {technologies.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
                 className={`${tech.color} p-2 rounded-xl shadow-md hover:shadow-lg transition text-center`}
+                variants={slideIn}
               >
                 <div className="text-4xl mb-3 flex justify-center items-center">
                   {tech.icon}
@@ -273,9 +353,9 @@ const WebDevelopment = () => {
                 <div className="font-semibold text-gray-800 sm:text-[12px]">
                   {tech.name}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -329,9 +409,10 @@ const WebDevelopment = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`rounded-2xl p-8 ${
+                whileHover={{ y: -10 }}
+                className={`rounded-2xl p-8 transition-all ${
                   pkg.popular
                     ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white transform scale-105 shadow-2xl"
                     : "bg-white border-2 border-gray-200 shadow-lg"
@@ -387,14 +468,20 @@ const WebDevelopment = () => {
                 >
                   অর্ডার করুন
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white max-w-4xl px-[15%] mx-auto rounded-2xl mb-7"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             আজই পান আপনার ড্রিম ওয়েবসাইট
@@ -409,7 +496,7 @@ const WebDevelopment = () => {
             ফ্রি কনসালটেশন বুক করুন →
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
