@@ -290,13 +290,13 @@ const WebDevelopment = () => {
               বিভিন্ন শিল্পে আমাদের সফলতার গল্প
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {portfolio.map((project, index) => (
               <div
                 key={index}
                 className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
               >
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 md:h-48 h-32 flex items-center justify-center text-6xl hover:scale-105 transform duration-500">
                   {project.image}
                 </div>
                 <div className="p-3">
