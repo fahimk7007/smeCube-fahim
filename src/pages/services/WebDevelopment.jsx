@@ -216,7 +216,7 @@ const WebDevelopment = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-2">
       {/* Hero Section */}
       <motion.section
         className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20"
