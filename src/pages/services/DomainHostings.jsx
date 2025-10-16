@@ -137,7 +137,7 @@ const DomainHostings = () => {
         variants={fadeIn}
         className="relative bg-gradient-to-br from-orange-500 to-red-600 text-white py-28 overflow-hidden h-[80vh] flex flex-col justify-center items-center"
       >
-        <div className="max-w-6xl mx-auto px-4 text-center">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4 text-center">
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -165,7 +165,7 @@ const DomainHostings = () => {
       </motion.section>
 
       {/* Features Section */}
-      <section className="py-20 mx-auto max-w-6xl px-[10%]">
+      <section className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent py-1.5"
           initial="hidden"
@@ -210,7 +210,7 @@ const DomainHostings = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-gradient-to-r from-orange-50/50 to-red-50/50">
-        <div className="mx-auto max-w-6xl px-[15%] text-center">
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 px-4 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent py-2"
             initial="hidden"
@@ -253,7 +253,7 @@ const DomainHostings = () => {
 
       {/* Packages Section */}
       <div className="py-16 bg-gradient-to-br from-orange-50 to-red-100">
-        <div className="py-20 mx-auto max-w-6xl px-[15%]">
+        <div className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent py-2">
             হোস্টিং প্যাকেজসমূহ
           </h2>
@@ -317,7 +317,7 @@ const DomainHostings = () => {
       </div>
 
       {/* CTA */}
-      <section className="py-20 mx-auto max-w-6xl px-[15%]">
+      <section className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
         <motion.div
           className="bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-3xl p-12 text-center shadow-2xl"
           initial="hidden"

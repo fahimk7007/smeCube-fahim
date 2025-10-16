@@ -43,12 +43,12 @@ const WebDevelopment = () => {
   ];
 
   const technologies = [
-    { name: "React.js", icon: "⚛️", color: "bg-blue-50" },
-    { name: "Node.js", icon: "🟢", color: "bg-green-50" },
-    { name: "WordPress", icon: "📝", color: "bg-purple-50" },
-    { name: "HTML5/CSS3", icon: "🎨", color: "bg-orange-50" },
-    { name: "PHP", icon: "🐘", color: "bg-indigo-50" },
-    { name: "MongoDB", icon: "🍃", color: "bg-teal-50" },
+    { name: "React.js", icon: "/icons/technologysvg/reactjs-icon.svg", color: "bg-blue-50" },
+    { name: "Node.js", icon: "/icons/technologysvg/nodejs-icon.svg", color: "bg-green-50" },
+    { name: "WordPress", icon: "/icons/technologysvg/wordpress-icon.svg", color: "bg-purple-50" },
+    { name: "HTML5/CSS3", icon: "/icons/technologysvg/tailwindcss-icon.svg", color: "bg-orange-50" },
+    { name: "PHP", icon: "/icons/technologysvg/php-icon.svg", color: "bg-indigo-50" },
+    { name: "MongoDB", icon: "/icons/technologysvg/mongodb-icon.svg", color: "bg-teal-50" },
   ];
 
   const packages = [
@@ -97,17 +97,17 @@ const WebDevelopment = () => {
     {
       name: "রেস্টুরেন্ট ওয়েবসাইট",
       category: "খাদ্য ও পানীয়",
-      image: "🍽️",
+      image: "/images/restaurantwebsite.jpg",
     },
     {
       name: "শিক্ষা প্রতিষ্ঠান",
       category: "শিক্ষা",
-      image: "🎓",
+      image: "/images/schoolwebsite.jpg",
     },
     {
       name: "রিয়েল এস্টেট",
       category: "সম্পত্তি",
-      image: "🏢",
+      image: "/images/realstate.jpg",
     },
   ];
 
@@ -115,7 +115,7 @@ const WebDevelopment = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center">
             <div className="text-6xl mb-6">
               <HeroSvg />
@@ -147,7 +147,7 @@ const WebDevelopment = () => {
 
       {/* Services Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমাদের ওয়েব ডেভেলপমেন্ট সেবা
@@ -175,7 +175,7 @@ const WebDevelopment = () => {
 
       {/* Technologies Section */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমরা যে টেকনোলজি ব্যবহার করি
@@ -191,7 +191,7 @@ const WebDevelopment = () => {
                 className={`${tech.color} p-6 rounded-xl shadow-md hover:shadow-lg transition text-center`}
               >
                 <div className="text-4xl mb-3 flex justify-center items-center">
-                  {tech.icon}
+                  <img src={tech.icon} alt="" />
                 </div>
                 <div className="font-semibold text-gray-800">{tech.name}</div>
               </div>
@@ -202,7 +202,7 @@ const WebDevelopment = () => {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমাদের সাম্প্রতিক কাজ
@@ -218,7 +218,7 @@ const WebDevelopment = () => {
                 className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
               >
                 <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
-                  {project.image}
+                  <img className="h-full object-cover" src={project.image} alt={project.name} />
                 </div>
                 <div className="p-6">
                   <div className="text-sm text-purple-600 font-semibold mb-2">
@@ -239,7 +239,7 @@ const WebDevelopment = () => {
 
       {/* Pricing Section */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               প্রাইসিং প্ল্যান

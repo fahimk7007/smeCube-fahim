@@ -26,6 +26,7 @@ import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
+import IssueFixing from "../pages/services/IssueFixing";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
         element: <BrandPageSetup />,
       },
       {
+        path: "services/web-development",
+        element: <WebDevelopment />,
+      },
+      {
         path: "services/bulk-sms",
         element: <BulkSMS />,
       },
@@ -108,8 +113,8 @@ export const router = createBrowserRouter([
         element: <DomainHostings />,
       },
       {
-        path: "services/web-development",
-        element: <WebDevelopment />,
+        path: "services/issue-fixing",
+        element: <IssueFixing/>
       },
       {
         path: "services/business-training",
