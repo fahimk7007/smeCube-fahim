@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Star, TrendingUp, Sparkles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, ArrowUp, ChevronRight, Sparkles } from "lucide-react";
 
 // HELPER DATA //
 const pageData = {
@@ -8,19 +7,18 @@ const pageData = {
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M16 12L12 8L8 12H10V16H14V12H16Z" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M16 12L12 8L8 12H10V16H14V12H16Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      
       title: "পার্সোনালাইজড ডিজাইন",
       description: "আপনার ব্র্যান্ডের পরিচয় ফুটিয়ে তোলে এমন ইউনিক ডিজাইন।",
     },
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 3H21V21H3V3Z" stroke="#10b981" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M8 7H16M8 12H16M8 17H12" stroke="#10b981" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M3 3H21V21H3V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M8 7H16M8 12H16M8 17H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       title: "পূর্ণাঙ্গ শপিং কার্ট",
@@ -29,9 +27,9 @@ const pageData = {
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       title: "সম্পূর্ণ রেসপন্সিভ",
@@ -40,8 +38,8 @@ const pageData = {
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M12 6V12L16 14" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       title: "দ্রুত লোডিং স্পিড",
@@ -50,8 +48,8 @@ const pageData = {
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="#8b5cf6" strokeWidth="2"/>
-          <path d="M12 6V18M6 12H18" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 6V18M6 12H18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       title: "নিরাপত্তা ও সুরক্ষা",
@@ -60,8 +58,8 @@ const pageData = {
     {
       icon: (
         <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="#14b8a6" strokeWidth="2"/>
-          <path d="M8 9H16M8 13H14" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M8 9H16M8 13H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       title: "সেরা বিক্রয় পরবর্তী সেবা",
@@ -69,24 +67,16 @@ const pageData = {
     },
   ],
   clients: [
-    "bKash",
-    "Daraz",
-    "Pathao",
-    "Rokomari",
-    "Grameenphone",
-    "Shopify",
-    "Unilever",
-    "Square",
-    "Google",
-    "Meta",
-  ],
-  portfolioImages: [
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&w=800",
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&w=800",
-    "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&w=800",
-    "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&w=800",
-    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&w=800",
-    "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.0.3&w=800",
+    { name: "bKash", color: "from-red-500 to-pink-600" },
+    { name: "Daraz", color: "from-orange-500 to-red-600" },
+    { name: "Pathao", color: "from-green-500 to-teal-600" },
+    { name: "Rokomari", color: "from-blue-500 to-purple-600" },
+    { name: "Grameenphone", color: "from-yellow-500 to-orange-600" },
+    { name: "Shopify", color: "from-green-600 to-emerald-700" },
+    { name: "Unilever", color: "from-blue-600 to-cyan-600" },
+    { name: "Square", color: "from-purple-600 to-pink-700" },
+    { name: "Google", color: "from-blue-500 to-green-500" },
+    { name: "Meta", color: "from-purple-700 to-blue-700" },
   ],
   processSteps: [
     {
@@ -112,146 +102,122 @@ const pageData = {
   ],
 };
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
-const slideIn = {
-  hidden: { opacity: 0, x: -50 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
 const EcommerceSolution = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+      setIsVisible(true);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    setIsVisible(true);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const formatTitle = (title) => {
+    const words = title.split(' ');
+    if (words.length > 2) {
+      const mid = Math.ceil(words.length / 2);
+      return (
+        <>
+          {words.slice(0, mid).join(' ')}<br />
+          {words.slice(mid).join(' ')}
+        </>
+      );
+    }
+    return title;
+  };
+
   return (
-    <div className="font-sans text-gray-800 bg-white min-h-screen" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+    <div className="font-sans text-gray-800 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 min-h-screen font-hind">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+        .line-clamp-1 {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
       `}</style>
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-800 via-pink-700 to-purple-800">
-        {/* Animated background effects */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
         </div>
-        {/* Red dots pattern */}
-        <div className="absolute inset-0 opacity-10">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-red-500 rounded-full animate-pulse"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`,
-              }}
-            ></div>
-          ))}
-        </div>
+        
         <div className="container mx-auto px-4 md:px-16 relative z-10 py-20 md:py-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-5xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-full text-sm font-semibold border border-white/20 mb-6"
-            >
+          <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-full text-sm font-semibold border border-white/20 mb-6">
               <Sparkles className="w-4 h-4" /> ই-কমার্স সলিউশন বিশেষজ্ঞ
-            </motion.div>
+            </div>
+            
             <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight">
               Ecommerce Solution
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300 mt-2">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-orange-300 mt-2">
                 আপনার ব্যবসার জন্য
               </span>
             </h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg md:text-2xl text-purple-100 leading-relaxed mb-8 max-w-3xl mx-auto"
-            >
+            
+            <p className="text-lg md:text-2xl text-purple-100 leading-relaxed mb-8 max-w-3xl mx-auto">
               আপনার ব্র্যান্ডের জন্য আকর্ষণীয় ই-কমার্স সাইট, যা কনভার্সেশন বাড়াবে!
               <span className="block mt-2">
                 দৃষ্টিনন্দন Design আর কার্যকরী Conversion-এর সমন্বয়ে, আমরা তৈরি করি আপনার ব্র্যান্ডের Growth-এর পথ।
               </span>
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8"
-            >
+            </p>
+            
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
               {[
                 { number: '500+', label: 'সফল প্রজেক্ট' },
                 { number: '98%', label: 'সন্তুষ্টি' },
                 { number: '24/7', label: 'সাপোর্ট' },
               ].map((stat, index) => (
-                <motion.div
+                <div 
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 transition-all duration-500 delay-200"
+                  style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
                   <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
                   <div className="text-purple-200 text-xs md:text-sm">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 20px 60px rgba(255, 255, 255, 0.3)' }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3"
-              >
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="group bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl active:scale-95">
                 আরও জানুন
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all"
-              >
+              </button>
+              <button className="border-2 border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all hover:scale-105 active:scale-95">
                 ফ্রী কন্সাল্টেশন
-              </motion.button>
-            </motion.div>
-          </motion.div>
+              </button>
+            </div>
+          </div>
         </div>
-        {/* Curved bottom with soft red gradient */}
+        
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <defs>
               <linearGradient id="curveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#FEF2F2" />
-                <stop offset="100%" stopColor="#FFFFFF" />
+                <stop offset="0%" stopColor="#FAF5FF" />
+                <stop offset="100%" stopColor="#FDF2F8" />
               </linearGradient>
             </defs>
             <path
@@ -262,97 +228,84 @@ const EcommerceSolution = () => {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-12 md:py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 md:px-16 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6">আপনার প্রজেক্ট শুরু করুন আজই!</h3>
-            <p className="text-purple-100 text-lg md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-              আমাদের বিশেষজ্ঞ টিম আপনার প্রজেক্ট নিয়ে আলোচনা করতে প্রস্তুত। বিনামূল্যে কন্সাল্টেশন পান।
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 20px 60px rgba(255, 255, 255, 0.3)' }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-white text-purple-600 px-8 md:px-10 py-3 md:py-5 rounded-full font-semibold text-base md:text-lg shadow-2xl transition-all flex items-center justify-center gap-3"
-              >
-                ফ্রী কন্সাল্টেশন বুক করুন
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 md:px-10 py-3 md:py-5 rounded-full font-semibold text-base md:text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
-              >
-                লাইভ চ্যাট
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-12 md:py-24 bg-gradient-to-b from-red-50 to-white relative">
-        <div className="mx-auto max-w-7xl px-4 md:px-16">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-20"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4"
+      {/* FEATURES SECTION */}
+      <section className="py-8 md:py-12 mx-auto max-w-7xl px-4 md:px-8">
+        <h2 className="text-xl md:text-5xl font-bold text-center mb-8 md:mb-12 leading-tight">
+          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            আমাদের ফিচারসমূহ
+          </span>
+        </h2>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+          {pageData.features.map((feature, i) => (
+            <div
+              key={i}
+              className="group relative bg-gradient-to-br from-white to-gray-50 rounded-xl md:rounded-2xl p-3 md:p-5 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 aspect-square flex flex-col justify-center items-center border border-purple-100 shadow-sm"
             >
-              <Sparkles className="w-4 h-4" /> আমাদের সেবা
-            </motion.span>
-            <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-30">আমাদের ফিচারসমূহ </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              সম্পূর্ণ ই-কমার্স সলিউশন একটি প্যাকেজে
-            </p>
-          </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {pageData.features.map((feature, i) => (
-              <motion.div
-                key={i}
-                className="group text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all border border-gray-100 relative overflow-hidden"
-                variants={scaleIn}
-                whileHover={{ y: -10, scale: 1.02 }}
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="bg-gray-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 rounded-xl md:rounded-2xl transition-all duration-300"></div>
+              
+              <div className="relative z-10 text-purple-600 mb-2 md:mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              
+              <h3 className="relative z-10 text-xs md:text-sm font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight min-h-[2.5rem] flex items-center justify-center">
+                {formatTitle(feature.title)}
+              </h3>
+              
+              <p className="relative z-10 text-[10px] md:text-xs text-gray-600 line-clamp-1 group-hover:text-gray-700 transition-colors duration-300">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* CLIENTS */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-purple-50 relative overflow-hidden">
+      {/* PROCESS SECTION */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-white to-purple-50">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+              আমাদের কাজের প্রক্রিয়া
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 mb-10">
+              পরিকল্পনা থেকে ডেলিভারি পর্যন্ত সম্পূর্ণ প্রক্রিয়া
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {pageData.processSteps.map((step, i) => (
+              <div
+                key={i}
+                className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col min-h-[280px] transition-all border border-gray-100 hover:shadow-xl hover:scale-105"
+              >
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent mb-4">
+                      {step.step}
+                    </div>
+                    <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-3 leading-tight min-h-[3rem] flex items-center">
+                      {formatTitle(step.title)}
+                    </h3>
+                    <p className="text-gray-600 text-sm line-clamp-2">{step.description}</p>
+                  </div>
+                  <div className="mt-4">
+                    <a
+                      href="#"
+                      className="inline-flex items-center text-purple-600 font-medium hover:text-purple-700 hover:bg-purple-50 rounded px-2 py-1 transition-all duration-200 text-sm"
+                    >
+                      আরও জানুন
+                      <ChevronRight className="w-5 h-5 ml-1" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CLIENTS SECTION */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
@@ -361,161 +314,69 @@ const EcommerceSolution = () => {
             }}
           ></div>
         </div>
+        
         <div className="mx-auto max-w-7xl px-4 md:px-16 relative z-10">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-semibold mb-4 shadow-sm"
-            >
+          <div className="text-center mb-8 md:mb-12">
+            <span className="inline-block px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-semibold mb-4 shadow-sm">
               বিশ্বস্ত ব্র্যান্ড
-            </motion.span>
+            </span>
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               আমাদের সম্মানিত ক্লায়েন্টরা
             </h2>
-          </motion.div>
-          <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 md:gap-8"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
+          </div>
+          
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6">
             {pageData.clients.map((client, i) => (
-              <motion.div
+              <div
                 key={i}
-                className="px-4 md:px-6 py-2 md:py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all border border-gray-100"
-                variants={scaleIn}
-                whileHover={{ scale: 1.08, y: -3 }}
-                whileTap={{ scale: 0.95 }}
+                className="px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md hover:shadow-lg transition-all border border-gray-100 hover:scale-105 active:scale-95"
+                style={{ 
+                  background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
+                  backgroundImage: `linear-gradient(135deg, ${client.color.split(' ')[0].replace('from-', '')}, ${client.color.split(' ')[1].replace('to-', '')})`
+                }}
               >
-                <span className="text-sm md:text-lg font-semibold text-gray-700">{client}</span>
-              </motion.div>
+                <span className="text-sm md:text-lg font-semibold text-white">{client.name}</span>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* DEMO PROJECTS */}
-      <section className="py-12 md:py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 md:px-16">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-20"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4"
-            >
-              <TrendingUp className="w-4 h-4" /> আমাদের কাজ
-            </motion.span>
-            <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-6">ডেমো প্রজেক্টসমূহ</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              সফল ই-কমার্স প্রজেক্টের নমুনা
+      {/* CTA SECTION */}
+      <section className="py-12 md:py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="mx-auto max-w-7xl px-4 md:px-16 text-center relative z-10">
+          <div>
+            <h3 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6">আপনার প্রজেক্ট শুরু করুন আজই!</h3>
+            <p className="text-purple-100 text-lg md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+              আমাদের বিশেষজ্ঞ টিম আপনার প্রজেক্ট নিয়ে আলোচনা করতে প্রস্তুত। বিনামূল্যে কন্সাল্টেশন পান।
             </p>
-          </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {pageData.portfolioImages.map((img, i) => (
-              <motion.div
-                key={i}
-                className="group overflow-hidden rounded-2xl shadow-md hover:shadow-2xl relative bg-white aspect-square"
-                variants={scaleIn}
-                whileHover={{ y: -10, scale: 1.02 }}
-              >
-                <img
-                  src={img}
-                  alt={`Project ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-6">
-                  <motion.button
-                    className="px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold text-base shadow-lg flex items-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    দেখুন
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.button>
-                </div>
-                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
-                  প্রজেক্ট {i + 1}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+              <button className="group bg-white text-purple-600 px-8 md:px-10 py-3 md:py-5 rounded-full font-semibold text-base md:text-lg shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl active:scale-95">
+                ফ্রী কন্সাল্টেশন বুক করুন
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="border-2 border-white text-white px-8 md:px-10 py-3 md:py-5 rounded-full font-semibold text-base md:text-lg hover:bg-white/10 transition-all backdrop-blur-sm hover:scale-105 active:scale-95">
+                লাইভ চ্যাট
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* PROCESS SECTION */}
-      <section className="py-12 md:py-24 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="mx-auto max-w-7xl px-4 md:px-16">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-20"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-semibold mb-4 shadow-sm"
-            >
-              <Sparkles className="w-4 h-4" /> কাজের ধাপ
-            </motion.span>
-            <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-6">আমাদের কাজের প্রক্রিয়া</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              পরিকল্পনা থেকে ডেলিভারি পর্যন্ত সম্পূর্ণ প্রক্রিয়া
-            </p>
-          </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {pageData.processSteps.map((step, i) => (
-              <motion.div
-                key={i}
-                className="bg-white p-6 rounded-3xl shadow-md hover:shadow-2xl transition-all border border-purple-100 group relative overflow-hidden"
-                variants={slideIn}
-                whileHover={{ y: -10 }}
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-                  <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mt-4 group-hover:w-16 transition-all duration-300"></div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {/* Scroll to Top */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 sm:p-5 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 z-50"
+        >
+          <ArrowUp className="w-6 h-6 sm:w-7 sm:h-7" />
+        </button>
+      )}
     </div>
   );
 };
