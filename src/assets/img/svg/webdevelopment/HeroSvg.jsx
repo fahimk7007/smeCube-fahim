@@ -9,7 +9,7 @@ const HeroSvg = () => {
       height="240" */
       role="img"
       aria-labelledby="webTitle webDesc"
-      className="mx-auto h-32 w-32 md:w-60 md:h-60"
+      className="mx-auto h-24 w-24"
     >
       <title id="webTitle">Web development icon</title>
       <desc id="webDesc">

@@ -192,7 +192,7 @@ const WebDevelopment = () => {
       <section className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
-            <div className="text-6xl mb-6">
+            <div className="mb-6">
               <HeroSvg />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
