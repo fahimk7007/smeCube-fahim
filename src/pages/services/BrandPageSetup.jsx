@@ -127,6 +127,11 @@ const BrandPageSetup = () => {
     },
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
   return (
     <div
       className="min-h-screen"
@@ -173,14 +178,14 @@ const BrandPageSetup = () => {
                 সোশ্যাল মিডিয়া বিশেষজ্ঞ
               </motion.div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+              <h1 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-white">
                 ব্র্যান্ড পেজ সেটআপ
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300 mt-2">
                   এবং ম্যানেজমেন্ট
                 </span>
               </h1>
 
-              <p className="text-xl lg:text-2xl mb-8 text-purple-100 leading-relaxed">
+              <p className="text-xl md:text-2xl  mb-8 text-purple-100 leading-relaxed">
                 আপনার ব্র্যান্ডকে সোশ্যাল মিডিয়ায় প্রতিষ্ঠিত করুন আমাদের
                 বিশেষজ্ঞ টিমের সাথে
               </p>
@@ -289,8 +294,9 @@ const BrandPageSetup = () => {
         <div className="absolute bottom-0 left-0 right-0">
           <svg
             viewBox="0 0 1440 120"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full h-auto block"
           >
             <path
               d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
@@ -319,7 +325,7 @@ const BrandPageSetup = () => {
               <Zap className="w-4 h-4" />
               আমাদের সেবা
             </motion.span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               আমরা যা অফার করি
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -384,7 +390,7 @@ const BrandPageSetup = () => {
             >
               মূল্য পরিকল্পনা
             </motion.span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               আমাদের প্যাকেজ সমূহ
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -489,7 +495,7 @@ const BrandPageSetup = () => {
               <TrendingUp className="w-4 h-4" />
               সাফল্যের গল্প
             </motion.span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               আমাদের ক্লায়েন্টদের সাফল্য
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -540,7 +546,7 @@ const BrandPageSetup = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               ক্লায়েন্টরা যা বলেন
             </h2>
           </motion.div>
@@ -586,55 +592,63 @@ const BrandPageSetup = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-        </div>
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="mx-auto max-w-6xl  px-[10%]"
+      >
+        <div className="m-10 p-10 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 text-white relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 opacity-20 p-4">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
+            <div
+              className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            ></div>
+          </div>
 
-        <div className="px-[15%] text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-              আপনার ব্র্যান্ডের যাত্রা শুরু করুন
-            </h2>
-            <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              আজই আমাদের সাথে যোগাযোগ করুন এবং আপনার সোশ্যাল মিডিয়া উপস্থিতিকে
-              নতুন উচ্চতায় নিয়ে যান
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 60px rgba(255, 255, 255, 0.3)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-white text-purple-600 px-10 py-5 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3"
-              >
-                ফ্রি অডিট রিকোয়েস্ট করুন
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
-              >
-                লাইভ চ্যাট
-              </motion.button>
-            </div>
-          </motion.div>
+          <div className="text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                আপনার ব্র্যান্ডের যাত্রা শুরু করুন
+              </h2>
+              <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                আজই আমাদের সাথে যোগাযোগ করুন এবং আপনার সোশ্যাল মিডিয়া
+                উপস্থিতিকে নতুন উচ্চতায় নিয়ে যান
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 60px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group bg-white text-purple-600 px-10 py-5 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3"
+                >
+                  ফ্রি অডিট রিকোয়েস্ট করুন
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                >
+                  লাইভ চ্যাট
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
