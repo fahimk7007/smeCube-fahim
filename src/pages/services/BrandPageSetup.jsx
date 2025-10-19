@@ -108,19 +108,19 @@ const BrandPageSetup = () => {
       brand: "ফ্যাশন হাব",
       growth: "৩৫০%",
       description: "৩ মাসে ফলোয়ার ১০,০০০ তে বৃদ্ধি",
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: <TrendingUp className="md:w-8 md:h-8 w-6 h-6" />,
     },
     {
       brand: "টেক সলিউশন",
       growth: "৫০০%",
       description: "রিচ ৫x বৃদ্ধি এবং লিড জেনারেশন",
-      icon: <Sparkles className="w-8 h-8" />,
+      icon: <Sparkles className="md:w-8 md:h-8 w-6 h-6" />,
     },
     {
       brand: "ফুডি বাংলা",
       growth: "২৮০%",
       description: "এনগেজমেন্ট ৩x বৃদ্ধি এবং সেলস বৃদ্ধি",
-      icon: <Star className="w-8 h-8" />,
+      icon: <Star className="md:w-8 md:h-8 w-6 h-6" />,
     },
   ];
 
@@ -368,21 +368,13 @@ const BrandPageSetup = () => {
                   <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:scale-110 transition-transform">
                     {feature.icon}
                   </div>
-                  <h3 className="text-[12px] xl:text-xl font-bold text-gray-900 mb-2 md:mb-4">
+                  <h3 className="relative z-10 text-sm sm:text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight">
                     {feature.title}
                   </h3>
                   <p className="text-[12px] xl:text-xl md:text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
-
-                <h3 className="relative z-10 text-sm sm:text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight">
-                  {feature.title}
-                </h3>
-
-                <p className="hidden sm:block relative z-10 text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300 font-hind">
-                  {feature.description}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -528,30 +520,24 @@ const BrandPageSetup = () => {
             {successStories.map((story, index) => (
               <div
                 key={index}
-                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center"
+                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-1.5 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center "
               >
-                <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-500"></div>
+                {/* <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 z-0 transition-transform duration-500"></div> */}
 
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-8 h-8 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-6 group-hover:scale-110 transition-transform">
                     {story.icon}
                   </div>
-                  <div className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                  <div className="text-xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 md:mb-4">
                     {story.growth}
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">
                     {story.brand}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm lg:text-xl">
                     {story.description}
                   </p>
                 </div>
-                <h3 className="text-base sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">
-                  {story.brand}
-                </h3>
-                <p className="hidden sm:block text-gray-600 leading-relaxed text-sm font-hind">
-                  {story.description}
-                </p>
               </div>
             ))}
           </div>
