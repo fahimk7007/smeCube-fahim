@@ -327,7 +327,7 @@ const BrandPageSetup = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -336,18 +336,18 @@ const BrandPageSetup = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="group text-center bg-gradient-to-br from-white to-purple-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-purple-100 relative overflow-hidden"
+                className="group text-center bg-gradient-to-br from-white to-purple-100 rounded-3xl p-2 md:p-4 shadow-lg hover:shadow-2xl transition-all border border-purple-100 relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-500"></div>
 
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:scale-110 transition-transform">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-[12px] xl:text-xl font-bold text-gray-900 mb-2 md:mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-[12px] xl:text-xl md:text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -392,7 +392,7 @@ const BrandPageSetup = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-3 lg:gap-6 max-w-4xl mx-auto">
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
@@ -422,9 +422,13 @@ const BrandPageSetup = () => {
                 )}
 
                 <div className="text-center mb-8 mt-4">
-                  <h3 className="text-3xl font-bold mb-4">{pkg.name}</h3>
+                  <h3 className="text-2xl md:text-xl lg:text-3xl font-bold mb-4">
+                    {pkg.name}
+                  </h3>
                   <div className="flex items-baseline justify-center gap-2 mb-2">
-                    <span className="text-5xl font-bold">৳{pkg.price}</span>
+                    <span className="text-2xl md:text-xl lg:text-5xl font-bold">
+                      ৳{pkg.price}
+                    </span>
                   </div>
                   <span
                     className={`text-sm ${
@@ -504,19 +508,19 @@ const BrandPageSetup = () => {
                 whileHover={{ y: -10 }}
                 className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-pink-100 relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-500"></div>
 
                 <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     {story.icon}
                   </div>
-                  <div className="text-6xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                  <div className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
                     {story.growth}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
                     {story.brand}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-xl">
                     {story.description}
                   </p>
                 </div>
