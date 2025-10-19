@@ -418,13 +418,13 @@ const BrandPageSetup = () => {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-3 lg:gap-6 max-w-4xl mx-auto">
             {packages.map((pkg, index) => (
-              <div
+              <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -15, scale: pkg.recommended ? 1 : 1.02 }}
+                // initial={{ opacity: 0, y: 50 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.6, delay: index * 0.15 }}
+                // viewport={{ once: true }}
+                whileHover={{ y: -15 }}
                 className={`relative rounded-3xl p-8 shadow-xl transition-all ${
                   pkg.recommended
                     ? `bg-gradient-to-br ${pkg.gradient} text-white scale-105 shadow-2xl`
@@ -486,7 +486,7 @@ const BrandPageSetup = () => {
                 >
                   প্যাকেজ নির্বাচন করুন
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
