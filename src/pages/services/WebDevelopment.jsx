@@ -376,7 +376,7 @@ const WebDevelopment = () => {
                 key={index}
                 className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
               >
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl hover:scale-110 transition duration-300">
                   {project.image}
                 </div>
                 <div className="p-3">
