@@ -348,7 +348,7 @@ const WebDevelopment = () => {
                 variants={slideIn}
               >
                 <div className="text-4xl mb-3 flex justify-center items-center">
-                  <img src={tech.icon} alt="" />
+                  {tech.icon}
                 </div>
                 <div className="font-semibold text-gray-800 sm:text-[12px]">
                   {tech.name}
@@ -377,11 +377,7 @@ const WebDevelopment = () => {
                 className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
               >
                 <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
-                  <img
-                    className="h-full object-cover"
-                    src={project.image}
-                    alt={project.name}
-                  />
+                  {project.image}
                 </div>
                 <div className="p-3">
                   <div className="text-sm text-purple-600 font-semibold mb-2">
