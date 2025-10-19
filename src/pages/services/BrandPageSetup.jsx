@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -17,7 +17,19 @@ import {
 } from "lucide-react";
 
 const BrandPageSetup = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const features = [
     {
@@ -139,8 +151,14 @@ const BrandPageSetup = () => {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-        .english-text {
-          font-family: 'Akceler Alter', sans-serif;
+        .font-hind {
+          font-family: 'Hind Siliguri', sans-serif;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       `}</style>
 
@@ -357,6 +375,14 @@ const BrandPageSetup = () => {
                     {feature.description}
                   </p>
                 </div>
+
+                <h3 className="relative z-10 text-sm sm:text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight">
+                  {feature.title}
+                </h3>
+
+                <p className="hidden sm:block relative z-10 text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300 font-hind">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -400,7 +426,7 @@ const BrandPageSetup = () => {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-3 lg:gap-6 max-w-4xl mx-auto">
             {packages.map((pkg, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -445,7 +471,7 @@ const BrandPageSetup = () => {
                   </span>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-2 md:space-y-3 mb-6">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle
@@ -458,19 +484,17 @@ const BrandPageSetup = () => {
                   ))}
                 </ul>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => setSelectedPackage(index)}
-                  className={`w-full py-4 rounded-xl font-semibold transition-all ${
+                  className={`w-full py-3 md:py-4 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 text-sm md:text-base ${
                     pkg.recommended
                       ? "bg-white text-purple-500 hover:bg-gray-100 shadow-lg"
                       : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg"
                   }`}
                 >
                   প্যাকেজ নির্বাচন করুন
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             ))}
           </div>
         </div>
@@ -498,21 +522,13 @@ const BrandPageSetup = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               আমাদের ক্লায়েন্টদের সাফল্য
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              অসাধারণ সাফল্য এবং বৃদ্ধি অর্জনকারী ব্র্যান্ডসমূহ
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 gap-4">
             {successStories.map((story, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-pink-100 relative overflow-hidden"
+                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center"
               >
                 <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 transition-transform duration-500"></div>
 
@@ -530,7 +546,13 @@ const BrandPageSetup = () => {
                     {story.description}
                   </p>
                 </div>
-              </motion.div>
+                <h3 className="text-base sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">
+                  {story.brand}
+                </h3>
+                <p className="hidden sm:block text-gray-600 leading-relaxed text-sm font-hind">
+                  {story.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -551,17 +573,13 @@ const BrandPageSetup = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-3xl p-8 shadow-lg"
+                className="bg-white rounded-3xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all"
               >
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -569,11 +587,11 @@ const BrandPageSetup = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-700 text-lg mb-6 leading-relaxed italic">
+                <p className="text-gray-700 text-xs md:text-lg mb-4 md:mb-6 leading-relaxed italic font-hind line-clamp-3">
                   "{testimonial.text}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -585,7 +603,7 @@ const BrandPageSetup = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

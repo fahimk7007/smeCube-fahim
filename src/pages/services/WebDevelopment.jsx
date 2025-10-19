@@ -313,7 +313,7 @@ const WebDevelopment = () => {
 
       {/* Technologies Section */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
@@ -348,7 +348,7 @@ const WebDevelopment = () => {
                 variants={slideIn}
               >
                 <div className="text-4xl mb-3 flex justify-center items-center">
-                  {tech.icon}
+                  <img src={tech.icon} alt="" />
                 </div>
                 <div className="font-semibold text-gray-800 sm:text-[12px]">
                   {tech.name}
@@ -361,7 +361,7 @@ const WebDevelopment = () => {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               আমাদের সাম্প্রতিক কাজ
@@ -376,8 +376,12 @@ const WebDevelopment = () => {
                 key={index}
                 className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
               >
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 md:h-48 h-32 flex items-center justify-center text-6xl hover:scale-105 transform duration-500">
-                  {project.image}
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 h-48 flex items-center justify-center text-6xl">
+                  <img
+                    className="h-full object-cover"
+                    src={project.image}
+                    alt={project.name}
+                  />
                 </div>
                 <div className="p-3">
                   <div className="text-sm text-purple-600 font-semibold mb-2">

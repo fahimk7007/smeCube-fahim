@@ -259,7 +259,7 @@ const IssueFixing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white relative overflow-hidden">
+      <section className="lg:pt-32 pt-5 pb-20 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -440,10 +440,10 @@ const IssueFixing = () => {
                 }`}
               >
                 {offer.popular && (
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-yellow-400 text-purple-900 px-4 py-1 rounded-full text-sm font-bold inline-block">
                       <Star className="w-6 h-4 inline mr-1" />
-                      সর্বাধিক জনপ্রিয়
+                      জনপ্রিয়
                     </div>
                   </div>
                 )}
