@@ -68,57 +68,118 @@ const Pricing = () => {
   ];
 
   const addOnServices = [
-    { name: "ফেসবুক বুস্টিং", price: "৩,০০০", unit: "/মাস" },
-    { name: "গ্রাফিক ডিজাইন প্যাকেজ", price: "৫,০০০", unit: "/মাস" },
-    { name: "বাল্ক এসএমএস", price: "০.২৫", unit: "/এসএমএস" },
-    { name: "চাটবট সেটআপ", price: "৮,০০০", unit: "/একবার" },
-    { name: "ডোমেইন রেজিস্ট্রেশন", price: "১,২০০", unit: "/বছর" },
-    { name: "কন্টেন্ট রাইটিং", price: "৫০০", unit: "/পোস্ট" }
+    {
+      name: "ফেসবুক বুস্টিং",
+      price: "৩,০০০",
+      unit: "/মাস",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" fill="white"/>
+        </svg>
+      )
+    },
+    {
+      name: "গ্রাফিক ডিজাইন প্যাকেজ",
+      price: "৫,০০০",
+      unit: "/মাস",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM8 17L12 19L16 17V13L12 15L8 13V17Z" fill="white"/>
+        </svg>
+      )
+    },
+    {
+      name: "বাল্ক এসএমএস",
+      price: "০.২৫",
+      unit: "/এসএমএস",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z" fill="white"/>
+        </svg>
+      )
+    },
+    {
+      name: "চাটবট সেটআপ",
+      price: "৮,০০০",
+      unit: "/একবার",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 11.5C21 16.1944 16.9706 20 12 20C10.1157 20 8.36842 19.4472 7 18.5833L3 20L4.41667 16C3.55279 14.6316 3 12.8843 3 11C3 6.30558 7.02944 2.5 12 2.5C16.9706 2.5 21 6.30558 21 11.5Z" fill="white"/>
+        </svg>
+      )
+    },
+    {
+      name: "ডোমেইন রেজিস্ট্রেশন",
+      price: "১,২০০",
+      unit: "/বছর",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="white"/>
+        </svg>
+      )
+    },
+    {
+      name: "কন্টেন্ট রাইটিং",
+      price: "৫০০",
+      unit: "/পোস্ট",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z" fill="white"/>
+        </svg>
+      )
+    }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+        .font-hind {
+          font-family: 'Hind Siliguri', sans-serif;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12">
             <div className="flex-1 text-center md:text-left w-full">
               <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6 flex justify-center md:justify-start">💰</div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-2 font-hind">
                 স্বচ্ছ প্রাইসিং প্ল্যান
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-gray-100 px-4">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-gray-100 px-4 font-hind">
                 আপনার ব্যবসার জন্য সঠিক প্যাকেজ নির্বাচন করুন। সকল প্ল্যানে স্বচ্ছ মূল্য, 
                 কোন লুকানো খরচ নেই। মাসিক এবং বার্ষিক প্ল্যান উপলব্ধ।
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start px-4">
-                <button className="bg-white text-red-600 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-gray-100 transition text-center text-sm sm:text-base">
+                <button className="bg-white text-red-600 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-gray-100 transition text-center text-sm sm:text-base font-hind">
                   ফ্রি ট্রায়াল শুরু করুন →
                 </button>
-                <button className="border-2 border-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-red-600 transition text-sm sm:text-base">
+                <button className="border-2 border-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-red-600 transition text-sm sm:text-base font-hind">
                   এক্সপার্ট পরামর্শ
                 </button>
               </div>
             </div>
             <div className="flex-1 w-full">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 sm:p-6 md:p-8 border border-white/20">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center md:text-left">আমাদের মূল্য বৈশিষ্ট্য</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center md:text-left font-hind">আমাদের মূল্য বৈশিষ্ট্য</h3>
                 <ul className="space-y-2 sm:space-y-3 md:space-y-4">
                   <li className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start text-center md:text-left">
                     <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">✅</span>
-                    <span className="text-xs sm:text-sm md:text-base">কোন সেটআপ ফি নেই</span>
+                    <span className="text-xs sm:text-sm md:text-base font-hind">কোন সেটআপ ফি নেই</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start text-center md:text-left">
                     <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">✅</span>
-                    <span className="text-xs sm:text-sm md:text-base">৭ দিনের মানি ব্যাক গ্যারান্টি</span>
+                    <span className="text-xs sm:text-sm md:text-base font-hind">৭ দিনের মানি ব্যাক গ্যারান্টি</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start text-center md:text-left">
                     <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">✅</span>
-                    <span className="text-xs sm:text-sm md:text-base">যেকোনো সময় প্ল্যান আপগ্রেড</span>
+                    <span className="text-xs sm:text-sm md:text-base font-hind">যেকোনো সময় প্ল্যান আপগ্রেড</span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3 justify-center md:justify-start text-center md:text-left">
                     <span className="text-lg sm:text-xl md:text-2xl flex-shrink-0">✅</span>
-                    <span className="text-xs sm:text-sm md:text-base">২৪/৭ টেকনিক্যাল সাপোর্ট</span>
+                    <span className="text-xs sm:text-sm md:text-base font-hind">২৪/৭ টেকনিক্যাল সাপোর্ট</span>
                   </li>
                 </ul>
               </div>
@@ -133,7 +194,7 @@ const Pricing = () => {
           <div className="inline-flex items-center bg-white rounded-full p-1 shadow-lg mb-6">
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-base ${
+              className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-base font-hind ${
                 billingCycle === 'monthly'
                   ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-gray-900'
@@ -143,7 +204,7 @@ const Pricing = () => {
             </button>
             <button
               onClick={() => setBillingCycle('yearly')}
-              className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-base ${
+              className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-base font-hind ${
                 billingCycle === 'yearly'
                   ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-gray-900'
@@ -155,18 +216,18 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Pricing Cards - 2 cards per row on mobile */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 mb-10 sm:mb-16 md:mb-20">
+        {/* Pricing Cards - 3 cards per row on mobile */}
+        <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-8 mb-10 sm:mb-16 md:mb-20">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
               className={`relative bg-white rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-1 ${
                 plan.popular ? 'ring-2 md:ring-4 ring-red-500 md:scale-105' : ''
-              } ${index === 2 ? 'col-span-2 md:col-span-1' : ''}`}
+              }`}
             >
               {plan.popular && (
                 <div className="absolute -top-2 md:-top-5 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 sm:px-4 md:px-6 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg">
+                  <div className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 sm:px-4 md:px-6 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg font-hind">
                     জনপ্রিয়
                   </div>
                 </div>
@@ -179,8 +240,8 @@ const Pricing = () => {
                 </div>
 
                 {/* Plan Name */}
-                <h3 className="text-base sm:text-lg md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">{plan.name}</h3>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6">{plan.description}</p>
+                <h3 className="text-base sm:text-lg md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2 font-hind">{plan.name}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 font-hind">{plan.description}</p>
 
                 {/* Price */}
                 <div className="mb-4 sm:mb-6 md:mb-8">
@@ -188,12 +249,12 @@ const Pricing = () => {
                     <span className="text-2xl sm:text-3xl md:text-5xl font-black bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
                       ৳{billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
                     </span>
-                    <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-1 sm:mb-2">
+                    <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-1 sm:mb-2 font-hind">
                       /{billingCycle === 'monthly' ? 'মাস' : 'বছর'}
                     </span>
                   </div>
                   {billingCycle === 'yearly' && (
-                    <p className="text-xs sm:text-sm text-green-600 font-semibold mt-1 sm:mt-2">
+                    <p className="text-xs sm:text-sm text-green-600 font-semibold mt-1 sm:mt-2 font-hind">
                       মাসিক মূল্যে ২০% সাশ্রয়!
                     </p>
                   )}
@@ -206,14 +267,14 @@ const Pricing = () => {
                       <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-2 h-2 sm:w-3 sm:h-3 text-green-600" />
                       </div>
-                      <span className="text-xs sm:text-sm md:text-base text-gray-700">{feature}</span>
+                      <span className="text-xs sm:text-sm md:text-base text-gray-700 font-hind">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Button */}
                 <button
-                  className={`w-full py-2 sm:py-3 md:py-4 rounded-lg md:rounded-xl font-bold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base ${
+                  className={`w-full py-2 sm:py-3 md:py-4 rounded-lg md:rounded-xl font-bold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base font-hind ${
                     plan.popular
                       ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
                       : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
@@ -227,30 +288,30 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Add-on Services - 2 cards per row on mobile */}
+        {/* Add-on Services - 3 cards per row on mobile */}
         <div className="mb-10 sm:mb-16 md:mb-20">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 font-hind">
               অতিরিক্ত সার্ভিস
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600">আপনার প্যাকেজের সাথে যুক্ত করুন এই সার্ভিসগুলো</p>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-hind">আপনার প্যাকেজের সাথে যুক্ত করুন এই সার্ভিসগুলো</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {addOnServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg md:rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-lg md:rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center"
               >
                 <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900">{service.name}</h3>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 font-hind">{service.name}</h3>
                   <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
-                    <Check className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
+                    {service.icon}
                   </div>
                 </div>
                 <div className="flex items-end gap-1">
                   <span className="text-lg sm:text-xl md:text-3xl font-black text-gray-900">৳{service.price}</span>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-0.5 sm:mb-1">{service.unit}</span>
+                  <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-0.5 sm:mb-1 font-hind">{service.unit}</span>
                 </div>
               </div>
             ))}
@@ -259,7 +320,7 @@ const Pricing = () => {
 
         {/* Comparison Table */}
         <div className="bg-white rounded-xl md:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-12 mb-10 sm:mb-16 md:mb-20">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-12 font-hind">
             <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
               প্ল্যান তুলনা
             </span>
@@ -269,10 +330,10 @@ const Pricing = () => {
             <table className="w-full min-w-full">
               <thead>
                 <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base">ফিচার</th>
-                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base">স্টার্টার</th>
-                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base">প্রফেশনাল</th>
-                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base">এন্টারপ্রাইজ</th>
+                  <th className="text-left py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base font-hind">ফিচার</th>
+                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base font-hind">স্টার্টার</th>
+                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base font-hind">প্রফেশনাল</th>
+                  <th className="text-center py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-bold text-gray-900 text-xs sm:text-sm md:text-base font-hind">এন্টারপ্রাইজ</th>
                 </tr>
               </thead>
               <tbody>
@@ -285,10 +346,10 @@ const Pricing = () => {
                   { feature: 'ই-কমার্স', starter: '✗', pro: '✗', enterprise: '✓' }
                 ].map((row, index) => (
                   <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-semibold text-gray-700 text-xs sm:text-sm md:text-base">{row.feature}</td>
-                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base">{row.starter}</td>
-                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base">{row.pro}</td>
-                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base">{row.enterprise}</td>
+                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 font-semibold text-gray-700 text-xs sm:text-sm md:text-base font-hind">{row.feature}</td>
+                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base font-hind">{row.starter}</td>
+                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base font-hind">{row.pro}</td>
+                    <td className="py-2 sm:py-3 md:py-4 px-2 sm:px-4 text-center text-gray-600 text-xs sm:text-sm md:text-base font-hind">{row.enterprise}</td>
                   </tr>
                 ))}
               </tbody>
@@ -298,7 +359,7 @@ const Pricing = () => {
 
         {/* FAQ Section */}
         <div className="bg-white rounded-xl md:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-12 mb-10 sm:mb-16 md:mb-20">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-12 font-hind">
             <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
               সাধারণ প্রশ্ন
             </span>
@@ -324,8 +385,8 @@ const Pricing = () => {
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-gray-200 pb-4 sm:pb-6 last:border-0">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{faq.q}</h3>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{faq.a}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 font-hind">{faq.q}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed font-hind">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -333,18 +394,18 @@ const Pricing = () => {
 
         {/* CTA Section */}
         <div className="bg-gradient-to-br from-red-500 to-pink-600 rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-12 text-center text-white shadow-2xl">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 font-hind">
             এখনও নিশ্চিত নন?
           </h2>
-          <p className="text-sm sm:text-base md:text-xl mb-4 sm:mb-6 md:mb-8 text-white/90">
+          <p className="text-sm sm:text-base md:text-xl mb-4 sm:mb-6 md:mb-8 text-white/90 font-hind">
             আমাদের সাথে কথা বলুন এবং পান ফ্রি কনসালটেশন
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <button className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base">
+            <button className="bg-white text-red-600 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base font-hind">
               <Phone className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               কল করুন
             </button>
-            <button className="bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-bold border-2 border-white hover:bg-white hover:text-red-600 transition-all duration-300 text-xs sm:text-sm md:text-base">
+            <button className="bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-bold border-2 border-white hover:bg-white hover:text-red-600 transition-all duration-300 text-xs sm:text-sm md:text-base font-hind">
               <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 inline mr-1 sm:mr-2" />
               মেসেজ পাঠান
             </button>
