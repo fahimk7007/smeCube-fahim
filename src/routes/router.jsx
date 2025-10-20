@@ -32,6 +32,8 @@ import IssueFixing from "../pages/services/IssueFixing";
 import AdminChatbotSetup from "../pages/admin/dashboard/AdminChatbotSetup";
 import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
 import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
+import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS"
+import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
 
 export const router = createBrowserRouter([
   {
@@ -154,6 +156,10 @@ export const router = createBrowserRouter([
         ),
       },
 
+      { path: "bulk-sms", element: <AdminBulkSMS />},
+      { path: "landing-page", element: <AdminLandingPage /> },
+      { path: "facebook-boosting", element: <AdminFacebookBoosting /> },
+      { path: "ecommerce-solution", element: <AdminEcommerceSolution /> },
       { path: "chatbot-setup", element: <AdminChatbotSetup /> },
       { path: "issue-fixing", element: <AdminIssueFixing /> },
       { path: "business-training", element: <AdminBusinessTraining /> },
