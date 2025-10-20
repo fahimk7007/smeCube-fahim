@@ -6,7 +6,6 @@ import {
   Menu,
   X,
   RefreshCcw,
-  icons,
   LayoutDashboard,
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
@@ -38,8 +37,8 @@ const Sidebar = () => {
         { path: "/admin/brand-page-setup", name: "Brand Page Setup" },
         { path: "/admin/graphic-design", name: "Graphic Design" },
         { path: "/admin/chatbot-setup", name: "Chatbot Setup" },
-        { path: "/admin/issue-fixing", name: "Issue Fixing" },
-        { path: "/admin/business-training", name: "Business Training" },
+    { path: "/admin/issue-fixing", name: "Issue Fixing" },
+    { path: "/admin/business-training", name: "Business Training" },
       ],
     },
   ];

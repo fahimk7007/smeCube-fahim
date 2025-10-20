@@ -28,9 +28,9 @@ import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
 import AdminFacebookBoosting from "../pages/admin/dashboard/AdminFacebookBoosting";
 import AdminEcommerceSolution from "../pages/admin/dashboard/AdminEcommerceSolution";
 import IssueFixing from "../pages/services/IssueFixing";
-import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
-import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS";
-
+import AdminChatbotSetup from "../pages/admin/dashboard/AdminChatbotSetup";
+import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
+import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
 
 export const router = createBrowserRouter([
   {
@@ -152,27 +152,10 @@ export const router = createBrowserRouter([
           // </RequireAdmin>
         ),
       },
-      {
-        path: "landing-page",
-        element: (
-          // <RequireAdmin>
-          <AdminLandingPage />
-          // </RequireAdmin>
-        ),
-      },
-      {
-        path: "bulk-sms",
-        element: (
-          // <RequireAdmin>
-          <AdminBulkSMS />
-          // </RequireAdmin>
-        ),
-      },
-      { path: "facebook-boosting", element: <AdminFacebookBoosting /> },
-      { path: "ecommerce-solution", element: <AdminEcommerceSolution /> }
 
-      
-
+      { path: "chatbot-setup", element: <AdminChatbotSetup /> },
+      { path: "issue-fixing", element: <AdminIssueFixing /> },
+      { path: "business-training", element: <AdminBusinessTraining /> },
     ],
   },
 ]);
