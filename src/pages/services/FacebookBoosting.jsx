@@ -1,266 +1,244 @@
-import React, { useState } from 'react';
-import { SquareCheckBig } from 'lucide-react';
+import React, { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const FacebookBoosting = () => {
   const [formData, setFormData] = useState({
-    budget: '',
-    mobile: '',
-    pageLink: '',
-    postLink: '',
-    minAge: '18',
-    maxAge: '65',
-    location: '',
-    days: '1'
+    budget: "",
+    mobile: "",
+    pageLink: "",
+    postLink: "",
+    minAge: "18",
+    maxAge: "65",
+    location: "",
+    days: "1",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('অর্ডার সফলভাবে সাবমিট হয়েছে!');
+    console.log("Form submitted:", formData);
+    alert("অর্ডার সফলভাবে সাবমিট হয়েছে!");
   };
 
   const features = [
     {
-      icon: '/icons/target.png',
+      icon: (
+        <svg
+          className="w-10 h-10 text-yellow-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M12 2L2 7h20L12 2z" />
+          <path d="M2 7v7a10 10 0 0020 0V7" />
+        </svg>
+      ),
       title: "টার্গেটেড অডিয়েন্স",
       description: "সঠিক কাস্টমারদের কাছে পৌঁছান",
     },
     {
-      icon: '/icons/pie-chart.png',
+      icon: (
+        <svg
+          className="w-10 h-10 text-yellow-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <path d="M8 15l3-3 2 2 3-3" />
+        </svg>
+      ),
       title: "এনালিটিক্স রিপোর্ট",
       description: "বিস্তারিত পারফরমেন্স ট্র্যাকিং",
     },
     {
-      icon: '/icons/money-bag.png',
+      icon: (
+        <svg
+          className="w-10 h-10 text-yellow-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M12 1v22M3 8h18" />
+        </svg>
+      ),
       title: "বাজেট অপটিমাইজেশন",
       description: "সর্বোচ্চ ROI নিশ্চিত করুন",
     },
     {
-      icon: '/icons/lightning.png',
+      icon: (
+        <svg
+          className="w-10 h-10 text-yellow-500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
       title: "দ্রুত রেজাল্ট",
       description: "১-২ দিনে ফলাফল দেখুন",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white pt-20 md:pt-32 pb-12 md:pb-20">
-        <div className="max-w-6xl mx-auto px-3 md:px-4">
-          <div className="text-center mb-6 md:mb-12">
-            <div className="mb-3 md:mb-6 h-12 md:h-20 inline-block">
-              <img className='h-full' src="/icons/rocket.png" alt="Rocket" />
-            </div>
-            <h1 className="text-2xl md:text-5xl font-bold mb-2 md:mb-6">
-              Facebook Boosting
-            </h1>
-            <p className="text-lg md:text-2xl font-bold text-yellow-300 mb-2 md:mb-4">
-              ডলার প্রতি ১৬৫ টাকা মাত্র
-            </p>
-            <p className="text-sm md:text-xl text-gray-100 px-4">
-              আপনার ব্যবসাকে সঠিক মানুষের কাছে পৌঁছে দিন
-            </p>
-          </div>
+    <div className="font-sans bg-gradient-to-br from-slate-50 via-yellow-50/20 to-white min-h-screen text-gray-800">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+        .font-hind {
+          font-family: 'Hind Siliguri', sans-serif;
+        }
+      `}</style>
 
-          <div className="max-w-2xl mx-auto bg-white/95 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-8 shadow-2xl">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
-              বুস্টিং অর্ডার ফর্ম
-            </h2>
-            <div className="space-y-3 md:space-y-4">
-              <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                    বাজেট ($)
-                  </label>
-                  <input
-                    type="number"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    placeholder="উদাহরণ: 10"
-                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                    মোবাইল নাম্বার
-                  </label>
-                  <input
-                    type="tel"
-                    name="mobile"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    placeholder="০১৭xxxxxxxx"
-                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                  />
-                </div>
-              </div>
+      {/* HERO SECTION */}
+      <section className="relative flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 pt-32 pb-40 rounded-b-[60px] shadow-lg">
+        {/* Decorative blobs */}
+        <div className="absolute -top-32 left-10 w-80 h-80 bg-pink-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl"></div>
 
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                  পেইজ লিংক
-                </label>
-                <input
-                  type="url"
-                  name="pageLink"
-                  value={formData.pageLink}
-                  onChange={handleChange}
-                  placeholder="https://facebook.com/yourpage"
-                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                />
-              </div>
+        {/* Hero Text */}
+        <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-orange-200 mb-4 font-hind drop-shadow-lg leading-tight">
+          ফেসবুক বুস্টিং সেবা
+        </h1>
+        <p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-hind leading-relaxed">
+          আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে যান — লক্ষ্যভিত্তিক গ্রাহকদের কাছে পৌঁছান সহজেই।
+        </p>
 
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                  পোস্ট লিংক
-                </label>
-                <input
-                  type="url"
-                  name="postLink"
-                  value={formData.postLink}
-                  onChange={handleChange}
-                  placeholder="https://facebook.com/yourpage/posts/..."
-                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                />
-              </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center z-10">
+          <button className="group bg-gradient-to-r from-yellow-500 to-amber-400 text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg shadow-md transition-all flex items-center justify-center gap-3 hover:scale-105 active:scale-95">
+            এখনই শুরু করুন
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <button className="border-2 border-white/60 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all hover:scale-105">
+            বিস্তারিত জানুন
+          </button>
+        </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                    মিনিমাম বয়স
-                  </label>
-                  <input
-                    type="number"
-                    name="minAge"
-                    value={formData.minAge}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                    মেক্সিমাম বয়স
-                  </label>
-                  <input
-                    type="number"
-                    name="maxAge"
-                    value={formData.maxAge}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                  লোকেশন
-                </label>
-                <input
-                  type="text"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleChange}
-                  placeholder="উদাহরণ: ঢাকা, বাংলাদেশ"
-                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1 text-xs md:text-base">
-                  কত দিন
-                </label>
-                <select
-                  name="days"
-                  value={formData.days}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-gray-800 text-sm"
-                >
-                  <option value="1">১ দিন</option>
-                  <option value="3">৩ দিন</option>
-                  <option value="7">৭ দিন</option>
-                  <option value="14">১৪ দিন</option>
-                  <option value="30">৩০ দিন</option>
-                </select>
-              </div>
-
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105 shadow-lg text-sm md:text-lg"
-              >
-                অর্ডার করুন →
-              </button>
-            </div>
-          </div>
+        {/* Curved Bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg
+            viewBox="0 0 500 150"
+            preserveAspectRatio="none"
+            className="relative block w-[calc(150%+1.3px)] h-[120px]"
+          >
+            <path
+              d="M-9.31,73.65 C149.99,150.00 349.20,-49.98 514.63,93.47 L500.00,150.00 L0.00,150.00 Z"
+              className="fill-white"
+            ></path>
+          </svg>
         </div>
       </section>
 
-      <section className="py-8 md:py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-3 md:px-4">
-          <div className="text-center mb-6 md:mb-12">
-            <h2 className="text-xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-4">
-              কেন আমাদের সেবা নিবেন?
-            </h2>
-            <p className="text-xs md:text-lg text-gray-600">যা আমাদের আলাদা করে</p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+      {/* FEATURES */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 font-hind bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">
+            কেন আমাদের সেবা বেছে নেবেন?
+          </h2>
+
+          {/* Updated grid to keep all boxes in one row of squares even on mobile */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 justify-center">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 p-3 md:p-6 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition"
+                className="bg-gradient-to-br from-white to-yellow-50 border border-yellow-200 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 aspect-square flex flex-col items-center justify-center p-5"
               >
-                <img className='mb-2 md:mb-4 h-8 w-8 md:h-14 md:w-14' src={feature.icon} alt="" />
-                <h3 className="text-xs md:text-xl font-bold text-gray-800 mb-1 md:mb-2">{feature.title}</h3>
-                <p className="text-xs md:text-base text-gray-600">{feature.description}</p>
+                <div className="mb-3">{feature.icon}</div>
+                <h3 className="text-lg md:text-xl font-bold mb-1 font-hind text-gray-800">
+                  {feature.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 font-hind">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-8 md:py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-3 md:px-4">
-          <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 border-2 border-blue-200 shadow-lg">
-            <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 text-center">
-              কেন ফেসবুক বুস্টিং?
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-              <div className="flex items-start gap-2">
-                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
-                <span className="text-xs md:text-base text-gray-700">৩ কোটি+ বাংলাদেশি ইউজার</span>
+      {/* FORM SECTION */}
+      <section className="py-20 bg-gradient-to-b from-yellow-50 to-white">
+        <div className="max-w-3xl mx-auto bg-white/90 backdrop-blur-lg p-6 md:p-10 rounded-2xl shadow-2xl">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 font-hind bg-gradient-to-r from-yellow-500 to-amber-400 bg-clip-text text-transparent">
+            Boosting Order Form
+          </h2>
+
+          <div className="space-y-4">
+            {[
+              { name: "budget", label: "বাজেট ($)", placeholder: "উদাহরণ: 10", type: "number" },
+              { name: "mobile", label: "মোবাইল নাম্বার", placeholder: "০১৭xxxxxxxx", type: "tel" },
+              { name: "pageLink", label: "পেইজ লিংক", placeholder: "https://facebook.com/yourpage", type: "url" },
+              { name: "postLink", label: "পোস্ট লিংক", placeholder: "https://facebook.com/yourpage/posts/...", type: "url" },
+              { name: "location", label: "লোকেশন", placeholder: "ঢাকা, বাংলাদেশ", type: "text" },
+            ].map((field, i) => (
+              <div key={i}>
+                <label className="block font-semibold mb-1 font-hind text-gray-700">{field.label}</label>
+                <input
+                  type={field.type}
+                  name={field.name}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  placeholder={field.placeholder}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-400 focus:outline-none text-gray-800"
+                />
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
-                <span className="text-xs md:text-base text-gray-700">সর্বোচ্চ এনগেজমেন্ট রেট</span>
+            ))}
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block font-semibold mb-1 font-hind text-gray-700">মিনিমাম বয়স</label>
+                <input
+                  type="number"
+                  name="minAge"
+                  value={formData.minAge}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-400 focus:outline-none"
+                />
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
-                <span className="text-xs md:text-base text-gray-700">কম খরচে বেশি রিচ</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-blue-600 text-lg md:text-2xl flex-shrink-0"><SquareCheckBig /></span>
-                <span className="text-xs md:text-base text-gray-700">মাপযোগ্য ফলাফল</span>
+              <div>
+                <label className="block font-semibold mb-1 font-hind text-gray-700">ম্যাক্সিমাম বয়স</label>
+                <input
+                  type="number"
+                  name="maxAge"
+                  value={formData.maxAge}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-400 focus:outline-none"
+                />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-10 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto px-3 md:px-4 text-center">
-          <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-6">
-            আজই শুরু করুন আপনার ফেসবুক বুস্টিং
-          </h2>
-          <p className="text-sm md:text-xl mb-6 md:mb-8 text-gray-100">
-            সাশ্রয়ী মূল্যে পান সেরা বুস্টিং সেবা
-          </p>
-          <button className="bg-white text-blue-600 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:bg-gray-100 inline-block transform hover:scale-105 transition">
-            এখনই শুরু করুন →
-          </button>
+            <div>
+              <label className="block font-semibold mb-1 font-hind text-gray-700">কত দিন</label>
+              <select
+                name="days"
+                value={formData.days}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-amber-400 focus:outline-none"
+              >
+                <option value="1">১ দিন</option>
+                <option value="3">৩ দিন</option>
+                <option value="7">৭ দিন</option>
+                <option value="14">১৪ দিন</option>
+                <option value="30">৩০ দিন</option>
+              </select>
+            </div>
+
+            <button
+              onClick={handleSubmit}
+              className="w-full bg-gradient-to-r from-yellow-500 to-amber-400 hover:from-yellow-600 hover:to-amber-500 text-gray-900 font-bold py-3 rounded-xl transition-all hover:scale-105 mt-6"
+            >
+              অর্ডার করুন →
+            </button>
+          </div>
         </div>
       </section>
     </div>
