@@ -8,8 +8,7 @@ const SeoOpt = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 512 512"
       xmlSpace="preserve"
-      width="64"
-      height="64"
+      className="w-8 h-8 sm:w-10 sm:h-10"
     >
       <rect y={109.852} width={512} height={358.496} />
       <path

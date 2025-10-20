@@ -5,8 +5,7 @@ const CustomwebDesign = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
-      width="48"
-      height="48"
+      className="w-8 h-8 sm:w-10 sm:h-10"
     >
       <defs>
         <linearGradient id="grad-main" x1="0" y1="0" x2="1" y2="1">

@@ -5,11 +5,11 @@ const HeroSvg = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 240 240"
-      width="240"
-      height="240"
+      /*   width="240"
+      height="240" */
       role="img"
       aria-labelledby="webTitle webDesc"
-      className="mx-auto"
+      className="mx-auto h-24 w-24"
     >
       <title id="webTitle">Web development icon</title>
       <desc id="webDesc">

@@ -5,8 +5,7 @@ const FastLoading = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      width="64"
-      height="64"
+      className="w-8 h-8 sm:w-10 sm:h-10"
       role="img"
       aria-label="Swift Loading Icon"
     >

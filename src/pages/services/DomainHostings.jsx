@@ -1,36 +1,43 @@
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import heroDomain from "../../assets/png/domaiinhosting/domain.png";
+import domainIcon from "../../assets/icones/domainhosting/domain.png";
+import ssdIcon from "../../assets/icones/domainhosting/ssd.png";
+import sslIcon from "../../assets/icones/domainhosting/ssl.png";
+import upIcon from "../../assets/icones/domainhosting/uptime.png";
+import cpanelIcon from "../../assets/icones/domainhosting/cpanel.png";
+import supportIcon from "../../assets/icones/domainhosting/support.png";
 
 const DomainHostings = () => {
   const features = [
     {
-      icon: "../../../public/icons/domain.png",
+      icon: domainIcon,
       title: "ডোমেইন রেজিস্ট্রেশন",
       description: "আপনার ব্যবসার জন্য পছন্দের ডোমেইন নাম সহজে রেজিস্টার করুন।",
     },
     {
-      icon: "../../../public/icons/ssd.png",
+      icon: ssdIcon,
       title: "ফাস্ট SSD হোস্টিং",
       description: "SSD সার্ভারে দ্রুত ও নির্ভরযোগ্য ওয়েবসাইট পারফরম্যান্স।",
     },
     {
-      icon: "../../../public/icons/ssl.png",
+      icon: sslIcon,
       title: "ফ্রি SSL সার্টিফিকেট",
       description: "আপনার ওয়েবসাইটকে সুরক্ষিত রাখতে SSL সম্পূর্ণ ফ্রি।",
     },
     {
-      icon: "../../../public/icons/uptime.png",
+      icon: upIcon,
       title: "৯৯.৯% আপটাইম গ্যারান্টি",
       description: "আপনার ওয়েবসাইট সবসময় অনলাইনে থাকবে – গ্যারান্টিযুক্ত।",
     },
     {
-      icon: "../../../public/icons/cpanel.png",
+      icon: cpanelIcon,
       title: "ইজি কন্ট্রোল প্যানেল",
       description: "cPanel এর মাধ্যমে সহজে ফাইল, ইমেইল ও ডাটাবেস ম্যানেজ করুন।",
     },
     {
-      icon: "../../../public/icons/support.png",
+      icon: supportIcon,
       title: "২৪/৭ কাস্টমার সাপোর্ট",
       description: "লাইভ চ্যাট ও কল সাপোর্ট দিয়ে সর্বদা পাশে আছি।",
     },
@@ -128,7 +135,7 @@ const DomainHostings = () => {
   };
 
   return (
-    <div className="font-sans text-gray-800 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
+    <div className="text-gray-800 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 min-h-screen">
       {/* Hero Section */}
       <motion.section
         initial="hidden"
@@ -137,12 +144,15 @@ const DomainHostings = () => {
         variants={fadeIn}
         className="relative bg-gradient-to-br from-orange-500 to-red-600 text-white py-28 overflow-hidden h-[80vh] flex flex-col justify-center items-center"
       >
-        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto px-4 text-center">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="flex justify-center items-center">
+            <img className="w-16 h-16 mb-6" src={heroDomain} alt="domain" />
+          </div>
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-16 sm:mt-0"
+            className="text-3xl lg:text-5xl font-extrabold mb-6 drop-shadow-lg mt-8 sm:mt-0"
           >
             ডোমেইন ও হোস্টিং সার্ভিস
           </motion.h1>
@@ -164,8 +174,8 @@ const DomainHostings = () => {
         </div>
       </motion.section>
 
-      {/* Features Section */}
-      <section className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
+      {/* Service Features Section */}
+      <section className="py-20 mx-auto max-w-5xl px-2">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent py-1.5"
           initial="hidden"
@@ -177,7 +187,7 @@ const DomainHostings = () => {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-3 md:grid-cols-6 gap-3"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -186,23 +196,30 @@ const DomainHostings = () => {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className="p-6 bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100/50 cursor-pointer group backdrop-blur-sm"
+              className="p-3 bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-100/50 cursor-pointer group backdrop-blur-sm"
               variants={scaleIn}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ scale: 1.02 }}
             >
               <motion.div
-                className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                className="mb-4 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{
-                  rotate: [0, -5, 5, 0],
+                  // rotate: [0, -5, 5, 0],
                   transition: { duration: 0.5 },
                 }}
               >
-                <img width={64} height={64} src={f.icon} alt="" srcset="" />
+                <img
+                  className="w-10 h-10 md:w-12 md:h-12"
+                  src={f.icon}
+                  alt=""
+                  srcset=""
+                />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">
+              <h3 className="text-sm lg:text-[16px] font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">
                 {f.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{f.description}</p>
+              <p className="text-gray-600 leading-relaxed text-[10px] lg:text-sm">
+                {f.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
@@ -210,7 +227,7 @@ const DomainHostings = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-gradient-to-r from-orange-50/50 to-red-50/50">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 px-4 text-center">
+        <div className="mx-auto max-w-5xl sm:px-6 lg:px-8 px-4 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent py-2"
             initial="hidden"
@@ -222,7 +239,7 @@ const DomainHostings = () => {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -253,7 +270,7 @@ const DomainHostings = () => {
 
       {/* Packages Section */}
       <div className="py-16 bg-gradient-to-br from-orange-50 to-red-100">
-        <div className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
+        <div className="py-20 mx-auto max-w-5xl sm:px-6 lg:px-8 px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent py-2">
             হোস্টিং প্যাকেজসমূহ
           </h2>
@@ -261,7 +278,7 @@ const DomainHostings = () => {
             আপনার ওয়েবসাইটের প্রয়োজন অনুযায়ী সঠিক প্যাকেজ নির্বাচন করুন।
           </p>
 
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, i) => (
               <motion.div
                 key={i}
@@ -317,7 +334,7 @@ const DomainHostings = () => {
       </div>
 
       {/* CTA */}
-      <section className="py-20 mx-auto max-w-7xl sm:px-6 lg:px-8 px-4">
+      <section className="py-20 mx-auto max-w-5xl sm:px-6 lg:px-8 px-4">
         <motion.div
           className="bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-3xl p-12 text-center shadow-2xl"
           initial="hidden"
