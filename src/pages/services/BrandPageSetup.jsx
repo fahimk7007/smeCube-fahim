@@ -244,7 +244,7 @@ const BrandPageSetup = () => {
       </section>
 
       {/* FEATURES SECTION - USING CODE2'S UI */}
-      {/* FEATURES SECTION - USING CODE2'S UI */}
+    {/* FEATURES SECTION - USING CODE2'S UI */}
 <section className="py-12 md:py-20 bg-white">
   <div className="container mx-auto px-4 max-w-7xl">
     <div className="text-center mb-12">
@@ -258,7 +258,7 @@ const BrandPageSetup = () => {
       </p>
     </div>
     
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
       {features.map((feature, i) => (
         <div
           key={i}
