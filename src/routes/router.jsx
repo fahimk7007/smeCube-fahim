@@ -27,6 +27,9 @@ import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
 import IssueFixing from "../pages/services/IssueFixing";
+import AdminChatbotSetup from "../pages/admin/dashboard/AdminChatbotSetup";
+import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
+import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
 
 export const router = createBrowserRouter([
   {
@@ -148,6 +151,10 @@ export const router = createBrowserRouter([
           // </RequireAdmin>
         ),
       },
+
+      { path: "chatbot-setup", element: <AdminChatbotSetup /> },
+      { path: "issue-fixing", element: <AdminIssueFixing /> },
+      { path: "business-training", element: <AdminBusinessTraining /> },
     ],
   },
 ]);
