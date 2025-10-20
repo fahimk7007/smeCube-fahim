@@ -26,6 +26,8 @@ import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
+import AdminFacebookBoosting from "../pages/admin/dashboard/AdminFacebookBoosting";
+import AdminEcommerceSolution from "../pages/admin/dashboard/AdminEcommerceSolution";
 import IssueFixing from "../pages/services/IssueFixing";
 import AdminChatbotSetup from "../pages/admin/dashboard/AdminChatbotSetup";
 import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";

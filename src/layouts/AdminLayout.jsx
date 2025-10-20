@@ -10,6 +10,7 @@ import {
 import AdminNavbar from "../components/admin/Navbars/AdminNavbar";
 import Sidebar from "../components/admin/Sidebar/Sidebar";
 import HeaderStats from "../components/admin/Headers/HeaderStats";
+import ScrollToTop from "../utils/ScrollToTop";
 // import { useContext } from "react";
 // import { AuthContext } from "../../context/AuthContext";
 
@@ -25,6 +26,7 @@ const AdminLayout = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Sidebar />
       <div className="relative md:ml-64 bg-blueGray-100">
         {/* Header */}
