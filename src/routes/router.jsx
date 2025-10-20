@@ -27,6 +27,8 @@ import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
 import IssueFixing from "../pages/services/IssueFixing";
+import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
+import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS";
 
 export const router = createBrowserRouter([
   {
@@ -145,6 +147,22 @@ export const router = createBrowserRouter([
         element: (
           // <RequireAdmin>
           <AdminWebdev />
+          // </RequireAdmin>
+        ),
+      },
+      {
+        path: "landing-page",
+        element: (
+          // <RequireAdmin>
+          <AdminLandingPage />
+          // </RequireAdmin>
+        ),
+      },
+      {
+        path: "bulk-sms",
+        element: (
+          // <RequireAdmin>
+          <AdminBulkSMS />
           // </RequireAdmin>
         ),
       },
