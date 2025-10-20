@@ -100,6 +100,7 @@ const BrandPageSetup = () => {
       ],
       recommended: false,
       gradient: "from-purple-500 to-pink-500",
+      span: 2,
     },
   ];
 
@@ -425,7 +426,9 @@ const BrandPageSetup = () => {
                 // transition={{ duration: 0.6, delay: index * 0.15 }}
                 // viewport={{ once: true }}
                 whileHover={{ y: -15 }}
-                className={`relative rounded-3xl p-8 shadow-xl transition-all ${
+                className={`relative rounded-3xl p-2 md:p-8 shadow-xl transition-all ${
+                  pkg.span === 2 ? "col-span-2 md:col-span-1" : "col-span-1"
+                } ${
                   pkg.recommended
                     ? `bg-gradient-to-br ${pkg.gradient} text-white scale-105 shadow-2xl`
                     : "bg-white text-gray-800 hover:shadow-2xl"
@@ -445,8 +448,8 @@ const BrandPageSetup = () => {
                   </motion.div>
                 )}
 
-                <div className="text-center mb-8 mt-4">
-                  <h3 className="text-2xl md:text-xl lg:text-3xl font-bold mb-4">
+                <div className="text-center mb-8 mt-8">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
                     {pkg.name}
                   </h3>
                   <div className="flex items-baseline justify-center gap-2 mb-2">
@@ -478,7 +481,7 @@ const BrandPageSetup = () => {
 
                 <button
                   onClick={() => setSelectedPackage(index)}
-                  className={`w-full py-3 md:py-4 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 text-sm md:text-base ${
+                  className={`w-full py-3 md:py-4 rounded-xl font-semibold transition-all hover:scale-102 active:scale-95 text-sm md:text-base ${
                     pkg.recommended
                       ? "bg-white text-purple-500 hover:bg-gray-100 shadow-lg"
                       : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg"

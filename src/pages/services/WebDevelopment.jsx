@@ -148,6 +148,7 @@ const WebDevelopment = () => {
         "API ইন্টিগ্রেশন",
         "১ বছর সাপোর্ট",
       ],
+      span: 2,
     },
   ];
 
@@ -407,12 +408,14 @@ const WebDevelopment = () => {
               সাশ্রয়ী মূল্যে পেশাদার ওয়েবসাইট
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto ">
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
                 className={`rounded-2xl p-8 transition-all ${
+                  pkg.span ? "col-span-2 md:col-span-1" : "col-span-1"
+                } ${
                   pkg.popular
                     ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white transform scale-105 shadow-2xl"
                     : "bg-white border-2 border-gray-200 shadow-lg"
