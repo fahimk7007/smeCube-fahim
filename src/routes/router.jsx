@@ -26,7 +26,12 @@ import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
+import AdminFacebookBoosting from "../pages/admin/dashboard/AdminFacebookBoosting";
+import AdminEcommerceSolution from "../pages/admin/dashboard/AdminEcommerceSolution";
 import IssueFixing from "../pages/services/IssueFixing";
+import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
+import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS";
+
 
 export const router = createBrowserRouter([
   {
@@ -148,6 +153,27 @@ export const router = createBrowserRouter([
           // </RequireAdmin>
         ),
       },
+      {
+        path: "landing-page",
+        element: (
+          // <RequireAdmin>
+          <AdminLandingPage />
+          // </RequireAdmin>
+        ),
+      },
+      {
+        path: "bulk-sms",
+        element: (
+          // <RequireAdmin>
+          <AdminBulkSMS />
+          // </RequireAdmin>
+        ),
+      },
+      { path: "facebook-boosting", element: <AdminFacebookBoosting /> },
+      { path: "ecommerce-solution", element: <AdminEcommerceSolution /> }
+
+      
+
     ],
   },
 ]);
