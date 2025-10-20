@@ -118,7 +118,16 @@ const BrandPageSetup = () => {
     }
   ];
 
-  const clients = ['Facebook', 'Instagram', 'LinkedIn', 'Twitter', 'YouTube', 'TikTok', 'Pinterest', 'Snapchat'];
+  const clients = [
+    { name: "Facebook", domain: "facebook.com" },
+    { name: "Instagram", domain: "instagram.com" },
+    { name: "LinkedIn", domain: "linkedin.com" },
+    { name: "Twitter", domain: "twitter.com" },
+    { name: "YouTube", domain: "youtube.com" },
+    { name: "TikTok", domain: "tiktok.com" },
+    { name: "Pinterest", domain: "pinterest.com" },
+    { name: "Snapchat", domain: "snapchat.com" }
+  ];
 
   const formatTitle = (title) => {
     const words = title.split(' ');
@@ -149,7 +158,7 @@ const BrandPageSetup = () => {
         }
       `}</style>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - UPDATED */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-pink-800 to-orange-900 pt-20">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"></div>
@@ -160,7 +169,7 @@ const BrandPageSetup = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Logo SVG */}
-            <div className="mb-8 flex justify-center">
+            <div className="mb-4 flex justify-center"> {/* Reduced margin-bottom */}
               <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="60" cy="60" r="55" fill="url(#gradient1)" opacity="0.2"/>
                 <circle cx="60" cy="60" r="45" fill="url(#gradient2)"/>
@@ -181,50 +190,32 @@ const BrandPageSetup = () => {
               </svg>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-lg text-white rounded-full text-lg font-semibold border border-white/20 mb-8">
-              <Sparkles className="w-5 h-5" /> 
-              <span className="font-hind">সোশ্যাল মিডিয়া বিশেষজ্ঞ</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 leading-tight">
-              <span className="block bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
-                BRAND PAGE
-              </span>
-              <span className="block bg-gradient-to-r from-pink-200 to-orange-200 bg-clip-text text-transparent mt-2">
-                MANAGEMENT
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight"> {/* Reduced margin-bottom */}
+              <span className="block bg-gradient-to-r from-yellow-200 to-amber-200 bg-clip-text text-transparent">
+                ব্র্যান্ড পেজ ম্যানেজমেন্ট
               </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-purple-100 leading-relaxed mb-12 max-w-2xl mx-auto font-hind">
+
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto font-hind">
               <span className="font-semibold text-white">আপনার ব্র্যান্ডকে সোশ্যাল মিডিয়ায় প্রতিষ্ঠিত করুন</span>
               <br />
-              আমাদের বিশেষজ্ঞ টিমের সাথে
+              মডার্ন, ফাস্ট এবং হাই-কনভার্সন ব্র্যান্ড এক্সপেরিয়েন্স
             </p>
 
-            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
+            <div className="grid grid-cols-3 gap-3 max-w-2xl mx-auto mb-8">
               {[
                 { number: '৫০০+', label: 'ব্র্যান্ড' },
                 { number: '১০M+', label: 'রিচ' },
                 { number: '৯৮%', label: 'সন্তুষ্টি' },
               ].map((stat, index) => (
-                <div 
+                <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
+                  className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-purple-200 text-xs md:text-sm font-hind">{stat.label}</div>
+                  <div className="text-lg md:text-xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-white/80 text-xs font-hind">{stat.label}</div>
                 </div>
               ))}
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group bg-gradient-to-r from-purple-500 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-105 hover:shadow-3xl active:scale-95">
-                <span className="font-hind">ফ্রি কনসাল্টেশন নিন</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </button>
-              <button className="group border-2 border-white/40 backdrop-blur-lg text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all hover:scale-105 active:scale-95">
-                <span className="font-hind">প্যাকেজ দেখুন</span>
-              </button>
             </div>
           </div>
         </div>
@@ -237,45 +228,62 @@ const BrandPageSetup = () => {
             />
           </svg>
         </div>
-      </section>
 
-      {/* FEATURES SECTION */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-hind">
-                আমাদের সেবা সমূহ
-              </span>
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-4 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 min-h-[180px] sm:min-h-[200px] flex flex-col justify-center items-center border border-purple-100 shadow-sm"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 rounded-2xl transition-all duration-300"></div>
-                
-                <div className="relative z-10 text-purple-600 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300 scale-75 sm:scale-100">
-                  {feature.icon}
-                </div>
-                
-                <h3 className="relative z-10 text-sm sm:text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight">
-                  {formatTitle(feature.title)}
-                </h3>
-                
-                <p className="hidden sm:block relative z-10 text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300 font-hind">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+        {/* CROPPED WHITE ACTION PANEL - Buttons like ecommerce page */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-6 md:bottom-10 z-20 w-[90%] max-w-3xl">
+          <div className="bg-white rounded-3xl shadow-2xl backdrop-blur-md border border-gray-100 px-4 py-4 md:px-6 md:py-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button className="group bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-6 py-3 rounded-2xl font-bold text-lg shadow-md transition-all flex items-center justify-center gap-3 hover:scale-105 active:scale-95 w-full sm:w-auto">
+              <span className="font-hind">ফ্রী প্রোজেক্ট কন্সাল্ট</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </button>
+            <button className="group border-2 border-gray-200 text-gray-700 bg-white px-6 py-3 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+              <span className="font-hind">ভিউ পোর্টফোলিও</span>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* PRICING SECTION */}
+      {/* FEATURES SECTION - USING CODE2'S UI */}
+      {/* FEATURES SECTION - USING CODE2'S UI */}
+<section className="py-12 md:py-20 bg-white">
+  <div className="container mx-auto px-4 max-w-7xl">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 leading-tight">
+        <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-hind">
+          আমাদের সেবা সমূহ
+        </span>
+      </h2>
+      <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+        আপনার ব্র্যান্ডের সোশ্যাল মিডিয়া উপস্থিতি শক্তিশালী করতে সম্পূর্ণ সেবা প্যাকেজ
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {features.map((feature, i) => (
+        <div
+          key={i}
+          className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-4 text-center hover:shadow-xl hover:scale-105 transition-all duration-300 min-h-[180px] sm:min-h-[200px] flex flex-col justify-center items-center border border-purple-100 shadow-sm aspect-square"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 rounded-2xl transition-all duration-300"></div>
+          
+          <div className="relative z-10 text-purple-600 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300 scale-75 sm:scale-100">
+            {feature.icon}
+          </div>
+          
+          <h3 className="relative z-10 text-sm sm:text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300 leading-tight">
+            {formatTitle(feature.title)}
+          </h3>
+          
+          <p className="hidden sm:block relative z-10 text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300 font-hind">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* PRICING SECTION - KEEP ORIGINAL DESIGN */}
       <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-purple-50/30">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
@@ -342,7 +350,7 @@ const BrandPageSetup = () => {
         </div>
       </section>
 
-      {/* SUCCESS STORIES */}
+      {/* SUCCESS STORIES - USING CODE2'S UI */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
@@ -351,13 +359,16 @@ const BrandPageSetup = () => {
                 সাফল্যের গল্প
               </span>
             </h2>
+            <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              বিভিন্ন ব্র্যান্ডের সাথে আমাদের কাজের অসাধারণ ফলাফল
+            </p>
           </div>
 
           <div className="grid grid-cols-3 gap-4">
             {successStories.map((story, index) => (
               <div
                 key={index}
-                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center"
+                className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center aspect-square" // Added aspect-square
               >
                 <div className="text-3xl sm:text-6xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 sm:mb-4">
                   {story.growth}
@@ -370,66 +381,103 @@ const BrandPageSetup = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-purple-50/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-hind">
-                ক্লায়েন্টরা যা বলেন
-              </span>
+      {/* TESTIMONIALS - UPDATED WITH SQUARE BOXES */}
+      <section className="py-12 sm:py-16 lg:py-24 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-gray-50 to-purple-50/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4">
+            <div className="inline-block bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg mb-4 sm:mb-6 lg:mb-10">
+              ক্লায়েন্টরা যা বলেন
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 px-4">
+              আমাদের <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">ক্লায়েন্ট</span> এর মতামত
             </h2>
+            <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              আমাদের সেবা নিয়ে ক্লায়েন্টদের মূল্যবান মতামত
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+            {testimonials.map((testimonial, idx) => (
               <div
-                key={index}
-                className="bg-white rounded-3xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all"
+                key={idx}
+                className="group relative bg-white rounded-xl p-3 sm:p-4 aspect-square hover:shadow-xl transition-all duration-500 cursor-pointer overflow-hidden border border-gray-100 hover:border-transparent hover:-translate-y-1 h-full flex flex-col items-center justify-center text-center"
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 text-xs md:text-lg mb-4 md:mb-6 leading-relaxed italic font-hind line-clamp-3">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base">
-                    {testimonial.name.charAt(0)}
+                <div className={`absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+                <div className="relative z-10 flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full w-full">
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-xs md:text-base">{testimonial.name}</div>
-                    <div className="text-gray-600 text-xs md:text-sm">{testimonial.company}</div>
+                  
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-700 group-hover:text-white leading-relaxed italic font-hind line-clamp-3">
+                    "{testimonial.text}"
+                  </p>
+                  
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div className="text-center">
+                      <div className="font-bold text-gray-900 group-hover:text-white text-sm sm:text-base">{testimonial.name}</div>
+                      <div className="text-gray-600 group-hover:text-white/90 text-xs sm:text-sm">{testimonial.company}</div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
+            
+            {/* Empty box for the third column */}
+            <div className="group relative bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-3 sm:p-4 aspect-square hover:shadow-xl transition-all duration-500 cursor-pointer overflow-hidden border border-transparent hover:-translate-y-1 h-full flex flex-col items-center justify-center text-center">
+              <div className="relative z-10 flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white transition-colors leading-tight">
+                  আপনার সাফল্যের<br />গল্প যুক্ত করুন
+                </h3>
+                
+                <p className="text-sm sm:text-base lg:text-lg text-white/90 transition-colors leading-relaxed">
+                  পরবর্তী সাফল্যের গল্পটি হতে পারে আপনার
+                </p>
+
+                <button className="bg-white text-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold hover:scale-105 active:scale-95 transition-all text-xs sm:text-sm">
+                  শুরু করুন
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CLIENTS SECTION */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8 md:mb-12">
-            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4 shadow-sm font-hind">
-              আমাদের প্ল্যাটফর্ম
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-hind">
-              আমরা যেখানে কাজ করি
+      {/* CLIENTS SECTION - REPLACED WITH ECOMMERCE PAGE STYLE */}
+      <section className="py-8 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        <div className="max-w-7xl my-12 mx-auto px-4">
+          <div className="text-center mb-8">
+            <h3 className="text-sm inline-block bg-gradient-to-r from-purple-500 to-pink-600 text-white px-4 py-1 mb-5 rounded-full font-semibold mb-12">আমাদের প্ল্যাটফর্ম</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900">
+              <span className="bg-gradient-to-r m-10 from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                আমরা যেখানে কাজ করি
+              </span>
             </h2>
+            <p className="text-sm mb-10 text-gray-600 mt-8">বিভিন্ন সোশ্যাল মিডিয়া প্ল্যাটফর্মে আমাদের বিশেষজ্ঞতা</p>
           </div>
-          
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6">
+
+          <div className="mt-8 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 items-center justify-items-center">
             {clients.map((client, i) => (
-              <div
+              <a
                 key={i}
-                className="px-4 md:px-6 py-2 md:py-3 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-md hover:shadow-lg transition-all border border-gray-100 hover:scale-105 active:scale-95"
+                href={`https://${client.domain}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-col sm:flex-row items-center justify-center gap-2 bg-white rounded-lg p-2 sm:p-3 w-full max-w-[150px] sm:max-w-[220px] shadow-sm hover:shadow-md transition"
               >
-                <span className="text-sm md:text-lg font-semibold text-gray-700 font-hind">{client}</span>
-              </div>
+                <img
+                  src={`https://logo.clearbit.com/${client.domain}`}
+                  alt={client.name}
+                  className="h-6 sm:h-8 md:h-10 object-contain"
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = `https://via.placeholder.com/120x40?text=${encodeURIComponent(client.name)}`; }}
+                />
+                <span className="text-xs sm:text-sm font-semibold text-gray-700 text-center sm:text-left">{client.name}</span>
+              </a>
             ))}
           </div>
         </div>
