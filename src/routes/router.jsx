@@ -19,7 +19,6 @@ import ChatbotSetup from "../pages/services/ChatbotSetup";
 import FacebookBoosting from "../pages/services/FacebookBoosting";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
-import WebDevelopment from "../pages/services/WebDevelopment";
 import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
 import AdminLayout from "../layouts/AdminLayout";
