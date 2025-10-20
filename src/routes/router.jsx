@@ -26,7 +26,10 @@ import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
 import AdminWebdev from "../pages/admin/dashboard/AdminWebdev";
+import AdminFacebookBoosting from "../pages/admin/dashboard/AdminFacebookBoosting";
+import AdminEcommerceSolution from "../pages/admin/dashboard/AdminEcommerceSolution";
 import IssueFixing from "../pages/services/IssueFixing";
+
 
 export const router = createBrowserRouter([
   {
@@ -148,6 +151,11 @@ export const router = createBrowserRouter([
           // </RequireAdmin>
         ),
       },
+      { path: "facebook-boosting", element: <AdminFacebookBoosting /> },
+      { path: "ecommerce-solution", element: <AdminEcommerceSolution /> }
+
+      
+
     ],
   },
 ]);
