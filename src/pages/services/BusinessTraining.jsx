@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const BusinessTraining = () => {
-  
   const stats = [
     { number: "৫০০+", label: "ট্রেইন্ড উদ্যোক্তা" },
     { number: "৯৫%", label: "সফলতা হার" },
@@ -179,33 +178,6 @@ const BusinessTraining = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* Stats Section */}
-      {/*  <div className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#dbeafe,_transparent_40%)]"></div>
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.08, rotate: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.15, type: "spring" }}
-                className="bg-white/80 backdrop-blur-lg border border-indigo-100 shadow-md rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-5xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
-                  {stat.number}
-                </div>
-                <div className="text-gray-700 font-medium text-lg tracking-wide">
-                  {stat.label}
-                </div>
-                <div className="mt-3 w-12 h-1 mx-auto bg-gradient-to-r from-indigo-600 to-purple-500 rounded-full"></div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div> */}
 
       {/* Features Section */}
       <section className="py-20 mx-auto max-w-6xl px-[10%]">

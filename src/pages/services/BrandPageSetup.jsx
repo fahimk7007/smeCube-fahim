@@ -1,5 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, ArrowUp, CheckCircle, Star, Zap, Users, Eye, Share2, BarChart3, Sparkles, TrendingUp } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Zap,
+  Users,
+  Eye,
+  Share2,
+  BarChart3,
+  Phone,
+  Mail,
+  MapPin,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
 
 const BrandPageSetup = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -9,113 +24,119 @@ const BrandPageSetup = () => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const features = [
     {
-      icon: <Eye className="w-8 h-8" />,
-      title: 'প্রফেশনাল ডিজাইন',
-      description: 'আপনার ব্র্যান্ডের জন্য আকর্ষণীয় এবং প্রফেশনাল ডিজাইন'
+      icon: <Eye className="w-6 h-6" />,
+      title: "প্রফেশনাল ডিজাইন",
+      description: "আপনার ব্র্যান্ডের জন্য আকর্ষণীয় এবং প্রফেশনাল ডিজাইন",
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: 'গ্রাহক বেস বৃদ্ধি',
-      description: 'কৌশলগত কন্টেন্ট দ্রুত গ্রাহক বেস বৃদ্ধি'
+      icon: <Users className="w-6 h-6" />,
+      title: "গ্রাহক বেস বৃদ্ধি",
+      description: "কৌশলগত কন্টেন্ট দ্রুত গ্রাহক বেস বৃদ্ধি",
     },
     {
-      icon: <Share2 className="w-8 h-8" />,
-      title: 'কন্টেন্ট পরিকল্পনা',
-      description: 'মাসিক কন্টেন্ট ক্যালেন্ডার এবং পরিকল্পনা'
+      icon: <Share2 className="w-6 h-6" />,
+      title: "কন্টেন্ট পরিকল্পনা",
+      description: "মাসিক কন্টেন্ট ক্যালেন্ডার এবং পরিকল্পনা",
     },
     {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'বিশ্লেষণ রিপোর্ট',
-      description: 'নিয়মিত কর্মক্ষমতা বিশ্লেষণ এবং রিপোর্ট'
-    }
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: "বিশ্লেষণ রিপোর্ট",
+      description: "নিয়মিত কর্মক্ষমতা বিশ্লেষণ এবং রিপোর্ট",
+    },
   ];
 
   const packages = [
     {
-      name: 'বেসিক',
-      price: '৫,০০০',
-      duration: 'মাসিক',
+      name: "বেসিক",
+      price: "৫,০০০",
+      duration: "মাসিক",
       features: [
-        'প্রফেশনাল পেজ সেটআপ',
-        'কভার ও প্রোফাইল ফটো',
-        'বায়ো অপটিমাইজেশন',
-        'প্রাথমিক কন্টেন্ট পরিকল্পনা',
-        'সাপ্তাহিক পোস্ট (৪টি)'
+        "প্রফেশনাল পেজ সেটআপ",
+        "কভার ও প্রোফাইল ফটো",
+        "বায়ো অপটিমাইজেশন",
+        "প্রাথমিক কন্টেন্ট পরিকল্পনা",
+        "সাপ্তাহিক পোস্ট (৪টি)",
       ],
-      recommended: false
+      recommended: false,
+      gradient: "from-gray-600 to-gray-700",
     },
     {
-      name: 'প্রিমিয়াম',
-      price: '১০,০০০',
-      duration: 'মাসিক',
+      name: "প্রিমিয়াম",
+      price: "১০,০০০",
+      duration: "মাসিক",
       features: [
-        'সমস্ত বেসিক ফিচার',
-        'কাস্টম গ্রাফিক্স ডিজাইন',
-        'মাসিক কন্টেন্ট ক্যালেন্ডার',
-        'সাপ্তাহিক পোস্ট (৮টি)',
-        'এনগেজমেন্ট ম্যানেজমেন্ট',
-        'সাপ্তাহিক রিপোর্ট',
-        'বেসিক এডস সেটআপ'
+        "সমস্ত বেসিক ফিচার",
+        "কাস্টম গ্রাফিক্স ডিজাইন",
+        "মাসিক কন্টেন্ট ক্যালেন্ডার",
+        "সাপ্তাহিক পোস্ট (৮টি)",
+        "এনগেজমেন্ট ম্যানেজমেন্ট",
+        "সাপ্তাহিক রিপোর্ট",
+        "বেসিক এডস সেটআপ",
       ],
-      recommended: true
+      recommended: true,
+      gradient: "from-purple-500 to-pink-500",
     },
     {
-      name: 'এন্টারপ্রাইজ',
-      price: '২০,০০০',
-      duration: 'মাসিক',
+      name: "এন্টারপ্রাইজ",
+      price: "২০,০০০",
+      duration: "মাসিক",
       features: [
-        'সমস্ত প্রিমিয়াম ফিচার',
-        'ডেডিকেটেড ম্যানেজার',
-        'ডেইলি পোস্ট (৩০টি)',
-        'এডভান্সড এডস ক্যাম্পেইন',
-        'কস্টম চ্যাটবট সেটআপ',
-        'রিয়েল-টাইম মনিটরিং',
-        'প্রাইওরিটি সাপোর্ট'
+        "সমস্ত প্রিমিয়াম ফিচার",
+        "ডেডিকেটেড ম্যানেজার",
+        "ডেইলি পোস্ট (৩০টি)",
+        "এডভান্সড এডস ক্যাম্পেইন",
+        "কস্টম চ্যাটবট সেটআপ",
+        "রিয়েল-টাইম মনিটরিং",
+        "প্রাইওরিটি সাপোর্ট",
       ],
-      recommended: false
-    }
+      recommended: false,
+      gradient: "from-purple-500 to-pink-500",
+    },
   ];
 
   const successStories = [
     {
-      brand: 'ফ্যাশন হাব',
-      growth: '৩৫০%',
-      description: '৩ মাসে ফলোয়ার ১০,০০০ তে বৃদ্ধি'
+      brand: "ফ্যাশন হাব",
+      growth: "৩৫০%",
+      description: "৩ মাসে ফলোয়ার ১০,০০০ তে বৃদ্ধি",
+      icon: <TrendingUp className="md:w-8 md:h-8 w-6 h-6" />,
     },
     {
-      brand: 'টেক সলিউশন',
-      growth: '৫০০%',
-      description: 'রিচ ৫x বৃদ্ধি এবং লিড জেনারেশন'
+      brand: "টেক সলিউশন",
+      growth: "৫০০%",
+      description: "রিচ ৫x বৃদ্ধি এবং লিড জেনারেশন",
+      icon: <Sparkles className="md:w-8 md:h-8 w-6 h-6" />,
     },
     {
-      brand: 'ফুডি বাংলা',
-      growth: '২৮০%',
-      description: 'এনগেজমেন্ট ৩x বৃদ্ধি এবং সেলস বৃদ্ধি'
-    }
+      brand: "ফুডি বাংলা",
+      growth: "২৮০%",
+      description: "এনগেজমেন্ট ৩x বৃদ্ধি এবং সেলস বৃদ্ধি",
+      icon: <Star className="md:w-8 md:h-8 w-6 h-6" />,
+    },
   ];
 
   const testimonials = [
     {
-      name: 'আহমেদ রহমান',
-      company: 'টেক স্টার্টআপ',
-      text: 'SME Cube আমাদের ব্র্যান্ডকে সোশ্যাল মিডিয়ায় প্রতিষ্ঠিত করতে অসাধারণ সাহায্য করেছে।',
-      rating: 5
+      name: "আহমেদ রহমান",
+      company: "টেক স্টার্টআপ",
+      text: "SME Cube আমাদের ব্র্যান্ডকে সোশ্যাল মিডিয়ায় প্রতিষ্ঠিত করতে অসাধারণ সাহায্য করেছে।",
+      rating: 5,
     },
     {
-      name: 'ফারিহা আক্তার',
-      company: 'ফ্যাশন ব্র্যান্ড',
-      text: 'প্রফেশনাল সেবা এবং দ্রুত ফলাফল। আমাদের ফলোয়ার বেস তিনগুণ বেড়েছে।',
-      rating: 5
-    }
+      name: "ফারিহা আক্তার",
+      company: "ফ্যাশন ব্র্যান্ড",
+      text: "প্রফেশনাল সেবা এবং দ্রুত ফলাফল। আমাদের ফলোয়ার বেস তিনগুণ বেড়েছে।",
+      rating: 5,
+    },
   ];
 
   const clients = [
@@ -142,9 +163,11 @@ const BrandPageSetup = () => {
     }
     return title;
   };
-
   return (
-    <div className="font-sans text-gray-800 bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 min-h-screen">
+    <div
+      className="min-h-screen"
+      style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
         .font-hind {
@@ -221,7 +244,12 @@ const BrandPageSetup = () => {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" className="w-full">
+          <svg
+            viewBox="0 0 1440 120"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full h-auto block"
+          >
             <path
               d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
               fill="white"
@@ -292,43 +320,66 @@ const BrandPageSetup = () => {
                 আমাদের প্যাকেজ সমূহ
               </span>
             </h2>
-          </div>
-          
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              আপনার প্রয়োজন অনুযায়ী সেবা প্যাকেজ নির্বাচন করুন
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-3 lg:gap-6 max-w-4xl mx-auto">
             {packages.map((pkg, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`relative rounded-3xl p-4 md:p-8 shadow-xl transition-all hover:scale-105 ${
-                  pkg.recommended 
-                    ? 'bg-gradient-to-br from-purple-500 to-pink-600 text-white scale-100 md:scale-105 shadow-2xl' 
-                    : 'bg-white text-gray-800 hover:shadow-2xl'
+                // initial={{ opacity: 0, y: 50 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.6, delay: index * 0.15 }}
+                // viewport={{ once: true }}
+                whileHover={{ y: -15 }}
+                className={`relative rounded-3xl p-8 shadow-xl transition-all ${
+                  pkg.recommended
+                    ? `bg-gradient-to-br ${pkg.gradient} text-white scale-105 shadow-2xl`
+                    : "bg-white text-gray-800 hover:shadow-2xl"
                 }`}
               >
                 {pkg.recommended && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                  >
                     <span className="flex items-center gap-2">
                       <Star className="w-4 h-4 fill-current" />
                       সর্বাধিক জনপ্রিয়
                     </span>
-                  </div>
+                  </motion.div>
                 )}
-                
-                <div className="text-center mb-6 mt-2">
-                  <h3 className="text-xl md:text-3xl font-bold mb-4">{pkg.name}</h3>
+
+                <div className="text-center mb-8 mt-4">
+                  <h3 className="text-2xl md:text-xl lg:text-3xl font-bold mb-4">
+                    {pkg.name}
+                  </h3>
                   <div className="flex items-baseline justify-center gap-2 mb-2">
-                    <span className="text-3xl md:text-5xl font-bold">৳{pkg.price}</span>
+                    <span className="text-2xl md:text-xl lg:text-5xl font-bold">
+                      ৳{pkg.price}
+                    </span>
                   </div>
-                  <span className={`text-sm ${pkg.recommended ? 'text-purple-200' : 'text-gray-500'}`}>
+                  <span
+                    className={`text-sm ${
+                      pkg.recommended ? "text-purple-200" : "text-gray-500"
+                    }`}
+                  >
                     প্রতি {pkg.duration}
                   </span>
                 </div>
 
                 <ul className="space-y-2 md:space-y-3 mb-6">
                   {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 md:gap-3 text-xs md:text-base">
-                      <CheckCircle className={`w-4 md:w-5 h-4 md:h-5 flex-shrink-0 mt-0.5 ${
-                        pkg.recommended ? 'text-green-300' : 'text-green-500'
-                      }`} />
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle
+                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                          pkg.recommended ? "text-green-300" : "text-green-500"
+                        }`}
+                      />
                       <span className="leading-relaxed">{feature}</span>
                     </li>
                   ))}
@@ -338,13 +389,13 @@ const BrandPageSetup = () => {
                   onClick={() => setSelectedPackage(index)}
                   className={`w-full py-3 md:py-4 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 text-sm md:text-base ${
                     pkg.recommended
-                      ? 'bg-white text-purple-500 hover:bg-gray-100 shadow-lg'
-                      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg'
+                      ? "bg-white text-purple-500 hover:bg-gray-100 shadow-lg"
+                      : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg"
                   }`}
                 >
                   প্যাকেজ নির্বাচন করুন
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -370,11 +421,22 @@ const BrandPageSetup = () => {
                 key={index}
                 className="group text-center bg-gradient-to-br from-white to-pink-100 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all hover:scale-105 border border-pink-100 min-h-[180px] sm:min-h-[220px] flex flex-col justify-center aspect-square" // Added aspect-square
               >
-                <div className="text-3xl sm:text-6xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 sm:mb-4">
-                  {story.growth}
+                {/* <div className="absolute top-0 right-0 w-26 h-26 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -mr-16 -mt-16 group-hover:scale-125 z-0 transition-transform duration-500"></div> */}
+
+                <div className="relative z-10">
+                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 text-purple-500 w-8 h-8 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-6 group-hover:scale-110 transition-transform">
+                    {story.icon}
+                  </div>
+                  <div className="text-xl lg:text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 md:mb-4">
+                    {story.growth}
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">
+                    {story.brand}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-xl">
+                    {story.description}
+                  </p>
                 </div>
-                <h3 className="text-base sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">{story.brand}</h3>
-                <p className="hidden sm:block text-gray-600 leading-relaxed text-sm font-hind">{story.description}</p>
               </div>
             ))}
           </div>
@@ -480,43 +542,48 @@ const BrandPageSetup = () => {
               </a>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA SECTION */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h3 className="text-3xl md:text-5xl font-bold mb-6 font-hind">আপনার প্রজেক্ট শুরু করুন আজই!</h3>
-          <p className="text-purple-100 text-base md:text-lg mb-8 max-w-3xl mx-auto leading-relaxed font-hind">
-            আমাদের বিশেষজ্ঞ টিম আপনার প্রজেক্ট নিয়ে আলোচনা করতে প্রস্তুত। বিনামূল্যে কন্সাল্টেশন পান।
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-105 hover:shadow-2xl active:scale-95">
-              <span className="font-hind">ফ্রী কন্সাল্টেশন বুক করুন</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm hover:scale-105 active:scale-95">
-              <span className="font-hind">লাইভ চ্যাট</span>
-            </button>
+          <div className="text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                আপনার ব্র্যান্ডের যাত্রা শুরু করুন
+              </h2>
+              <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                আজই আমাদের সাথে যোগাযোগ করুন এবং আপনার সোশ্যাল মিডিয়া
+                উপস্থিতিকে নতুন উচ্চতায় নিয়ে যান
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 60px rgba(255, 255, 255, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group bg-white text-purple-600 px-10 py-5 rounded-full font-semibold text-lg shadow-2xl transition-all flex items-center justify-center gap-3"
+                >
+                  ফ্রি অডিট রিকোয়েস্ট করুন
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                >
+                  লাইভ চ্যাট
+                </motion.button>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Scroll to Top */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 z-50"
-        >
-          <ArrowUp className="w-6 h-6" />
-        </button>
-      )}
+      </motion.section>
     </div>
   );
 };
