@@ -1,3 +1,4 @@
+// Updated src/routes/router.jsx
 import { createBrowserRouter } from "react-router-dom";
 
 // Main Pages
@@ -17,6 +18,7 @@ import BulkSMS from "../pages/services/BulkSMS";
 import BusinessConsulting from "../pages/services/BusinessConsulting";
 import ChatbotSetup from "../pages/services/ChatbotSetup";
 import FacebookBoosting from "../pages/services/FacebookBoosting";
+import WebDevelopment from "../pages/services/WebDevelopment";
 import GraphicDesign from "../pages/services/GraphicDesign";
 import LandingPage from "../pages/services/LandingPage";
 import App from "../layouts/App";
@@ -33,6 +35,17 @@ import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
 import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
 import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS"
 import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
+
+// New Client Imports
+import ClientLayout from "../layouts/ClientLayout";
+import ClientDashboard from "../pages/clientUser/ClientDashboard";
+import ServicesSubscriptions from "../pages/clientUser/ServicesSubscriptions";
+import ClientTools from "../pages/clientUser/ClientTools";
+import ProjectsCampaigns from "../pages/clientUser/ProjectsCampaigns";
+import BillingPayments from "../pages/clientUser/BillingPayments";
+import NotificationsAlerts from "../pages/clientUser/NotificationsAlerts";
+import SupportHelpDesk from "../pages/clientUser/SupportHelpDesk.jsx";
+import AccountProfileSettings from "../pages/clientUser/AccountProfileSettings";
 
 export const router = createBrowserRouter([
   {
@@ -126,6 +139,10 @@ export const router = createBrowserRouter([
         path: "services/business-training",
         element: <BusinessTraining />,
       },
+      {
+        path: "services/web-development",
+        element: <WebDevelopment/>
+      },
     ],
   },
   {
@@ -164,9 +181,22 @@ export const router = createBrowserRouter([
       { path: "business-training", element: <AdminBusinessTraining /> },
     ],
   },
+  {
+    path: "client",
+    element: (
+      // <RequireClient> // Uncomment and implement if you have client auth guard
+      <ClientLayout />
+      // </RequireClient>
+    ),
+    children: [
+      { path: "dashboard", element: <ClientDashboard /> },
+      { path: "services-subscriptions", element: <ServicesSubscriptions /> },
+      { path: "tools", element: <ClientTools /> },
+      { path: "projects-campaigns", element: <ProjectsCampaigns /> },
+      { path: "billing-payments", element: <BillingPayments /> },
+      { path: "notifications-alerts", element: <NotificationsAlerts /> },
+      { path: "support-helpdesk", element: <SupportHelpDesk /> },
+      { path: "account-profile", element: <AccountProfileSettings /> },
+    ],
+  },
 ]);
-
-
-
-
-

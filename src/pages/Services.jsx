@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
+
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 // Custom SVG logos for each service
