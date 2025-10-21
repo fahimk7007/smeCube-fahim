@@ -103,6 +103,7 @@ const DomainHostings = () => {
         "ফ্রি SSL + ক্লাউড ব্যাকআপ",
         "ডেডিকেটেড সার্ভার পারফরম্যান্স",
       ],
+      span: 2,
     },
   ];
 
@@ -284,6 +285,8 @@ const DomainHostings = () => {
                 key={i}
                 whileHover={{ y: -10 }}
                 className={`rounded-lg p-3 transition-all ${
+                  pkg.span ? "col-span-2 md:col-span-1" : "col-span-1"
+                } ${
                   pkg.popular
                     ? "bg-gradient-to-br from-orange-600 to-red-600 text-white shadow-2xl scale-105"
                     : "bg-white shadow-md"
