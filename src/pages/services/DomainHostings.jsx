@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import heroDomain from "../../assets/png/domaiinhosting/domain.png";
-import domainIcon from "../../assets/icones/domainhosting/domain.png";
-import ssdIcon from "../../assets/icones/domainhosting/ssd.png";
-import sslIcon from "../../assets/icones/domainhosting/ssl.png";
-import upIcon from "../../assets/icones/domainhosting/uptime.png";
-import cpanelIcon from "../../assets/icones/domainhosting/cpanel.png";
-import supportIcon from "../../assets/icones/domainhosting/support.png";
+import domainIcon from "../../assets/icones/domainhosting/domain.svg";
+import ssdIcon from "../../assets/icones/domainhosting/ssd.svg";
+import sslIcon from "../../assets/icones/domainhosting/ssl.svg";
+import upIcon from "../../assets/icones/domainhosting/uptime.svg";
+import cpanelIcon from "../../assets/icones/domainhosting/cpanel.svg";
+import supportIcon from "../../assets/icones/domainhosting/customer-care.svg";
 
 const DomainHostings = () => {
   const features = [
