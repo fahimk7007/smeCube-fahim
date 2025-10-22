@@ -1,4 +1,17 @@
-import React from 'react'
+import {
+  ArrowRight,
+  BarChart3,
+  CheckCircle,
+  Eye,
+  Share2,
+  Sparkles,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const BrandPageSetup = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -641,7 +654,7 @@ const BrandPageSetup = () => {
         </div>
       </motion.section>
     </div>
-  )
-}
+  );
+};
 
-export default BrandPageSetup
+export default BrandPageSetup;
