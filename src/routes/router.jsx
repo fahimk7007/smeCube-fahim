@@ -33,6 +33,11 @@ import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
 import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
 import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS"
 import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
+import WebDevelopment from "../pages/services/WebDevelopment";
+import AdminBusinessConsulting from "../pages/admin/dashboard/AdminBusinessConsulting";
+import AdminBrandPageSetup from "../pages/admin/dashboard/AdminBrandPageSetup";
+import AdminGraphicDesign from "../pages/admin/dashboard/AdminGraphicDesign";
+
 
 export const router = createBrowserRouter([
   {
@@ -162,6 +167,9 @@ export const router = createBrowserRouter([
       { path: "chatbot-setup", element: <AdminChatbotSetup /> },
       { path: "issue-fixing", element: <AdminIssueFixing /> },
       { path: "business-training", element: <AdminBusinessTraining /> },
+      { path: "business-consulting", element: <AdminBusinessConsulting /> },
+      { path: "brand-page-setup", element: <AdminBrandPageSetup /> },
+      { path: "graphic-design", element: <AdminGraphicDesign /> },
     ],
   },
 ]);

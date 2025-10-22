@@ -1,4 +1,5 @@
-import React from 'react'
+import { ArrowRight, BarChart3, Eye, Share2, Sparkles, Star, TrendingUp, Users } from 'lucide-react';
+import React, { useEffect, useState } from 'react'
 
 const BrandPageSetup = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
