@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle, ArrowRight, X } from "lucide-react";
 
 // Custom SVG logos for each service
 const customLogos = {
@@ -294,9 +292,215 @@ const customLogos = {
   ),
 };
 
-// Reusable ServiceCard component
-const ServiceCard = React.memo(({ service, index }) => (
-  <Tilt options={{ max: 15, scale: 1.05, speed: 450 }}>
+const Services = () => {
+  const [selectedService, setSelectedService] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleServiceClick = (service) => {
+    if (isMobile) {
+      setSelectedService(service);
+    }
+  };
+
+  const closePopup = () => {
+    setSelectedService(null);
+  };
+
+  const services = [
+    {
+      icon: customLogos.facebookBoosting,
+      title: "ফেসবুক বুস্টিং",
+      desc: "টার্গেটেড অডিয়েন্সে পৌঁছান এবং বিক্রয় বাড়ান",
+      fullDescription: "ফেসবুক বুস্টিং সার্ভিসের মাধ্যমে আপনার বিজ্ঞাপনগুলো সঠিক টার্গেট অডিয়েন্সের কাছে পৌঁছে দিন। আমরা কাস্টম অডিয়েন্স তৈরি, বাজেট অপটিমাইজেশন, এবং পারফরম্যান্স ট্র্যাকিং প্রদান করি।",
+      gradient: "from-blue-500 to-blue-600",
+      iconBg: "bg-blue-50",
+      path: "/services/facebook-boosting",
+      features: [
+        "টার্গেটেড অ্যাড",
+        "বাজেট অপটিমাইজেশন",
+        "পারফরম্যান্স ট্র্যাকিং",
+      ],
+    },
+    {
+      icon: customLogos.ecommerce,
+      title: "ই-কমার্স সলিউশন",
+      desc: "সম্পূর্ণ অনলাইন শপ সেটআপ এবং ম্যানেজমেন্ট",
+      fullDescription: "সম্পূর্ণ ই-কমার্স সলিউশন প্রদান করি যাতে রয়েছে পেমেন্ট গেটওয়ে ইন্টিগ্রেশন, ইনভেন্টরি ম্যানেজমেন্ট, এবং অর্ডার ট্র্যাকিং সিস্টেম।",
+      gradient: "from-emerald-500 to-teal-600",
+      iconBg: "bg-emerald-50",
+      path: "/services/ecommerce-solution",
+      features: [
+        "পেমেন্ট গেটওয়ে",
+        "ইনভেন্টরি ম্যানেজমেন্ট",
+        "অর্ডার ট্র্যাকিং",
+      ],
+    },
+    {
+      icon: customLogos.webDevelopment,
+      title: "ডেভেলপ ওয়েবসাইট",
+      desc: "আধুনিক এবং রেসপন্সিভ ওয়েবসাইট ডেভেলপমেন্ট",
+      fullDescription: "কাস্টম ওয়েবসাইট ডেভেলপমেন্ট সার্ভিস যেখানে আমরা মোবাইল ফ্রেন্ডলি, SEO অপটিমাইজড, এবং হাই-পারফরম্যান্স ওয়েবসাইট তৈরি করি।",
+      gradient: "from-purple-500 to-indigo-600",
+      iconBg: "bg-purple-50",
+      path: "/services/web-development",
+      features: ["কাস্টম ডিজাইন", "মোবাইল ফ্রেন্ডলি", "SEO অপটিমাইজড"],
+    },
+    {
+      icon: customLogos.hosting,
+      title: "ডিজাইন হোস্টিং",
+      desc: "নিরাপদ এবং দ্রুত হোস্টিং সেবা",
+      fullDescription: "৯৯.৯% আপটাইম গ্যারান্টি সহ প্রিমিয়াম হোস্টিং সার্ভিস। SSL সার্টিফিকেট, ডেইলি ব্যাকআপ, এবং ২৪/৭ সাপোর্ট সহ।",
+      gradient: "from-orange-500 to-red-600",
+      iconBg: "bg-orange-50",
+      path: "/services/hosting",
+      features: ["৯৯.৯% আপটাইম", "SSL সার্টিফিকেট", "ডেইলি ব্যাকআপ"],
+    },
+    {
+      icon: customLogos.landingPage,
+      title: "ল্যান্ডিং পেজ",
+      desc: "কনভার্শন অপটিমাইজড ল্যান্ডিং পেজ ডিজাইন",
+      fullDescription: "হাই কনভার্শন রেটের জন্য অপটিমাইজড ল্যান্ডিং পেজ ডিজাইন। A/B টেস্টিং, দ্রুত লোডিং স্পিড, এবং ইউজার-ফ্রেন্ডলি ইন্টারফেস।",
+      gradient: "from-pink-500 to-rose-600",
+      iconBg: "bg-pink-50",
+      path: "/services/landing-page",
+      features: ["হাই কনভার্শন", "দ্রুত লোডিং", "A/B টেস্টিং"],
+    },
+    {
+      icon: customLogos.bulkSms,
+      title: "বাল্ক এসএমএস",
+      desc: "বাল্ক এসএমএস মার্কেটিং সার্ভিস",
+      fullDescription: "দ্রুত ডেলিভারি এবং কম্পিটিটিভ প্রাইসে বাল্ক এসএমএস সার্ভিস। ডিটেইল্ড রিপোর্টিং এবং কাস্টমাইজড মেসেজিং।",
+      gradient: "from-green-500 to-emerald-600",
+      iconBg: "bg-green-50",
+      path: "/services/bulk-sms",
+      features: ["দ্রুত ডেলিভারি", "রিপোর্টিং", "সাশ্রয়ী দাম"],
+    },
+    {
+      icon: customLogos.consulting,
+      title: "বিজনেস কনসালটিং",
+      desc: "ব্যবসায়িক পরামর্শ এবং কৌশল উন্নয়ন",
+      fullDescription: "বিজনেস গ্রোথের জন্য এক্সপার্ট কনসালটেশন। মার্কেট রিসার্চ, কৌশল পরিকল্পনা, এবং গ্রোথ হ্যাকিং টেকনিক।",
+      gradient: "from-yellow-500 to-orange-600",
+      iconBg: "bg-yellow-50",
+      path: "/services/business-consulting",
+      features: ["কৌশল পরিকল্পনা", "মার্কেট রিসার্চ", "গ্রোথ হ্যাকিং"],
+    },
+    {
+      icon: customLogos.brandPage,
+      title: "ব্র্যান্ড পেজ সেটআপ",
+      desc: "প্রফেশনাল বিজনেস পেজ সেটআপ",
+      fullDescription: "ফেসবুক বিজনেস পেজ সেটআপ এবং অপ্টিমাইজেশন। পেজ ভেরিফিকেশন, কন্টেন্ট স্ট্র্যাটেজি, এবং অডিয়েন্স বিল্ডিং।",
+      gradient: "from-cyan-500 to-blue-600",
+      iconBg: "bg-cyan-50",
+      path: "/services/brand-page-setup",
+      features: [
+        "পেজ ভেরিফিকেশন",
+        "কন্টেন্ট স্ট্র্যাটেজি",
+        "অডিয়েন্স বিল্ডিং",
+      ],
+    },
+    {
+      icon: customLogos.graphicDesign,
+      title: "গ্রাফিক ডিজাইন",
+      desc: "লোগো, ব্যানার এবং ব্র্যান্ডিং ডিজাইন",
+      fullDescription: "প্রফেশনাল গ্রাফিক ডিজাইন সার্ভিস। লোগো ডিজাইন, সোশ্যাল মিডিয়া গ্রাফিক্স, এবং সম্পূর্ণ ব্র্যান্ড আইডেন্টিটি ডেভেলপমেন্ট।",
+      gradient: "from-violet-500 to-purple-600",
+      iconBg: "bg-violet-50",
+      path: "/services/graphic-design",
+      features: [
+        "লোগো ডিজাইন",
+        "সোশ্যাল মিডিয়া গ্রাফিক্স",
+        "ব্র্যান্ড আইডেন্টিটি",
+      ],
+    },
+    {
+      icon: customLogos.chatbot,
+      title: "চাটবট সেটআপ",
+      desc: "অটোমেটেড কাস্টমার সাপোর্ট সিস্টেম",
+      fullDescription: "২৪/৭ অটোমেটেড কাস্টমার সাপোর্ট সিস্টেম। অটো রেসপন্স, লিড জেনারেশন, এবং মাল্টি-প্ল্যাটফর্ম সাপোর্ট।",
+      gradient: "from-teal-500 to-cyan-600",
+      iconBg: "bg-teal-50",
+      path: "/services/chatbot-setup",
+      features: ["২৪/৭ সাপোর্ট", "অটো রেসপন্স", "লিড জেনারেশন"],
+    },
+    {
+      icon: customLogos.issueFixing,
+      title: "ইস্যু ফিক্সিং",
+      desc: "ওয়েবসাইট সমস্যা সমাধান",
+      fullDescription: "ওয়েবসাইটের যেকোনো টেকনিক্যাল সমস্যার দ্রুত সমাধান। বাগ ফিক্সিং, পারফরম্যান্স অপ্টিমাইজেশন, এবং সিকিউরিটি আপডেট।",
+      gradient: "from-rose-500 to-pink-600",
+      iconBg: "bg-rose-50",
+      path: "/services/issue-fixing",
+      features: ["দ্রুত সমাধান", "বাগ ফিক্স", "পারফরম্যান্স উন্নতি"],
+    },
+    {
+      icon: customLogos.training,
+      title: "বিজনেস ট্রেনিং",
+      desc: "ডিজিটাল মার্কেটিং প্রশিক্ষণ",
+      fullDescription: "হাতে-কলমে ডিজিটাল মার্কেটিং প্রশিক্ষণ। সার্টিফিকেট প্রদান এবং লাইফটাইম সাপোর্ট সহ সম্পূর্ণ ট্রেনিং প্রোগ্রাম।",
+      gradient: "from-indigo-500 to-blue-600",
+      iconBg: "bg-indigo-50",
+      path: "/services/business-training",
+      features: ["হাতে-কলমে শিক্ষা", "সার্টিফিকেট", "লাইফটাইম সাপোর্ট"],
+    },
+  ];
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    hover: { 
+      scale: isMobile ? 1.02 : 1.05,
+      y: isMobile ? -2 : -3,
+      transition: { duration: 0.3, ease: 'easeInOut' } 
+    },
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8, when: 'beforeChildren', staggerChildren: 0.15 } },
+  };
+
+  const popupVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } }
+  };
+
+  // Mobile Service Card Component
+  const MobileServiceCard = ({ service, index }) => (
+    <motion.div
+      key={index}
+      variants={cardVariants}
+      whileHover="hover"
+      onClick={() => handleServiceClick(service)}
+      className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 aspect-square flex flex-col justify-center p-4 border border-gray-100 cursor-pointer"
+    >
+      <div className={`relative w-12 h-12 sm:w-14 sm:h-14 mx-auto bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-3 shadow-inner`}>
+        <div className="absolute inset-[3px] bg-white/90 rounded-lg flex items-center justify-center">
+          <motion.div
+            whileHover={{ scale: isMobile ? 1.1 : 1.15 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            {service.icon}
+          </motion.div>
+        </div>
+      </div>
+
+      <h3 className="text-sm sm:text-base font-bold text-gray-900 text-center leading-tight">
+        {service.title}
+      </h3>
+    </motion.div>
+  );
+
+  // Desktop Service Card Component
+  const DesktopServiceCard = ({ service, index }) => (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -322,8 +526,7 @@ const ServiceCard = React.memo(({ service, index }) => (
         <div
           className={`absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br ${service.gradient} rounded-full animate-pulse`}
         ></div>
-        </div>
-     warden
+      </div>
 
       {/* Text */}
       <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
@@ -337,8 +540,6 @@ const ServiceCard = React.memo(({ service, index }) => (
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 + idx * 0.1 }}
-           scrivener
-
             viewport={{ once: true }}
             className="flex items-center gap-2 text-sm text-gray-600"
           >
@@ -358,136 +559,7 @@ const ServiceCard = React.memo(({ service, index }) => (
         <ArrowRight className="w-5 h-5" />
       </Link>
     </motion.div>
-  </Tilt>
-));
-
-const Services = () => {
-  const services = [
-    {
-      icon: customLogos.facebookBoosting,
-      title: "ফেসবুক বুস্টিং",
-      desc: "টার্গেটেড অডিয়েন্সে পৌঁছান এবং বিক্রয় বাড়ান",
-      gradient: "from-blue-500 to-blue-600",
-      iconBg: "bg-blue-50",
-      path: "/services/facebook-boosting",
-      features: [
-        "টার্গেটেড অ্যাড",
-        "বাজেট অপটিমাইজেশন",
-        "পারফরম্যান্স ট্র্যাকিং",
-      ],
-    },
-    {
-      icon: customLogos.ecommerce,
-      title: "ই-কমার্স সলিউশন",
-      desc: "সম্পূর্ণ অনলাইন শপ সেটআপ এবং ম্যানেজমেন্ট",
-      gradient: "from-emerald-500 to-teal-600",
-      iconBg: "bg-emerald-50",
-      path: "/services/ecommerce-solution",
-      features: [
-        "পেমেন্ট গেটওয়ে",
-        "ইনভেন্টরি ম্যানেজমেন্ট",
-        "অর্ডার ট্র্যাকিং",
-      ],
-    },
-    {
-      icon: customLogos.webDevelopment,
-      title: "ডেভেলপ ওয়েবসাইট",
-      desc: "আধুনিক এবং রেসপন্সিভ ওয়েবসাইট ডেভেলপমেন্ট",
-      gradient: "from-purple-500 to-indigo-600",
-      iconBg: "bg-purple-50",
-      path: "/services/web-development",
-      features: ["কাস্টম ডিজাইন", "মোবাইল ফ্রেন্ডলি", "SEO অপটিমাইজড"],
-    },
-    {
-      icon: customLogos.hosting,
-      title: "ডিজাইন হোস্টিং",
-      desc: "নিরাপদ এবং দ্রুত হোস্টিং সেবা",
-      gradient: "from-orange-500 to-red-600",
-      iconBg: "bg-orange-50",
-      path: "/services/hosting",
-      features: ["৯৯.৯% আপটাইম", "SSL সার্টিফিকেট", "ডেইলি ব্যাকআপ"],
-    },
-    {
-      icon: customLogos.landingPage,
-      title: "ল্যান্ডিং পেজ",
-      desc: "কনভার্শন অপটিমাইজড ল্যান্ডিং পেজ ডিজাইন",
-      gradient: "from-pink-500 to-rose-600",
-      iconBg: "bg-pink-50",
-      path: "/services/landing-page",
-      features: ["হাই কনভার্শন", "দ্রুত লোডিং", "A/B টেস্টিং"],
-    },
-    {
-      icon: customLogos.bulkSms,
-      title: "বাল্ক এসএমএস",
-      desc: "বাল্ক এসএমএস মার্কেটিং সার্ভিস",
-      gradient: "from-green-500 to-emerald-600",
-      iconBg: "bg-green-50",
-      path: "/services/bulk-sms",
-      features: ["দ্রুত ডেলিভারি", "রিপোর্টিং", "সাশ্রয়ী দাম"],
-    },
-    {
-      icon: customLogos.consulting,
-      title: "বিজনেস কনসালটিং",
-      desc: "ব্যবসায়িক পরামর্শ এবং কৌশল উন্নয়ন",
-      gradient: "from-yellow-500 to-orange-600",
-      iconBg: "bg-yellow-50",
-      path: "/services/business-consulting",
-      features: ["কৌশল পরিকল্পনা", "মার্কেট রিসার্চ", "গ্রোথ হ্যাকিং"],
-    },
-    {
-      icon: customLogos.brandPage,
-      title: "ব্র্যান্ড পেজ সেটআপ",
-      desc: "প্রফেশনাল বিজনেস পেজ সেটআপ",
-      gradient: "from-cyan-500 to-blue-600",
-      iconBg: "bg-cyan-50",
-      path: "/services/brand-page-setup",
-      features: [
-        "পেজ ভেরিফিকেশন",
-        "কন্টেন্ট স্ট্র্যাটেজি",
-        "অডিয়েন্স বিল্ডিং",
-      ],
-    },
-    {
-      icon: customLogos.graphicDesign,
-      title: "গ্রাফিক ডিজাইন",
-      desc: "লোগো, ব্যানার এবং ব্র্যান্ডিং ডিজাইন",
-      gradient: "from-violet-500 to-purple-600",
-      iconBg: "bg-violet-50",
-      path: "/services/graphic-design",
-      features: [
-        "লোগো ডিজাইন",
-        "সোশ্যাল মিডিয়া গ্রাফিক্স",
-        "ব্র্যান্ড আইডেন্টিটি",
-      ],
-    },
-    {
-      icon: customLogos.chatbot,
-      title: "চাটবট সেটআপ",
-      desc: "অটোমেটেড কাস্টমার সাপোর্ট সিস্টেম",
-      gradient: "from-teal-500 to-cyan-600",
-      iconBg: "bg-teal-50",
-      path: "/services/chatbot-setup",
-      features: ["২৪/৭ সাপোর্ট", "অটো রেসপন্স", "লিড জেনারেশন"],
-    },
-    {
-      icon: customLogos.issueFixing,
-      title: "ইস্যু ফিক্সিং",
-      desc: "োয়েবসাইট সমস্যা সমাধান",
-      gradient: "from-rose-500 to-pink-600",
-      iconBg: "bg-rose-50",
-      path: "/services/issue-fixing",
-      features: ["দ্রুত সমাধান", "বাগ ফিক্স", "পারফরম্যান্স উন্নতি"],
-    },
-    {
-      icon: customLogos.training,
-      title: "বিজনেস ট্রেনিং",
-      desc: "ডিজিটাল মার্কেটিং প্রশিক্ষণ",
-      gradient: "from-indigo-500 to-blue-600",
-      iconBg: "bg-indigo-50",
-      path: "/services/business-training",
-      features: ["হাতে-কলমে শিক্ষা", "সার্টিফিকেট", "লাইফটাইম সাপোর্ট"],
-    },
-  ];
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-32 pb-20 relative overflow-hidden">
@@ -516,11 +588,83 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+        >
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            isMobile ? (
+              <MobileServiceCard key={index} service={service} index={index} />
+            ) : (
+              <DesktopServiceCard key={index} service={service} index={index} />
+            )
           ))}
-        </div>
+        </motion.div>
+
+        {/* Mobile Popup */}
+        <AnimatePresence>
+          {selectedService && isMobile && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+              onClick={closePopup}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-white rounded-2xl p-6 max-w-sm w-full max-h-[80vh] overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+                variants={popupVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${selectedService.gradient} rounded-xl flex items-center justify-center shadow-inner`}>
+                    <div className="w-10 h-10 bg-white/90 rounded-lg flex items-center justify-center">
+                      {selectedService.icon}
+                    </div>
+                  </div>
+                  <button
+                    onClick={closePopup}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {selectedService.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4">
+                  {selectedService.fullDescription}
+                </p>
+
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    {selectedService.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Link
+                    to={selectedService.path}
+                    className="w-full bg-gradient-to-r from-red-500 to-pink-600 text-white py-3 rounded-lg font-semibold text-center block hover:shadow-lg transition-all duration-300"
+                    onClick={closePopup}
+                  >
+                    বিস্তারিত দেখুন
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* CTA Section */}
         <motion.div
