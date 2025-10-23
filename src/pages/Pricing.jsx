@@ -288,7 +288,7 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Add-on Services - 3 cards per row on mobile */}
+        {/* Add-on Services - Updated for desktop view */}
         <div className="mb-10 sm:mb-16 md:mb-20">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 font-hind">
@@ -297,21 +297,50 @@ const Pricing = () => {
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-hind">আপনার প্যাকেজের সাথে যুক্ত করুন এই সার্ভিসগুলো</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+          {/* Mobile View - 3 cards per row */}
+          <div className="md:hidden grid grid-cols-3 gap-3 sm:gap-4">
             {addOnServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg md:rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center"
+                className="bg-white rounded-lg p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center"
               >
-                <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 font-hind">{service.name}</h3>
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <h3 className="text-sm sm:text-base font-bold text-gray-900 font-hind">{service.name}</h3>
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
                     {service.icon}
                   </div>
                 </div>
                 <div className="flex items-end gap-1">
-                  <span className="text-lg sm:text-xl md:text-3xl font-black text-gray-900">৳{service.price}</span>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-0.5 sm:mb-1 font-hind">{service.unit}</span>
+                  <span className="text-lg sm:text-xl font-black text-gray-900">৳{service.price}</span>
+                  <span className="text-xs sm:text-sm text-gray-600 font-semibold mb-0.5 sm:mb-1 font-hind">{service.unit}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View - 5 cards per row with logo on top */}
+          <div className="hidden md:grid md:grid-cols-5 gap-4 lg:gap-6">
+            {addOnServices.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-4 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 aspect-square flex flex-col items-center justify-center text-center"
+              >
+                {/* Logo at the top */}
+                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 lg:mb-4">
+                  {service.icon}
+                </div>
+
+                {/* Service Name - Larger text */}
+                <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-2 lg:mb-3 font-hind leading-tight">
+                  {service.name}
+                </h3>
+
+                {/* Price - Larger text */}
+                <div className="flex items-end gap-1">
+                  <span className="text-xl lg:text-2xl font-black text-gray-900">৳{service.price}</span>
+                  <span className="text-sm lg:text-base text-gray-600 font-semibold mb-0.5 lg:mb-1 font-hind">
+                    {service.unit}
+                  </span>
                 </div>
               </div>
             ))}
