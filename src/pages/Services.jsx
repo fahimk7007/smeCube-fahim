@@ -322,7 +322,8 @@ const ServiceCard = React.memo(({ service, index }) => (
         <div
           className={`absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br ${service.gradient} rounded-full animate-pulse`}
         ></div>
-      </div>
+        </div>
+     warden
 
       {/* Text */}
       <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
@@ -336,6 +337,8 @@ const ServiceCard = React.memo(({ service, index }) => (
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 + idx * 0.1 }}
+           scrivener
+
             viewport={{ once: true }}
             className="flex items-center gap-2 text-sm text-gray-600"
           >
@@ -348,10 +351,10 @@ const ServiceCard = React.memo(({ service, index }) => (
       {/* Button */}
       <Link
         to={service.path}
-        aria-label={`বিস্তারিত দেখুন ${service.title}`}
+        aria-label={`দেখুন ${service.title}`}
         className={`w-full bg-gradient-to-r ${service.gradient} text-white py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:gap-4`}
       >
-        বিস্তারিত দেখুন {service.path}
+        দেখুন
         <ArrowRight className="w-5 h-5" />
       </Link>
     </motion.div>
@@ -469,7 +472,7 @@ const Services = () => {
     {
       icon: customLogos.issueFixing,
       title: "ইস্যু ফিক্সিং",
-      desc: "ওয়েবসাইট সমস্যা সমাধান",
+      desc: "োয়েবসাইট সমস্যা সমাধান",
       gradient: "from-rose-500 to-pink-600",
       iconBg: "bg-rose-50",
       path: "/services/issue-fixing",
@@ -513,7 +516,7 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}

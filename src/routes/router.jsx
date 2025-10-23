@@ -5,13 +5,16 @@ import { createBrowserRouter } from "react-router-dom";
 import SMECubeLanding from "../pages/SMECubeLanding";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-import EcommerceSolution from "../pages/services/EcommerceSolution";
+import Services from "../pages/Services";
+import Blogs from "../pages/Blogs"; 
 import Tools from "../pages/Tools";
 import Pricing from "../pages/Pricing";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 
 // Service Pages
+import EcommerceSolution from "../pages/services/EcommerceSolution";
+
 import DomainHostings from "../pages/services/DomainHostings";
 import BrandPageSetup from "../pages/services/BrandPageSetup";
 import BulkSMS from "../pages/services/BulkSMS";
@@ -35,7 +38,7 @@ import AdminIssueFixing from "../pages/admin/dashboard/AdminIssueFixing";
 import AdminBusinessTraining from "../pages/admin/dashboard/AdminBusinessTraining";
 import AdminBulkSMS from "../pages/admin/dashboard/AdminBulkSMS"
 import AdminLandingPage from "../pages/admin/dashboard/AdminLandinPage"
-import WebDevelopment from "../pages/services/WebDevelopment";
+
 import AdminBusinessConsulting from "../pages/admin/dashboard/AdminBusinessConsulting";
 import AdminBrandPageSetup from "../pages/admin/dashboard/AdminBrandPageSetup";
 import AdminGraphicDesign from "../pages/admin/dashboard/AdminGraphicDesign";
@@ -71,11 +74,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <EcommerceSolution />,
+        element: <Services />,
       },
       {
-        path: "services/ecommerce",
-        element: <EcommerceSolution />,
+        path: "blogs",
+        element: <Blogs />,
       },
       {
         path: "tools",

@@ -1,9 +1,8 @@
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
-  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -41,38 +40,22 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
             >
               হোম
             </Link>
-            <div className="relative">
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className={`font-semibold transition-all duration-300 hover:text-red-500 flex items-center ${
-                  location.pathname.startsWith("/services")
-                    ? "text-red-500"
-                    : "text-gray-700"
-                }`}
-              >
-                সার্ভিস
-                <ChevronDown
-                  className={`ml-2 h-4 w-4 transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
-                  <Link
-                    to="/services/ecommerce"
-                    className={`block px-4 py-2 font-semibold transition-all duration-300 hover:text-red-500 ${
-                      location.pathname === "/services/ecommerce"
-                        ? "text-red-500"
-                        : "text-gray-700"
-                    }`}
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    ই-কমার্স সার্ভিস
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link
+              to="/services"
+              className={`font-semibold transition-all duration-300 hover:text-red-500 ${
+                location.pathname === "/services" ? "text-red-500" : "text-gray-700"
+              }`}
+            >
+              সার্ভিস
+            </Link>
+            <Link
+              to="/blogs"
+              className={`font-semibold transition-all duration-300 hover:text-red-500 ${
+                location.pathname === "/blogs" ? "text-red-500" : "text-gray-700"
+              }`}
+            >
+              ব্লগ
+            </Link>
             <Link
               to="/tools"
               className={`font-semibold transition-all duration-300 hover:text-red-500 ${
@@ -155,41 +138,24 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
                 >
                   হোম
                 </Link>
-                <div className="w-full text-center">
-                  <button
-                    onClick={() => setServicesOpen(!servicesOpen)}
-                    className={`text-xl font-semibold transition-all duration-300 hover:text-red-500 flex items-center justify-center w-full ${
-                      location.pathname.startsWith("/services")
-                        ? "text-red-500"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    সার্ভিস
-                    <ChevronDown
-                      className={`ml-2 h-5 w-5 transition-transform ${
-                        servicesOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  {servicesOpen && (
-                    <div className="mt-2 space-y-2">
-                      <Link
-                        to="/services/ecommerce"
-                        onClick={() => {
-                          setServicesOpen(false);
-                          setMobileMenuOpen(false);
-                        }}
-                        className={`block text-lg font-semibold transition-all duration-300 hover:text-red-500 ${
-                          location.pathname === "/services/ecommerce"
-                            ? "text-red-500"
-                            : "text-gray-700"
-                        }`}
-                      >
-                        ই-কমার্স সার্ভিস
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                <Link
+                  to="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-xl font-semibold transition-all duration-300 hover:text-red-500 ${
+                    location.pathname === "/services" ? "text-red-500" : "text-gray-700"
+                  }`}
+                >
+                  সার্ভিস
+                </Link>
+                <Link
+                  to="/blogs"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-xl font-semibold transition-all duration-300 hover:text-red-500 ${
+                    location.pathname === "/blogs" ? "text-red-500" : "text-gray-700"
+                  }`}
+                >
+                  ব্লগ
+                </Link>
                 <Link
                   to="/tools"
                   onClick={() => setMobileMenuOpen(false)}
@@ -252,7 +218,7 @@ const Header = ({ setMobileMenuOpen, scrolled, mobileMenuOpen }) => {
               </div>
             </div>
 
-            {/* Optional overlay (if you want a dark background behind menu) */}
+            {/* Optional overlay */}
             <div
               className="fixed inset-0 bg-black/30 z-30 md:hidden"
               onClick={() => setMobileMenuOpen(false)}
