@@ -216,82 +216,186 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Pricing Cards - 3 cards per row on mobile */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-8 mb-10 sm:mb-16 md:mb-20">
+        {/* Pricing Cards - 2 cards per row on mobile, 3 on larger screens */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-16 md:mb-20">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-1 ${
-                plan.popular ? 'ring-2 md:ring-4 ring-red-500 md:scale-105' : ''
-              }`}
+              className={`relative bg-white rounded-2xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 ${
+                plan.name === 'এন্টারপ্রাইজ' ? 'col-span-2 md:col-span-1' : ''
+              } ${plan.popular ? 'ring-2 ring-red-500 md:scale-105' : ''}`}
             >
               {plan.popular && (
-                <div className="absolute -top-2 md:-top-5 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 sm:px-4 md:px-6 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg font-hind">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-md font-hind">
                     জনপ্রিয়
                   </div>
                 </div>
               )}
 
-              <div className="p-4 sm:p-6 md:p-8">
-                {/* Icon */}
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${plan.gradient} rounded-xl md:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg`}>
-                  {plan.icon}
-                </div>
+              <div className="p-5 sm:p-6 md:p-8">
+                {plan.name === 'এন্টারপ্রাইজ' ? (
+                  <>
+                    <div className="md:hidden flex flex-col sm:flex-row sm:gap-6">
+                      {/* Mobile View: Split into two sections */}
+                      <div className="flex-1">
+                        {/* Icon */}
+                        <div className={`w-12 h-12 bg-gradient-to-br ${plan.gradient} rounded-lg flex items-center justify-center text-white mb-4 shadow-md`}>
+                          {plan.icon}
+                        </div>
 
-                {/* Plan Name */}
-                <h3 className="text-base sm:text-lg md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2 font-hind">{plan.name}</h3>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 font-hind">{plan.description}</p>
+                        {/* Plan Name and Description */}
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 font-hind">{plan.name}</h3>
+                        <p className="text-sm sm:text-base text-gray-500 mb-4 font-hind">{plan.description}</p>
 
-                {/* Price */}
-                <div className="mb-4 sm:mb-6 md:mb-8">
-                  <div className="flex items-end gap-1 sm:gap-2">
-                    <span className="text-2xl sm:text-3xl md:text-5xl font-black bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                      ৳{billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
-                    </span>
-                    <span className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold mb-1 sm:mb-2 font-hind">
-                      /{billingCycle === 'monthly' ? 'মাস' : 'বছর'}
-                    </span>
-                  </div>
-                  {billingCycle === 'yearly' && (
-                    <p className="text-xs sm:text-sm text-green-600 font-semibold mt-1 sm:mt-2 font-hind">
-                      মাসিক মূল্যে ২০% সাশ্রয়!
-                    </p>
-                  )}
-                </div>
-
-                {/* Features */}
-                <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-6 md:mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-2 h-2 sm:w-3 sm:h-3 text-green-600" />
+                        {/* Price */}
+                        <div className="mb-4 sm:mb-6">
+                          <div className="flex items-end gap-2">
+                            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+                              ৳{billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                            </span>
+                            <span className="text-sm sm:text-base text-gray-500 font-semibold mb-1 font-hind">
+                              /{billingCycle === 'monthly' ? 'মাস' : 'বছর'}
+                            </span>
+                          </div>
+                          {billingCycle === 'yearly' && (
+                            <p className="text-xs sm:text-sm text-green-600 font-semibold mt-2 font-hind">
+                              মাসিক মূল্যে ২০% সাশ্রয়!
+                            </p>
+                          )}
+                        </div>
                       </div>
-                      <span className="text-xs sm:text-sm md:text-base text-gray-700 font-hind">{feature}</span>
-                    </div>
-                  ))}
-                </div>
 
-                {/* Button */}
-                <button
-                  className={`w-full py-2 sm:py-3 md:py-4 rounded-lg md:rounded-xl font-bold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm md:text-base font-hind ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}
-                >
-                  শুরু করুন
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                </button>
+                      {/* Features */}
+                      <div className="flex-1">
+                        <div className="space-y-3 mb-6">
+                          {plan.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <Check className="w-3 h-3 text-green-600" />
+                              </div>
+                              <span className="text-sm sm:text-base text-gray-600 font-hind">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop View: Standard Layout */}
+                    <div className="hidden md:block">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${plan.gradient} rounded-lg flex items-center justify-center text-white mb-4 shadow-md`}>
+                        {plan.icon}
+                      </div>
+
+                      {/* Plan Name */}
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 font-hind">{plan.name}</h3>
+                      <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-4 font-hind">{plan.description}</p>
+
+                      {/* Price */}
+                      <div className="mb-4 sm:mb-6">
+                        <div className="flex items-end gap-2">
+                          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+                            ৳{billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                          </span>
+                          <span className="text-sm sm:text-base md:text-lg text-gray-500 font-semibold mb-1 font-hind">
+                            /{billingCycle === 'monthly' ? 'মাস' : 'বছর'}
+                          </span>
+                        </div>
+                        {billingCycle === 'yearly' && (
+                          <p className="text-xs sm:text-sm text-green-600 font-semibold mt-2 font-hind">
+                            মাসিক মূল্যে ২০% সাশ্রয়!
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Features */}
+                      <div className="space-y-3 mb-6">
+                        {plan.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Check className="w-3 h-3 text-green-600" />
+                            </div>
+                            <span className="text-sm sm:text-base md:text-lg text-gray-600 font-hind">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Button */}
+                    <button
+                      className={`w-full py-3 sm:py-4 rounded-lg font-bold transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg font-hind ${
+                        plan.popular
+                          ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      }`}
+                    >
+                      শুরু করুন
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    {/* Icon */}
+                    <div className={`w-12 h-12 bg-gradient-to-br ${plan.gradient} rounded-lg flex items-center justify-center text-white mb-4 shadow-md`}>
+                      {plan.icon}
+                    </div>
+
+                    {/* Plan Name */}
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 font-hind">{plan.name}</h3>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-4 font-hind">{plan.description}</p>
+
+                    {/* Price */}
+                    <div className="mb-4 sm:mb-6">
+                      <div className="flex items-end gap-2">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+                          ৳{billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                        </span>
+                        <span className="text-sm sm:text-base md:text-lg text-gray-500 font-semibold mb-1 font-hind">
+                          /{billingCycle === 'monthly' ? 'মাস' : 'বছর'}
+                        </span>
+                      </div>
+                      {billingCycle === 'yearly' && (
+                        <p className="text-xs sm:text-sm text-green-600 font-semibold mt-2 font-hind">
+                          মাসিক মূল্যে ২০% সাশ্রয়!
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-3 mb-6">
+                      {plan.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-green-600" />
+                          </div>
+                          <span className="text-sm sm:text-base md:text-lg text-gray-600 font-hind">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Button */}
+                    <button
+                      className={`w-full py-3 sm:py-4 rounded-lg font-bold transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg font-hind ${
+                        plan.popular
+                          ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      }`}
+                    >
+                      শুরু করুন
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Add-on Services - Updated for desktop view */}
+        {/* Add-on Services - 3 cards per row on mobile */}
         <div className="mb-10 sm:mb-16 md:mb-20">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 font-hind">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4 font-hind">
               অতিরিক্ত সার্ভিস
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-hind">আপনার প্যাকেজের সাথে যুক্ত করুন এই সার্ভিসগুলো</p>
@@ -305,13 +409,13 @@ const Pricing = () => {
                 className="bg-white rounded-lg p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center"
               >
                 <div className="flex items-center justify-between mb-2 sm:mb-3">
-                  <h3 className="text-sm sm:text-base font-bold text-gray-900 font-hind">{service.name}</h3>
+                  <h3 className="text-sm sm:text-base font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent font-hind">{service.name}</h3>
                   <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
                     {service.icon}
                   </div>
                 </div>
                 <div className="flex items-end gap-1">
-                  <span className="text-lg sm:text-xl font-black text-gray-900">৳{service.price}</span>
+                  <span className="text-lg sm:text-xl font-black bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">৳{service.price}</span>
                   <span className="text-xs sm:text-sm text-gray-600 font-semibold mb-0.5 sm:mb-1 font-hind">{service.unit}</span>
                 </div>
               </div>
@@ -325,19 +429,14 @@ const Pricing = () => {
                 key={index}
                 className="bg-white rounded-xl p-4 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 aspect-square flex flex-col items-center justify-center text-center"
               >
-                {/* Logo at the top */}
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 lg:mb-4">
                   {service.icon}
                 </div>
-
-                {/* Service Name - Larger text */}
-                <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-2 lg:mb-3 font-hind leading-tight">
+                <h3 className="text-base lg:text-lg font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-2 lg:mb-3 font-hind leading-tight">
                   {service.name}
                 </h3>
-
-                {/* Price - Larger text */}
                 <div className="flex items-end gap-1">
-                  <span className="text-xl lg:text-2xl font-black text-gray-900">৳{service.price}</span>
+                  <span className="text-xl lg:text-2xl font-black bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">৳{service.price}</span>
                   <span className="text-sm lg:text-base text-gray-600 font-semibold mb-0.5 lg:mb-1 font-hind">
                     {service.unit}
                   </span>
@@ -354,7 +453,6 @@ const Pricing = () => {
               প্ল্যান তুলনা
             </span>
           </h2>
-
           <div className="overflow-x-auto">
             <table className="w-full min-w-full">
               <thead>
@@ -393,7 +491,6 @@ const Pricing = () => {
               সাধারণ প্রশ্ন
             </span>
           </h2>
-
           <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
             {[
               {

@@ -163,7 +163,7 @@ const Blogs = () => {
 
   // Filter posts based on active filter
   const getFilteredPosts = () => {
-    switch(activeFilter) {
+    switch (activeFilter) {
       case "featured":
         return filteredPosts.filter(post => post.featured);
       case "popular":
@@ -254,7 +254,7 @@ const Blogs = () => {
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
                     : "bg-white text-gray-700 hover:bg-gray-50 hover:shadow-md border border-gray-200"
                 }`}
-              >
+                >
                 {category === "all" ? "সব ক্যাটাগরি" : category}
               </button>
             ))}
@@ -420,6 +420,94 @@ const Blogs = () => {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* More Blogs Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <h2 className="text-3xl font-black mb-8 flex items-center gap-3">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              আরো ব্লগ দেখুন
+            </span>
+            <div className="h-1 flex-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {blogPosts
+              .filter(post => !post.featured)
+              .slice(0, 3)
+              .map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 flex flex-col h-full"
+                >
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-blue-500 text-white px-2 py-1 rounded-lg text-xs font-semibold">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-1">
+                        <User className="w-4 h-4" />
+                        <span>{post.author}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{post.date}</span>
+                      </div>
+                    </div>
+                    <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md">
+                      <Clock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  
+                  <Link
+                    to={post.path}
+                    className="inline-flex items-center gap-2 text-blue-500 font-semibold text-sm hover:gap-3 transition-all duration-300 group-hover:text-blue-600 mt-auto"
+                  >
+                    বিস্তারিত পড়ুন
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/blogs"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:gap-4"
+            >
+              বিস্তারিত দেখুন
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </motion.div>
 
