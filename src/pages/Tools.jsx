@@ -388,7 +388,7 @@ const Tools = () => {
                 variants={cardVariants}
                 whileHover="hover"
                 onClick={() => handleToolClick(tool)}
-                className="bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center p-3 sm:p-4 md:p-6 border border-gray-100 cursor-pointer"
+                className="bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col items-center justify-center text-center md:items-start md:text-left p-3 sm:p-4 md:p-6 border border-gray-100 cursor-pointer"
               >
                 <div
                   className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br ${tool.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-inner`}
@@ -405,7 +405,12 @@ const Tools = () => {
                 </div>
 
                 <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 font-akceler leading-tight">
-                  {tool.name}
+                  {isMobile ? (
+                    <>
+                      {tool.name.split(' ').slice(0, Math.ceil(tool.name.split(' ').length / 2)).join(' ')}<br />
+                      {tool.name.split(' ').slice(Math.ceil(tool.name.split(' ').length / 2)).join(' ')}
+                    </>
+                  ) : tool.name}
                 </h3>
                 <p className="hidden md:block text-xs sm:text-sm md:text-base text-gray-600 font-hind">
                   {tool.description}
@@ -448,7 +453,7 @@ const Tools = () => {
                 variants={cardVariants}
                 whileHover="hover"
                 onClick={() => handleToolClick(tool)}
-                className="bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col justify-center p-3 sm:p-4 md:p-6 border border-gray-100 cursor-pointer"
+                className="bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-square flex flex-col items-center justify-center text-center md:items-start md:text-left p-3 sm:p-4 md:p-6 border border-gray-100 cursor-pointer"
               >
                 <div
                   className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br ${tool.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-inner`}
@@ -465,7 +470,12 @@ const Tools = () => {
                 </div>
 
                 <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 font-akceler leading-tight">
-                  {tool.name}
+                  {isMobile ? (
+                    <>
+                      {tool.name.split(' ').slice(0, Math.ceil(tool.name.split(' ').length / 2)).join(' ')}<br />
+                      {tool.name.split(' ').slice(Math.ceil(tool.name.split(' ').length / 2)).join(' ')}
+                    </>
+                  ) : tool.name}
                 </h3>
                 <p className="hidden md:block text-xs sm:text-sm md:text-base text-gray-600 font-hind">
                   {tool.description}
@@ -564,4 +574,3 @@ const Tools = () => {
 };
 
 export default Tools;
-

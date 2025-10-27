@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, MessageCircle, Target, TrendingUp, BarChart, Users } from 'lucide-react';
-
+import RelatedBlogs from '../../components/RelatedBlogs';
 const FacebookBoostingGuide = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-20 pb-20">
@@ -210,6 +210,8 @@ const FacebookBoostingGuide = () => {
             <span>কমেন্ট সেকশন শীঘ্রই আসছে...</span>
           </div>
         </motion.div>
+        {/* Related Blogs Section */}
+        <RelatedBlogs currentBlogPath="/blogs/business-consulting-guide" />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, MessageCircle, Smartphone, Monitor, Tablet, Globe, Search } from 'lucide-react';
-
+import RelatedBlogs from '../../components/RelatedBlogs';
 const ResponsiveWebDesign = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 pt-20 pb-20">
@@ -97,6 +97,8 @@ const ResponsiveWebDesign = () => {
             <span>কমেন্ট সেকশন শীঘ্রই আসছে...</span>
           </div>
         </motion.div>
+        {/* Related Blogs Section */}
+        <RelatedBlogs currentBlogPath="/blogs/business-consulting-guide" />
       </div>
     </div>
   );
