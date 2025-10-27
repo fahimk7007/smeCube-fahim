@@ -26,6 +26,7 @@ import App from "../layouts/App";
 import BusinessTraining from "../pages/services/BusinessTraining";
 
 // Admin
+import AdminPricing from "../pages/admin/dashboard/AdminPricing";
 import AdminLayout from "../layouts/AdminLayout";
 import AdminDashboard from "../pages/admin/dashboard/AdminDashboard";
 import AdminSettings from "../pages/admin/dashboard/AdminSettings";
@@ -109,6 +110,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "dashboard", element: <AdminDashboard /> },
       { path: "settings", element: <AdminSettings /> },
+      { path: "pricing", element: <AdminPricing /> }, // ✅ ADDED THIS LINE
       { path: "web-development", element: <AdminWebdev /> },
       { path: "bulk-sms", element: <AdminBulkSMS /> },
       { path: "landing-page", element: <AdminLandingPage /> },

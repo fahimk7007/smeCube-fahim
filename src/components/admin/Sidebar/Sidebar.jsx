@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   Settings,
-  Table,
   Menu,
   X,
   RefreshCcw,
   LayoutDashboard,
+  DollarSign
 } from "lucide-react";
 import UserDropdown from "../Dropdowns/UserDropdown";
 
@@ -22,7 +22,11 @@ const Sidebar = () => {
       name: "Dashboard",
       icon: <LayoutDashboard size={18} />,
     },
-    { path: "/admin/settings", name: "Settings", icon: <Settings size={18} /> },
+    { 
+      path: "/admin/pricing", 
+      name: "Pricing", 
+      icon: <DollarSign size={18} /> 
+    },
     {
       // path: "/admin/update-services",
       name: "Update Services",
@@ -37,9 +41,14 @@ const Sidebar = () => {
         { path: "/admin/brand-page-setup", name: "Brand Page Setup" },
         { path: "/admin/graphic-design", name: "Graphic Design" },
         { path: "/admin/chatbot-setup", name: "Chatbot Setup" },
-    { path: "/admin/issue-fixing", name: "Issue Fixing" },
-    { path: "/admin/business-training", name: "Business Training" },
+        { path: "/admin/issue-fixing", name: "Issue Fixing" },
+        { path: "/admin/business-training", name: "Business Training" },
       ],
+    },
+    { 
+      path: "/admin/settings", 
+      name: "Settings", 
+      icon: <Settings size={18} /> 
     },
   ];
 
@@ -133,7 +142,7 @@ const Sidebar = () => {
                   {item.subcategories && (
                     <svg
                       className={`w-3 h-3 text-gray-400 transition-transform duration-200 ${
-                        expandedCategory ? "rotate-90" : "rotate-0"
+                        expandedCategory === item.name ? "rotate-90" : "rotate-0"
                       }`}
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
