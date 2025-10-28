@@ -118,7 +118,7 @@ const About = () => {
       `}</style>
 
       {/* Hero Section - Reduced Height */}
-      <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-red-700 via-red-700 to-red-800">
+      <section className="relative h-[80vh] md:h-screen flex items-center overflow-hidden bg-gradient-to-br from-red-700 via-red-700 to-red-800">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(239,68,68,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(220,38,38,0.3),transparent_50%)]"></div>
@@ -165,11 +165,11 @@ const About = () => {
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-3 md:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                    className="bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-3 md:p-6 border border-white/20 hover:bg-white/00 transition-all duration-300 hover:scale-105"
                   >
                     <div className="w-8 h-8 md:w-12 md:h-12 text-white mb-1 md:mb-3 mx-auto">{stat.icon}</div>
                     <div className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2">{stat.number}</div>
-                    <p className="text-sm md:text-lg text-white/90">{stat.label}</p>
+                    <p className="text-sm md:text-lg text-red/50">{stat.label}</p>
                   </div>
                 ))}
               </div>
