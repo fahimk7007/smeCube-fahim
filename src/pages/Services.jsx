@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, ArrowRight, X } from "lucide-react";
 
-// Custom SVG logos for each service
+// Custom SVG logos for each service (unchanged)
 const customLogos = {
   facebookBoosting: (
     <svg
@@ -434,7 +434,7 @@ const Services = () => {
       icon: customLogos.issueFixing,
       title: "ইস্যু ফিক্সিং",
       desc: "ওয়েবসাইট সমস্যা সমাধান",
-      fullDescription: "ওয়েবসাইটের যেকোনো টেকনিক্যাল সমস্যার দ্রুত সমাধান। বাগ ফিক্সিং, পারফরম্যান্স অপ্টিমাইজেশন, এবং সিকিউরিটি আপডেট।",
+      fullDescription: "ওয়েবসাইটের যেকোনো টেকনিক্যাল সমস্যার দ্রুত সমাধান। বাগ ফিক্সিং, পারফরম্যান্স অপটিমাইজেশন, এবং সিকিউরিটি আপডেট।",
       gradient: "from-rose-500 to-pink-600",
       iconBg: "bg-rose-50",
       path: "/services/issue-fixing",
@@ -473,16 +473,16 @@ const Services = () => {
     exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } }
   };
 
-  // Mobile Service Card Component
+  // Mobile Service Card Component (Updated)
   const MobileServiceCard = ({ service, index }) => (
     <motion.div
       key={index}
       variants={cardVariants}
       whileHover="hover"
       onClick={() => handleServiceClick(service)}
-      className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 aspect-square flex flex-col justify-center p-4 border border-gray-100 cursor-pointer"
+      className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 aspect-square flex flex-col items-center justify-center p-4 border border-gray-100 cursor-pointer"
     >
-      <div className={`relative w-12 h-12 sm:w-14 sm:h-14 mx-auto bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-3 shadow-inner`}>
+      <div className={`relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-3 shadow-inner`}>
         <div className="absolute inset-[3px] bg-white/90 rounded-lg flex items-center justify-center">
           <motion.div
             whileHover={{ scale: isMobile ? 1.1 : 1.15 }}
@@ -494,12 +494,13 @@ const Services = () => {
       </div>
 
       <h3 className="text-sm sm:text-base font-bold text-gray-900 text-center leading-tight">
-        {service.title}
+        {service.title.split(' ').slice(0, Math.ceil(service.title.split(' ').length / 2)).join(' ')}<br />
+        {service.title.split(' ').slice(Math.ceil(service.title.split(' ').length / 2)).join(' ')}
       </h3>
     </motion.div>
   );
 
-  // Desktop Service Card Component
+  // Desktop Service Card Component (Unchanged)
   const DesktopServiceCard = ({ service, index }) => (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -515,7 +516,6 @@ const Services = () => {
         "--gradient-end": service.gradient.split(" ")[1].replace("to-", "#"),
       }}
     >
-      {/* Icon */}
       <div className="relative mb-6">
         <motion.div
           whileHover={{ rotate: 10 }}
@@ -528,11 +528,9 @@ const Services = () => {
         ></div>
       </div>
 
-      {/* Text */}
       <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
       <p className="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
 
-      {/* Features */}
       <div className="space-y-2 mb-6">
         {service.features.map((feature, idx) => (
           <motion.div
@@ -549,7 +547,6 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Button */}
       <Link
         to={service.path}
         aria-label={`দেখুন ${service.title}`}
@@ -563,12 +560,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-32 pb-20 relative overflow-hidden">
-      {/* Floating background gradient blobs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-red-400/20 to-pink-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-blue-400/20 to-purple-500/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -587,7 +582,6 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -603,7 +597,6 @@ const Services = () => {
           ))}
         </motion.div>
 
-        {/* Mobile Popup */}
         <AnimatePresence>
           {selectedService && isMobile && (
             <motion.div
@@ -666,7 +659,6 @@ const Services = () => {
           )}
         </AnimatePresence>
 
-        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
